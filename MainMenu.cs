@@ -22,6 +22,8 @@ namespace Group11_Machine_Problem
             }
             Console.WriteLine("MAINMENU");
             Console.WriteLine("2 - MainMENU");
+            Console.WriteLine("3 - MainMenu");
+
 
         }
         private void adminMainMenu()
