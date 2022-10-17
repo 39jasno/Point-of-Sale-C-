@@ -23,6 +23,7 @@ namespace Group11_Machine_Problem
             Console.WriteLine("MAINMENU");
 
             Console.WriteLine("Practice changes");
+            Console.WriteLine("Practice changes");
 
         }
         private void adminMainMenu()
