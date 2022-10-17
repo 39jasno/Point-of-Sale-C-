@@ -20,6 +20,8 @@ namespace Group11_Machine_Problem
             {
                 menu.employeeMainMenu();
             }
+            Console.WriteLine("MAINMENU");
+
         }
         private void adminMainMenu()
         {
