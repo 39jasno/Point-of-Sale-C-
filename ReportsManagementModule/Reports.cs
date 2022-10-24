@@ -20,7 +20,7 @@ namespace Group11_Machine_Problem
                 choice = Console.ReadLine().ToUpper().Trim();
                 if (choice == "1")
                 {
-                    dailySales("\nDaily sales reports");
+                    dailySales("Daily sales reports\n");
                 }
                 else if (choice == "2")
                 {
@@ -42,16 +42,27 @@ namespace Group11_Machine_Problem
 
         static void dailySales(string message) //Date | Grand Total
         {
-            Console.WriteLine(message);                     //Display Daily sales reports
-            Inventory check = new Inventory();              //Initalize Inventory Class
+            Console.Clear();
+            Console.WriteLine(message);                     //Display Daily sales reports.
+            Inventory check = new Inventory();              //Initalize Inventory Class.
+
             string path = "DailySales.txt";                 //Indicate text file name.
-            string[] dailySales = check.transfer(path);     //Transfer text files into array
-            foreach (var line in dailySales)                //Display daily sales.
+            string[][] dailySales = check.transfer(path);     //Transfer text files into array.
+
+            Console.WriteLine("Date\t\tGrand total\n");
+            for (int i = 0; i < dailySales.Length; i++)
+            {
+                Console.Write("{0}\t{1}\n", dailySales[i][0], dailySales[i][1]);
+
+            }
+            Console.WriteLine("\n\nPress any key to go back...");
+            Console.ReadKey();
+            /*foreach (var line in dailySales)                //Display daily sales.
             {
                 Console.WriteLine(line);
 
-            }
-            Console.WriteLine();
+            }*/
+
         }
         static void productInventory()//Category | Product
         {

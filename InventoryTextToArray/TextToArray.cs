@@ -33,15 +33,30 @@ namespace Group11_Machine_Problem.ReportsManagementModule
             }
         }
 
-        public string[] transfer(string path)
+        public string[][] transfer(string path)
         {
             bool found = checkInfo();
 
             if (found == true)
             {
+                string[][] array = new string[(File.ReadAllLines(path).Length)][];
+
+                int counter = 0;
+                foreach (var line in File.ReadLines(path))
+                {
+                    string[] info = line.Split('|');
+                    array[counter] = new string[2] { info[0], info[1] };
+                    counter++;
+                }
+                return array;
+            }
+            else
+            {
+                return null;
+            }
+            /*{
                 string[] stringArray = File.ReadAllLines(path);
                 string[] array = new string[stringArray.Length];
-
                 int counter = 0;
                 foreach (string example in stringArray)
                 {
@@ -49,12 +64,11 @@ namespace Group11_Machine_Problem.ReportsManagementModule
                     counter++;
                 }
                 return array;
-
             }
             else
             {
                 return null;
-            }
+            }*/
         }
     }
 }
