@@ -5,8 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace Group11_Machine_Problem.MainMenuRepository
-{
+namespace MP
     class Validation
     {
         public string ValidateUserPassword(string strMessage, int passMin, int passMax, string username)

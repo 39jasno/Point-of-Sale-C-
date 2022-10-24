@@ -8,8 +8,7 @@ using System.Drawing;
 using System.Threading;
 using System.Reflection.Emit;
 
-namespace Group11_Machine_Problem.MainMenuRepository
-{
+namespace MP
     class Display
     {
         private static Form loginForm;
