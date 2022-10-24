@@ -45,11 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form.cs" />
+    <Compile Include="Display.cs" />
+    <Compile Include="InventoryTextToArray\TextToArray.cs" />
     <Compile Include="MainMenuRepository\MainMenuClass.cs" />
     <Compile Include="PoS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReportsModule\Reports.cs" />
+    <Compile Include="ReportsManagementModule\Reports.cs" />
     <Compile Include="UserAccountManagement\Cashier.cs" />
     <Compile Include="UserAccountManagement\Checker.cs" />
     <Compile Include="UserAccountManagement\Manager.cs" />

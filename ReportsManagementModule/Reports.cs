@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using Group11_Machine_Problem.ReportsManagementModule;
 
 namespace Group11_Machine_Problem
 {
@@ -11,19 +12,19 @@ namespace Group11_Machine_Problem
     {
         public void reports()
         {
-            Reports mainMenu = new Reports();
+            Reports reportsMenu = new Reports();
             string choice = "";
             while (choice != "x")
             {
-                mainMenu.reportsMenu();
-                choice = Console.ReadLine().ToUpper();
+                reportsMenu.reportsMenu();
+                choice = Console.ReadLine().ToUpper().Trim();
                 if (choice == "1")
                 {
-                    dailySales();
+                    dailySales("\nDaily sales reports");
                 }
                 else if (choice == "2")
                 {
-                    inventory();
+                    productInventory();
 
                 }
                 else if (choice == "3")
@@ -39,18 +40,20 @@ namespace Group11_Machine_Problem
             
         }
 
-        static void dailySales() //Date | Grand Total
+        static void dailySales(string message) //Date | Grand Total
         {
-            string[] dailySales = { "Date", "TotalSales" };
-            Console.WriteLine("Daily sales reports");
-            for (int i = 0; i <= 1; i++)
+            Console.WriteLine(message);                     //Display Daily sales reports
+            Inventory check = new Inventory();              //Initalize Inventory Class
+            string path = "DailySales.txt";                 //Indicate text file name.
+            string[] dailySales = check.transfer(path);     //Transfer text files into array
+            foreach (var line in dailySales)                //Display daily sales.
             {
-                Console.WriteLine(dailySales[i]);
+                Console.WriteLine(line);
+
             }
-
-
+            Console.WriteLine();
         }
-        static void inventory()//Category | Product
+        static void productInventory()//Category | Product
         {
             Console.WriteLine("Inventory of Sold Items");
 
@@ -63,7 +66,7 @@ namespace Group11_Machine_Problem
 
         private void reportsMenu()
         {
-            Console.Write("\n1 - Daily sales reports" +
+            Console.Write("1 - Daily sales reports" +
                 "\n2 - Inventory of Sold Items" +
                 "\n3 - List of Return Items"+
                 "\nX - Exit"+

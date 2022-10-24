@@ -45,8 +45,6 @@ namespace Group11_Machine_Problem
             }
         }
 
-
-
         public void SetUserInfo()
         {
             try
@@ -111,7 +109,6 @@ namespace Group11_Machine_Problem
                 Console.WriteLine("ERROR: An error has occurred!");
             }
         }
-
 
 
         public void ChangeUserPassword()
