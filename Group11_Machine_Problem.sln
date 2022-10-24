@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32802.440
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Group11_Machine_Problem", "Group11_Machine_Problem.csproj", "{E470D3B7-7B9F-46DD-A753-877F1A82BF51}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Group11", "Group11.csproj", "{E470D3B7-7B9F-46DD-A753-877F1A82BF51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

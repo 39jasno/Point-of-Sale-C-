@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Group11_Machine_Problem
 {
-    class Reports
+    public class Reports
     {
         public void reports()
         {
