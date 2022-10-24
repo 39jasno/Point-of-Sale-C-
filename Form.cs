@@ -27,25 +27,30 @@ namespace Group11_Machine_Problem
             loginForm.Height = 224;
             loginForm.StartPosition = FormStartPosition.CenterScreen;
             loginForm.MaximizeBox = false;
+
             Label usernameLabel = new Label();
             usernameLabel.Text = "Username: ";
             usernameLabel.AutoSize = true;
             usernameLabel.Location = new System.Drawing.Point(60, 40);
             usernameLabel.Parent = loginForm;
+
             Label passwordLabel = new Label();
             passwordLabel.Text = "Password: ";
             passwordLabel.AutoSize = true;
             passwordLabel.Location = new System.Drawing.Point(60, 90);
             passwordLabel.Parent = loginForm;
+
             usernameTxt = new TextBox();
             usernameTxt.Size = new Size(160, 50);
             usernameTxt.Location = new System.Drawing.Point(140, 40);
             usernameTxt.Parent = loginForm;
+
             passwordTxt = new TextBox();
             passwordTxt.Size = new Size(160, 50);
             passwordTxt.Location = new System.Drawing.Point(140, 90);
             passwordTxt.PasswordChar = '*';
             passwordTxt.Parent = loginForm;
+
             loginBtn = new Button();
             loginBtn.Text = "Login";
             loginBtn.Width = 95;
@@ -53,12 +58,14 @@ namespace Group11_Machine_Problem
             loginBtn.Location = new System.Drawing.Point(270, 140);
             loginBtn.Parent = loginForm;
             loginBtn.Click += new EventHandler(loginBtn_Click);
+
             registerLinkLbl = new LinkLabel();
             registerLinkLbl.Text = "Register as New User";
             registerLinkLbl.Size = new Size(120, 25);
             registerLinkLbl.Location = new System.Drawing.Point(110, 145);
             registerLinkLbl.Parent = loginForm;
             registerLinkLbl.Click += new EventHandler(registerLinkLbl_Click);
+
             loginForm.ShowDialog();
         }
 

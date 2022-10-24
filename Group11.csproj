@@ -62,7 +62,6 @@
   <ItemGroup>
     <Folder Include="OrdersManagementModule\" />
     <Folder Include="ProductManagementModule\" />
-    <Folder Include="TextFiles\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

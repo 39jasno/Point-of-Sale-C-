@@ -22,8 +22,10 @@ namespace Group11_Machine_Problem
             Console.Clear();
             Console.WriteLine("Register User Menu\n");
             Validation validate = new Validation();
+
             id = validate.GetLastID();
             id++;
+
             username = validate.ValidateUsername("Enter username: ", 1, 30);
             password = validate.ValidateUserPassword("Enter password: ", 8, 20, username);
             accountType = validate.ValidateUserAccountType("Enter account type [Manager or Cashier]: ");
@@ -159,8 +161,6 @@ namespace Group11_Machine_Problem
             }
         }
 
-
-
         public void ActiveOrDeactivateUserAccount(string status, string strMessage1, string strMessage2 = null)
         {
             try
@@ -200,8 +200,6 @@ namespace Group11_Machine_Problem
             }
         }
 
-
-
         public void ActivateUserAccount(string strMessage)
         {
             char choice = '0';
@@ -226,8 +224,6 @@ namespace Group11_Machine_Problem
 
             }
         }
-
-
 
         public void ShowUserAccountExpiration()
         {
@@ -276,8 +272,6 @@ namespace Group11_Machine_Problem
             {
                 Console.WriteLine("ERROR: An error has occurred!");
             }
-
-
 
         }
 

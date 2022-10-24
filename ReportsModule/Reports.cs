@@ -39,17 +39,23 @@ namespace Group11_Machine_Problem
             
         }
 
-        static void dailySales()
+        static void dailySales() //Date | Grand Total
         {
+            string[] dailySales = { "Date", "TotalSales" };
             Console.WriteLine("Daily sales reports");
+            for (int i = 0; i <= 1; i++)
+            {
+                Console.WriteLine(dailySales[i]);
+            }
+
 
         }
-        static void inventory()
+        static void inventory()//Category | Product
         {
             Console.WriteLine("Inventory of Sold Items");
 
         }
-        static void returns()
+        static void returns()//Return Date | Category | Product
         {
             Console.WriteLine("List of Return Items");
 
