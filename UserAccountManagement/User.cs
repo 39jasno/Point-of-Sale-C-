@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Threading;
 
-namespace Group11_Machine_Problem
+namespace Group11_Machine_Problem.MainMenuRepository
 {
     class User
     {

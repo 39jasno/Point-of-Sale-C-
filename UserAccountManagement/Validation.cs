@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace Group11_Machine_Problem
+namespace Group11_Machine_Problem.MainMenuRepository
 {
     class Validation
     {
