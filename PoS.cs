@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Group11_Machine_Problem.MainMenus;
+using Group11_Machine_Problem.MainMenuRepository;
 
 namespace Group11_Machine_Problem
 {
@@ -13,22 +9,27 @@ namespace Group11_Machine_Problem
         {
             MainMenu menu = new MainMenu();
             Reports sales = new Reports();
-            string user = Console.ReadLine();
-            if (user == "1")
+
+            
+            bool programLoop = true;
+            while (programLoop)
             {
-                menu.adminMainMenu();
-                string choice = Console.ReadLine();
-                if (choice == "3")
+                string user = Console.ReadLine();
+                Console.WriteLine("MAINMENU");
+                if (user == "1")
                 {
-                    sales.reports();
+                    menu.adminMainMenu();
+                    string choice = Console.ReadLine();
+                    if (choice == "3")
+                    {
+                        sales.reports();
+                    }
+                }
+                else if (user == "2")
+                {
+                    menu.employeeMainMenu();
                 }
             }
-            else if (user == "2")
-            {
-                menu.employeeMainMenu();
-            }
-            Console.WriteLine("MAINMENU");
-
         }
     }
 }

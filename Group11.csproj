@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainMenus\MainMenuClass.cs" />
+    <Compile Include="MainMenuRepository\MainMenuClass.cs" />
     <Compile Include="PoS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportsModule\Reports.cs" />

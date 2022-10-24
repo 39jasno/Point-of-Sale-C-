@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Group11_Machine_Problem.MainMenus
+namespace Group11_Machine_Problem.MainMenuRepository
 {
     class MainMenu
     {
