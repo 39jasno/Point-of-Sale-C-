@@ -1,4 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 using Group11_Machine_Problem.MainMenuRepository;
 
 namespace Group11_Machine_Problem
@@ -7,7 +12,6 @@ namespace Group11_Machine_Problem
     {
         static void Main(string[] args)
         {
-            
             //eto yung ginawa ko na login form
             DialogResult tryAgain = DialogResult.No;
             do
@@ -21,12 +25,8 @@ namespace Group11_Machine_Problem
             } while (tryAgain != DialogResult.Yes);
 
             Console.ReadKey();
-            
-            
-            
-            
-            
-            MainMenu menu = new MainMenu();
+            /*
+            posMenu menu = new posMenu();
             Reports sales = new Reports();  
             bool programLoop = true;
             while (programLoop)
@@ -46,7 +46,8 @@ namespace Group11_Machine_Problem
                 {
                     menu.employeeMainMenu();
                 }
-            }
+            
+            }*/
         }
     }
 }

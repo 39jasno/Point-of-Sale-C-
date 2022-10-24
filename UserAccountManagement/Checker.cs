@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 
-namespace Group11_Machine_Problem.MainMenuRepository
+namespace Group11_Machine_Problem
 {
     class Checker
     {

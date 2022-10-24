@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Group11_Machine_Problem.MainMenuRepository
 {
-    class MainMenu
+    class posMenu
     {
         public void adminMainMenu()
         {
