@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Threading;
 using System.Reflection.Emit;
+using Label = System.Windows.Forms.Label;
 
 namespace Group11_Machine_Problem.MainMenuRepository
 {
