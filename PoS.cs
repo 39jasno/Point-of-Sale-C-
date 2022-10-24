@@ -7,10 +7,27 @@ namespace Group11_Machine_Problem
     {
         static void Main(string[] args)
         {
-            MainMenu menu = new MainMenu();
-            Reports sales = new Reports();
-
             
+            //eto yung ginawa ko na login form
+            DialogResult tryAgain = DialogResult.No;
+            do
+            {
+                Display LoginDisplay = new Display();
+                LoginDisplay.DisplayLogin();
+  
+                if(Display.isError)
+                    tryAgain = MessageBox.Show("Do you want to Exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            } while (tryAgain != DialogResult.Yes);
+
+            Console.ReadKey();
+            
+            
+            
+            
+            
+            MainMenu menu = new MainMenu();
+            Reports sales = new Reports();  
             bool programLoop = true;
             while (programLoop)
             {
