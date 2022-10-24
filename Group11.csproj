@@ -47,11 +47,18 @@
     <Compile Include="PoS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportsModule\Reports.cs" />
+    <Compile Include="UserAccountManagement\Cashier.cs" />
+    <Compile Include="UserAccountManagement\Checker.cs" />
+    <Compile Include="UserAccountManagement\Manager.cs" />
+    <Compile Include="UserAccountManagement\User.cs" />
+    <Compile Include="UserAccountManagement\Validation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="OrdersManagementModule\" />
+    <Folder Include="ProductManagementModule\" />
     <Folder Include="TextFiles\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
