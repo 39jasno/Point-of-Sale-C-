@@ -11,19 +11,22 @@ namespace Group11_Machine_Problem
         static void Main(string[] args)
         {
             MainMenu menu = new MainMenu();
+            Reports sales = new Reports();
             string user = Console.ReadLine();
             if (user == "1")
             {
                 menu.adminMainMenu();
+                string choice = Console.ReadLine();
+                if (choice == "3")
+                {
+                    sales.reports();
+                }
             }
             else if (user == "2")
             {
                 menu.employeeMainMenu();
             }
             Console.WriteLine("MAINMENU");
-
-            Console.WriteLine("Practice changes");
-            Console.WriteLine("Practice changes");
 
         }
         private void adminMainMenu()
