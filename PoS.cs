@@ -1,5 +1,9 @@
 ﻿using System;
-using Group11_Machine_Problem.MainMenuRepository;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Group11_Machine_Problem
 {
@@ -7,7 +11,6 @@ namespace Group11_Machine_Problem
     {
         static void Main(string[] args)
         {
-            
             //eto yung ginawa ko na login form
             DialogResult tryAgain = DialogResult.No;
             do
@@ -19,34 +22,6 @@ namespace Group11_Machine_Problem
                     tryAgain = MessageBox.Show("Do you want to Exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             } while (tryAgain != DialogResult.Yes);
-
-            Console.ReadKey();
-            
-            
-            
-            
-            
-            MainMenu menu = new MainMenu();
-            Reports sales = new Reports();  
-            bool programLoop = true;
-            while (programLoop)
-            {
-                string user = Console.ReadLine();
-                Console.WriteLine("MAINMENU");
-                if (user == "1")
-                {
-                    menu.adminMainMenu();
-                    string choice = Console.ReadLine();
-                    if (choice == "3")
-                    {
-                        sales.reports();
-                    }
-                }
-                else if (user == "2")
-                {
-                    menu.employeeMainMenu();
-                }
-            }
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 
 namespace Group11_Machine_Problem
+{ 
     class Validation
     {
         public string ValidateUserPassword(string strMessage, int passMin, int passMax, string username)
@@ -29,9 +30,6 @@ namespace Group11_Machine_Problem
 
             return password;
         }
-
-
-
         public bool CharacterChecker(string password, int lowerMin, int upperMin, int digitMin, int specialMin)
         {
             int digitCounter = 0, lowerCounter = 0, upperCounter = 0, specialCounter = 0;
@@ -39,11 +37,11 @@ namespace Group11_Machine_Problem
 
             foreach (char i in password)
             {
-                if (Char.IsLower(i))
+                if (char.IsLower(i))
                     lowerCounter += 1;
-                else if (Char.IsUpper(i))
+                else if (char.IsUpper(i))
                     upperCounter += 1;
-                else if (Char.IsDigit(i))
+                else if (char.IsDigit(i))
                     digitCounter += 1;
                 else if (specialCharacters.Contains(i))
                     specialCounter += 1;
@@ -63,9 +61,6 @@ namespace Group11_Machine_Problem
 
             return true;
         }
-
-
-
         public string ValidateUsername(string strMessage, int nameMin, int nameMax)
         {
             string username; bool doesAccountExist = false;
@@ -90,7 +85,6 @@ namespace Group11_Machine_Problem
 
             return username;
         }
-
         public int GetLastID()
         {
             int ID = 999999;
@@ -122,7 +116,6 @@ namespace Group11_Machine_Problem
 
             return ID;
         }
-
         public bool DoesAccountExist(string username)
         {
             bool doesAccountExist = false;
@@ -158,9 +151,6 @@ namespace Group11_Machine_Problem
 
             return doesAccountExist;
         }
-
-
-
         public string ValidateUserAccountType(string strMessage)
         {
             string accountType;
@@ -177,4 +167,5 @@ namespace Group11_Machine_Problem
         }
     }
 }
+
 
