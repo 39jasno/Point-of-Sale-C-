@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 
-namespace Group11_Machine_Problem.MainMenuRepository
+namespace MP
 {
     class Cashier : User
     {
