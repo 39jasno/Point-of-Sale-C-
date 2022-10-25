@@ -47,16 +47,15 @@
   <ItemGroup>
     <Compile Include="Display.cs" />
     <Compile Include="InventoryTextToArray\TextToArray.cs" />
-    <Compile Include="MainMenuRepository\MainMenuClass.cs" />
     <Compile Include="OrdersManagementModule\OrderInventory.cs" />
     <Compile Include="OrdersManagementModule\OrderManagement.cs" />
     <Compile Include="PoS.cs" />
-    <Compile Include="ProductManagementModule\Headphones.cs" />
-    <Compile Include="ProductManagementModule\Keyboard.cs" />
-    <Compile Include="ProductManagementModule\Monitor.cs" />
-    <Compile Include="ProductManagementModule\Mouse.cs" />
+    <Compile Include="ProductManagementModule\ProductInventory\Headphones.cs" />
+    <Compile Include="ProductManagementModule\ProductInventory\Keyboard.cs" />
+    <Compile Include="ProductManagementModule\ProductInventory\Monitor.cs" />
+    <Compile Include="ProductManagementModule\ProductInventory\Mouse.cs" />
     <Compile Include="ProductManagementModule\ProductManagement.cs" />
-    <Compile Include="ProductManagementModule\Speaker.cs" />
+    <Compile Include="ProductManagementModule\ProductInventory\Speaker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportsManagementModule\Reports.cs" />
     <Compile Include="ReportsManagementModule\ReportsOperations.cs" />
