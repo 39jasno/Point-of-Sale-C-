@@ -183,10 +183,10 @@ namespace Group11_Machine_Problem
             do
             {
                 Console.Write(strMessage);
-                accountType = Console.ReadLine().ToLower();
-                if (accountType != "manager" && accountType != "cashier")
+                accountType = Console.ReadLine().ToUpper();
+                if (accountType != "MANAGER" && accountType != "CASHIER")
                     Console.WriteLine("Invalid Input: Account type must be either manager or cashier!");
-            } while (!(accountType == "manager" || accountType == "cashier"));
+            } while (!(accountType == "MANAGER" || accountType == "CASHIER"));
 
             return accountType;
         }

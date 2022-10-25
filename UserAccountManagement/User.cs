@@ -42,7 +42,7 @@ namespace Group11_Machine_Problem
 
             Id++;
 
-            string path = @"\Employee\Employee.txt";
+            string path = @".\Employee\Employee.txt";
 
             using (StreamWriter writeUserInfo = new StreamWriter(path, true))
             {
@@ -58,7 +58,8 @@ namespace Group11_Machine_Problem
         //set the the class variable based on textfile to perform user operations
         public void SetUserInfo()
         {
-            string path = @"\Employee\Employee.txt";
+            string path = @".\Employee\Employee.txt";
+
             try
             {
                 //open file
@@ -97,7 +98,7 @@ namespace Group11_Machine_Problem
         //update the user file when changin its content
         public void UpdateUserFile(string newContent)
         {
-            string path = @"\Employee\Employee.txt";
+            string path = @".\Employee\Employee.txt";
 
             try
             {
@@ -106,7 +107,7 @@ namespace Group11_Machine_Problem
 
                 if (!(newContent.Trim() == String.Empty))
                 {
-                    using (StreamWriter writeUserInfo = new StreamWriter("employee.txt", true))
+                    using (StreamWriter writeUserInfo = new StreamWriter(path, true))
                     {
                         writeUserInfo.WriteLine(newContent);
 
@@ -116,7 +117,7 @@ namespace Group11_Machine_Problem
             }
             catch (FileNotFoundException)
             {
-                FileStream employeeFile = new FileStream("employee.txt", FileMode.CreateNew);
+                FileStream employeeFile = new FileStream(path, FileMode.CreateNew);
                 employeeFile.Close();
             }
             catch
@@ -132,7 +133,7 @@ namespace Group11_Machine_Problem
             string newPassword;
 
             Validation validate = new Validation();
-            string path = @"\Employee\Employee.txt";
+            string path = @".\Employee\Employee.txt";
 
             try
             {
@@ -183,7 +184,8 @@ namespace Group11_Machine_Problem
         //activates or deactivate the account of a user
         public void ActiveOrDeactivateUserAccount(string status, string strMessage1, string strMessage2 = null)
         {
-            string path = @"\Employee\Employee.txt";
+            string path = @".\Employee\Employee.txt";
+
             try
             {
                 //open file
@@ -273,7 +275,8 @@ namespace Group11_Machine_Problem
         public void DeleteUserAccount()
         {
             Validation validate = new Validation();
-            string path = @"\Employee\Employee.txt";
+            string path = @".\Employee\Employee.txt";
+
             try
             {
                 //open file

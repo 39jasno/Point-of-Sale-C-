@@ -93,11 +93,13 @@ namespace Group11_Machine_Problem
         //chceks if usernames if in textfile
         public bool UsernameChecker()
         {
+            string path = @".\Employee\Employee.txt";
+
             bool isUsernameFound = false;
             try
             {
                 //open file
-                FileStream employeeFile = new FileStream("employee.txt", FileMode.Open);
+                FileStream employeeFile = new FileStream(path, FileMode.Open);
                 StreamReader employeeReader = new StreamReader(employeeFile);
                 string employeeRecord = employeeReader.ReadLine();
                 while (employeeRecord != null)
@@ -113,7 +115,7 @@ namespace Group11_Machine_Problem
             }
             catch (FileNotFoundException)
             {
-                FileStream employeeFile = new FileStream("employee.txt", FileMode.CreateNew);
+                FileStream employeeFile = new FileStream(path, FileMode.CreateNew);
                 employeeFile.Close();
             }
             catch
@@ -185,11 +187,12 @@ namespace Group11_Machine_Problem
         //checks if file is empty
         public bool IsFileEmpty()
         {
+            string path = @".\Employee\Employee.txt";
             bool IsFileEmpty = false;
             try
             {
                 //open file
-                FileStream employeeFile = new FileStream("employee.txt", FileMode.Open);
+                FileStream employeeFile = new FileStream(path, FileMode.Open);
                 StreamReader employeeReader = new StreamReader(employeeFile);
                 string employeeRecord = employeeReader.ReadLine();
 

@@ -119,7 +119,7 @@ namespace Group11_Machine_Problem
                     Username = check.Username
                 };
                 loginUser.SetUserInfo();
-                if (loginUser.AccountType == "manager")
+                if (loginUser.AccountType == "MANAGER")
                 {
                     Manager loginManager = new Manager(loginUser.Username);
                     Console.Clear();
