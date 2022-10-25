@@ -36,7 +36,7 @@ namespace Group11_Machine_Problem
 
                 if (choice == 1)
                 {
-                    Console.Clear();
+                    Console.WriteLine();
                     Keyboard keyboard = new Keyboard();
                     StreamWriter moscosoWriter = new StreamWriter("Products.txt");
                     DateTime dt = new DateTime();
@@ -47,7 +47,7 @@ namespace Group11_Machine_Problem
 
                 else if (choice == 2)
                 {
-                    Console.Clear();
+                    Console.WriteLine();
                     Monitor monitor = new Monitor();
                     StreamWriter moscosoWriter = new StreamWriter("Products.txt");
                     DateTime dt = new DateTime();
@@ -57,7 +57,7 @@ namespace Group11_Machine_Problem
 
                 else if (choice == 3)
                 {
-                    Console.Clear();
+                    Console.WriteLine();
                     Mouse mouse = new Mouse();
                     StreamWriter moscosoWriter = new StreamWriter("Products.txt");
                     DateTime dt = new DateTime();
@@ -66,7 +66,7 @@ namespace Group11_Machine_Problem
 
                 else if (choice == 4)
                 {
-                    Console.Clear();
+                    Console.WriteLine();
                     Speaker speaker = new Speaker();
                     StreamWriter moscosoWriter = new StreamWriter("Products.txt");
                     DateTime dt = new DateTime();
@@ -75,7 +75,7 @@ namespace Group11_Machine_Problem
 
                 else if (choice == 5)
                 {
-                    Console.Clear();
+                    Console.WriteLine();
                     Headphone headphone = new Headphone();
                     StreamWriter moscosoWriter = new StreamWriter("Products.txt");
                     Console.WriteLine("Thank you for shopping");
