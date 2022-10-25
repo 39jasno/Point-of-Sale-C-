@@ -48,6 +48,8 @@
     <Compile Include="Display.cs" />
     <Compile Include="InventoryTextToArray\TextToArray.cs" />
     <Compile Include="MainMenuRepository\MainMenuClass.cs" />
+    <Compile Include="OrdersManagementModule\OrderInventory.cs" />
+    <Compile Include="OrdersManagementModule\OrderManagement.cs" />
     <Compile Include="PoS.cs" />
     <Compile Include="ProductManagementModule\ProductManagement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,8 +64,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="OrdersManagementModule\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
