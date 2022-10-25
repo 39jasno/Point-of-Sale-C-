@@ -33,8 +33,7 @@ namespace Group11_Machine_Problem
                     OrderManage initOrder = new OrderManage();
 
                     Console.WriteLine("Manager Menu");
-                    Console.WriteLine("\nPlease select an option from the menu:" +
-                        "\n 1 - Product Management " +
+                    Console.WriteLine("\n 1 - Product Management " +
                         "\n 2 - Order Management  " +
                         "\n 3 - Reports Management"+
                         "\n 4 - User Account Management"+

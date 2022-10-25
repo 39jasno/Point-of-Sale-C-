@@ -8,28 +8,28 @@ using Group11_Machine_Problem.ProductManagementModule;
 
 namespace Group11_Machine_Problem
 {
-    class ProductMouse
+    class ProductManagementOperations
     {
-        public void mouseWrite()
+        public void write(string path)
         {
-            validation mouseValidate = new validation();
-            int mouseCode = mouseValidate.numberLengthRequired("Enter Product ID: ", 1, 10);
-            string mouseName = mouseValidate.InputString("Enter Product Name: ");
-            double mousePrice = mouseValidate.doubleInput("Enter Product Price: ");
-            int mouseStock = mouseValidate.numbersRequired("Enter Product Stock: ");
-            int mouseSold = mouseValidate.numbersRequired("Enter Product Sold: ");
+            validation validate = new validation();
+            int code = validate.numberLengthRequired("Enter Product ID: ", 1, 10);
+            string name = validate.InputString("Enter Product Name: ");
+            double price = validate.doubleInput("Enter Product Price: ");
+            int stock = validate.numbersRequired("Enter Product Stock: ");
+            int sold = validate.numbersRequired("Enter Product Sold: ");
 
 
-            mouseData mouseBase = new mouseData();
-            mouseBase.addMouse(mouseCode, mouseName, mousePrice, mouseStock, mouseSold);
+            headpData speakBase = new headpData();
+            speakBase.add(path, code, name, price, stock, sold);
 
 
         }
 
         //Read and Print Product informations
-        public void mouseRead()
+        public void read(string path)
         {
-            StreamReader paytonReader = new StreamReader("MouseData.txt");
+            StreamReader paytonReader = new StreamReader(path);
             string paytonLine;
             paytonLine = paytonReader.ReadLine();
 
@@ -43,21 +43,21 @@ namespace Group11_Machine_Problem
         }
 
         //Search and print product informations
-        public void mouseSearch()
+        public void search(string path)
         {
             Console.WriteLine("Enter Product Code:");
-            string searchMouse = Console.ReadLine();
+            string search = Console.ReadLine();
 
-            FileStream paytonStm = new FileStream("MouseData.txt", FileMode.Open);
+            FileStream paytonStm = new FileStream(path, FileMode.Open);
             StreamReader paytonStmReader = new StreamReader(paytonStm);
             bool found = false;
             string paytonLine = paytonStmReader.ReadLine();
-            string[] mouseLineContent = paytonLine.Split('|');
+            string[] lineContent = paytonLine.Split('|');
 
             while (paytonLine != null)
             {
-                mouseLineContent = paytonLine.Split('|');
-                if (mouseLineContent[0].Equals(searchMouse))
+                lineContent = paytonLine.Split('|');
+                if (lineContent[0].Equals(search))
                 {
                     found = true; break;
                 }
@@ -72,7 +72,7 @@ namespace Group11_Machine_Problem
             if (found)
             {
                 Console.WriteLine();
-                Console.WriteLine(mouseLineContent[0] + "|" + mouseLineContent[1] + "|" + mouseLineContent[2] + "|" + mouseLineContent[3] + "|" + mouseLineContent[4]);
+                Console.WriteLine(lineContent[0] + "|" + lineContent[1] + "|" + lineContent[2] + "|" + lineContent[3] + "|" + lineContent[4]);
             }
             else
             {
@@ -82,28 +82,28 @@ namespace Group11_Machine_Problem
         }
 
         //Search and update product price
-        public class mousePriceUpdate
+        public class PriceUpdate
         {
             private static string oldPrice;
             private static string newPrice;
 
             //Search product
-            public void mouseFindUpdate()
+            public void findUpdate(string path)
             {
                 validation codeValidate = new validation();
-                int mouseUp = codeValidate.numberLengthRequired("Enter code to update Price:", 1, 10);
-                string searchMouse = Convert.ToString(mouseUp);
+                int up = codeValidate.numberLengthRequired("Enter code to update Price:", 1, 10);
+                string search = Convert.ToString(up);
 
-                FileStream paytonStm = new FileStream("MouseData.txt", FileMode.Open);
+                FileStream paytonStm = new FileStream(path, FileMode.Open);
                 StreamReader paytonStmReader = new StreamReader(paytonStm);
                 bool found = false;
                 string paytonLine = paytonStmReader.ReadLine();
-                string[] mouseLineContent = paytonLine.Split('|');
+                string[] lineContent = paytonLine.Split('|');
 
                 while (paytonLine != null)
                 {
-                    mouseLineContent = paytonLine.Split('|');
-                    if (mouseLineContent[0] == searchMouse)
+                    lineContent = paytonLine.Split('|');
+                    if (lineContent[0] == search)
                     {
                         found = true;
                     }
@@ -119,8 +119,8 @@ namespace Group11_Machine_Problem
 
                 if (found)
                 {
-                    oldPrice = mouseLineContent[2];
-                    mousePUpdate();
+                    oldPrice = lineContent[2];
+                    PUpdate(path);
                 }
                 else
                 {
@@ -130,15 +130,15 @@ namespace Group11_Machine_Problem
             }
 
             //Overwrite data
-            private void mousePUpdate()
+            private void PUpdate(string path)
             {
 
-                validation mouseValidate = new validation();
+                validation validate = new validation();
                 Console.WriteLine();
-                double newMousePrice = mouseValidate.doubleInput("Enter Product Price: ");
-                newPrice = Convert.ToString(newMousePrice);
+                double price = validate.doubleInput("Enter Product Price: ");
+                newPrice = Convert.ToString(price);
 
-                FileStream paytonStm = new FileStream("MouseData.txt", FileMode.Open);
+                FileStream paytonStm = new FileStream(path, FileMode.Open);
                 StreamReader paytonStmReader = new StreamReader(paytonStm);
                 string paytonLine = paytonStmReader.ReadLine();
                 string newContent = "";
@@ -152,7 +152,7 @@ namespace Group11_Machine_Problem
                 paytonStmReader.Close();
                 paytonStm.Close();
                 Console.WriteLine(newContent);
-                StreamWriter paytonWriter = new StreamWriter("MouseData.txt");
+                StreamWriter paytonWriter = new StreamWriter(path);
                 paytonWriter.Write(newContent);
                 paytonWriter.Close();
 
@@ -160,13 +160,14 @@ namespace Group11_Machine_Problem
         }
 
 
-        class mouseData
+
+        class headpData
         {
-            public void addMouse(int mmouseCode, string mmouseName, double mmousePrice, int mmouseStock, int mmouseSold)
+            public void add(string path,int code, string name, double price, int stock, int sold)
             {
-                using (StreamWriter writer = new StreamWriter("MouseData.txt", true))
+                using (StreamWriter writer = new StreamWriter(path, true))
                 {
-                    writer.WriteLine(mmouseCode + "|" + mmouseName + "|" + mmousePrice + "|" + mmouseStock + "|" + mmouseSold);
+                    writer.WriteLine(code + "|" + name + "|" + price + "|" + stock + "|" + sold);
                     writer.Close();
                 }
             }

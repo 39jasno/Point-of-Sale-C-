@@ -22,8 +22,6 @@ namespace Group11_Machine_Problem
             int choice = Convert.ToInt32(Console.ReadLine());
             int paymentOption;
 
-
-
             if (choice == 1)
             {
                 Keyboard keyboard = new Keyboard();

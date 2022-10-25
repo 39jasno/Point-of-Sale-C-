@@ -1,8 +1,0 @@
-C:\Users\Israel\Downloads\ProductModule\ProductModule\bin\Debug\ProductModule.exe.config
-C:\Users\Israel\Downloads\ProductModule\ProductModule\bin\Debug\ProductModule.exe
-C:\Users\Israel\Downloads\ProductModule\ProductModule\bin\Debug\ProductModule.pdb
-C:\Users\Israel\Downloads\ProductModule\ProductModule\obj\Debug\ProductModule.csproj.AssemblyReference.cache
-C:\Users\Israel\Downloads\ProductModule\ProductModule\obj\Debug\ProductModule.csproj.SuggestedBindingRedirects.cache
-C:\Users\Israel\Downloads\ProductModule\ProductModule\obj\Debug\ProductModule.csproj.CoreCompileInputs.cache
-C:\Users\Israel\Downloads\ProductModule\ProductModule\obj\Debug\ProductModule.exe
-C:\Users\Israel\Downloads\ProductModule\ProductModule\obj\Debug\ProductModule.pdb

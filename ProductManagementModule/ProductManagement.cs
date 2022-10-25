@@ -15,96 +15,102 @@ namespace Group11_Machine_Problem
     {
         static void introduction()
         {
-            Console.WriteLine("Product Management");
-            Console.WriteLine("===========================");
-            Console.WriteLine("");
-
-            Console.WriteLine("[A] Add new product");
-            Console.WriteLine("[B] Display Product Information");
-            Console.WriteLine("[C] Update Price");
-            Console.WriteLine("[D] Search for Product Information");
+            Console.Write("Product Management\n" +
+                "\n1 - Add new product"+
+                "\n2 - Display Product Information"+
+                "\n3 - Update Price"+
+                "\n4 - Search for Product Information"+
+                "\n5 - Exit"+
+                "\n\nEnter your choice: ");
         }
 
 
         public void Main()
         {
-            
+            ProductKeyboard keyboard = new ProductKeyboard();
+            ProductMouse mouse = new ProductMouse();
+            ProductMonitor monitor = new ProductMonitor();
+            ProductSpeaker speaker = new ProductSpeaker();
+            ProductHeadphones headphones = new ProductHeadphones();
+            ProductManagementOperations product = new ProductManagementOperations();
+
             DialogResult dialogtryagain;
+            string menuChoice;
             do
             {
-                ProductKeyboard keyboard = new ProductKeyboard();
-                ProductMouse mouse = new ProductMouse();
-                ProductMonitor monitor = new ProductMonitor();
-                ProductSpeaker speaker = new ProductSpeaker();
-                ProductHeadphones headphones = new ProductHeadphones();
-
                 Console.Clear();
                 introduction();
-                Console.WriteLine("Input choice: ");
-                string menuChoice = Console.ReadLine();
 
+                menuChoice = Console.ReadLine();
 
-                if (menuChoice.ToUpper() == "A")
+                if (menuChoice.Trim() == "1")
                 {
                     do
                     {
-                        Console.WriteLine("");
-                        Console.WriteLine("What product type are you going to insert?");
-                        Console.WriteLine("[A] Keyboard, [B] Mouse, [C] Monitor, [D] Speakers, [E] Headphones");
-                        Console.WriteLine("[F] Return");
-                        Console.WriteLine("Input choice: ");
+                        Console.Write("\nAdd New Product"+
+                            "\n[1] Keyboard" +
+                            "\n[2] Mouse" +
+                            "\n[3] Monitor" +
+                            "\n[4] Speakers" +
+                            "\n[5] Headphones" +
+                            "\n[6] Return"+
+                            "\n\nEnter your choice: ");
+
                         string AmenuChoice = Console.ReadLine();
 
-                        if (AmenuChoice.ToUpper() == "A")
+                        if (AmenuChoice.Trim() == "1")
                         {
-                            keyboard.keybWrite();
-                            Console.WriteLine("Data successfully inputted");
-                        }
-
-                        else if (AmenuChoice.ToUpper() == "B")
-                        {
-                            mouse.mouseWrite();
+                            product.write(@".\\ProductInventory\\KeyboardData.txt");
                             Console.WriteLine("Data successfully inputted");
 
                         }
 
-                        else if (AmenuChoice.ToUpper() == "C")
+                        else if (AmenuChoice.Trim() == "2")
                         {
-                            monitor.moniWrite();
+                            product.write("MouseData.txt");
                             Console.WriteLine("Data successfully inputted");
 
                         }
 
-                        else if (AmenuChoice.ToUpper() == "D")
+                        else if (AmenuChoice.Trim() == "3")
                         {
-
-                            speaker.speakWrite();
+                            product.write("Keyboard.txt");
                             Console.WriteLine("Data successfully inputted");
+
                         }
 
-                        else if (AmenuChoice.ToUpper() == "E")
+                        else if (AmenuChoice.Trim() == "4")
                         {
-
-                            headphones.headpWrite();
+                            product.write("MonitorData.txt");
                             Console.WriteLine("Data successfully inputted");
+
                         }
 
-                        else if (AmenuChoice.ToUpper() == "F")
+                        else if (AmenuChoice.Trim() == "5")
                         {
+                            product.write("HeadphonesData.txt");
+                            Console.WriteLine("Data successfully inputted");
+
+                        }
+
+                        else if (AmenuChoice.Trim() == "6")
+                        {
+                            Console.Clear();
                             break;
+
                         }
 
                         else
                         {
                             MessageBox.Show("Invalid Input! Please try again", "Invalid Input!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                    
+
 
                     } while (true);
 
                 }
 
-                else if (menuChoice.ToUpper() == "B")
+                else if (menuChoice.Trim() == "2")
                 {
                     do
                     {
@@ -128,7 +134,7 @@ namespace Group11_Machine_Problem
                             else if (BmenuChoice.ToUpper() == "B")
                             {
 
-                                
+
                                 mouse.mouseRead();
 
                             }
@@ -136,7 +142,7 @@ namespace Group11_Machine_Problem
                             else if (BmenuChoice.ToUpper() == "C")
                             {
 
-                             
+
                                 monitor.moniRead();
 
                             }
@@ -144,7 +150,7 @@ namespace Group11_Machine_Problem
                             else if (BmenuChoice.ToUpper() == "D")
                             {
 
-                                
+
                                 speaker.speakRead();
 
                             }
@@ -152,7 +158,7 @@ namespace Group11_Machine_Problem
                             else if (BmenuChoice.ToUpper() == "E")
                             {
 
-                                
+
                                 headphones.headpRead();
 
                             }
@@ -178,7 +184,7 @@ namespace Group11_Machine_Problem
 
                 }
 
-                else if (menuChoice.ToUpper() == "C")
+                else if (menuChoice.Trim() == "3")
                 {
                     do
                     {
@@ -256,9 +262,9 @@ namespace Group11_Machine_Problem
 
                     } while (true);
 
-                }                                             
+                }
 
-                else if (menuChoice.ToUpper() == "D")
+                else if (menuChoice.Trim() == "4")
                 {
                     do
                     {
@@ -274,7 +280,7 @@ namespace Group11_Machine_Problem
 
                             if (DmenuChoice.ToUpper() == "A")
                             {
-                                
+
                                 keyboard.keybSearch();
                             }
 
@@ -282,7 +288,7 @@ namespace Group11_Machine_Problem
                             else if (DmenuChoice.ToUpper() == "B")
                             {
 
-                               
+
                                 mouse.mouseSearch();
 
                             }
@@ -328,16 +334,20 @@ namespace Group11_Machine_Problem
 
 
                 }
-
+                else if (menuChoice.Trim() == "5")
+                {
+                    Console.Clear();
+                    break;
+                }
 
                 else
                 {
-                    MessageBox.Show("Invalid Input! Please try again", "Invalid Input!", MessageBoxButtons.OK, MessageBoxIcon.Error);                  
+                    MessageBox.Show("Invalid Input! Please try again", "Invalid Input!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
+                
                 dialogtryagain = MessageBox.Show("Would you like to close the program?", "Inquiry", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-            } while (dialogtryagain == DialogResult.No);
+            } while (menuChoice!= "5");
         }
 
     }
