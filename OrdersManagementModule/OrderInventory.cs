@@ -11,7 +11,8 @@ namespace Group11_Machine_Problem
     {
         public Keyboard()
         {
-            int qty;
+           int qty;
+
             Console.WriteLine("1. KEYCHRON Q1" + " Price: " + 8990);
             Console.WriteLine("2. GMMK PRO" + " Price: " + 8095);
             Console.WriteLine("3. GMMK 2" + " Price: " + 5990);
@@ -22,7 +23,7 @@ namespace Group11_Machine_Problem
             int keychoice = Convert.ToInt32(Console.ReadLine());
             if (keychoice == 1)
             {
-                Console.Clear();
+                Console.WriteLine();
                 Console.WriteLine("KEYCHRON Q1");
                 Console.WriteLine("QTY: ");
                 qty = Convert.ToInt32(Console.ReadLine());
@@ -33,7 +34,7 @@ namespace Group11_Machine_Problem
 
             else if (keychoice == 2)
             {
-                Console.Clear();
+                Console.WriteLine();
                 Console.WriteLine("GMMK PRO");
                 Console.WriteLine("QTY: ");
                 qty = Convert.ToInt32(Console.ReadLine());
@@ -43,7 +44,7 @@ namespace Group11_Machine_Problem
 
             else if (keychoice == 3)
             {
-                Console.Clear();
+                Console.WriteLine();
                 Console.WriteLine("GMMK 2");
                 Console.WriteLine("QTY: ");
                 qty = Convert.ToInt32(Console.ReadLine());
@@ -72,17 +73,18 @@ namespace Group11_Machine_Problem
             int keychoice = Convert.ToInt32(Console.ReadLine());
             if (keychoice == 1)
             {
-                Console.Clear();
+                Console.WriteLine();
                 Console.WriteLine("ICON 23 INCH MONITOR");
                 Console.WriteLine("QTY: ");
                 qty = Convert.ToInt32(Console.ReadLine());
                 icon *= qty;
-                Console.WriteLine("total price of chosen Monitor is: {0:N2} ", icon);
+                Console.WriteLine("total price of chosen  is: {0:N2} ", icon);
                 
             }
 
             else if (keychoice == 2)
-            {Console.Clear();
+            {
+                Console.WriteLine();
                 Console.WriteLine("AIODIY 24 INCH MONITOR");
                 Console.WriteLine("QTY: ");
                 qty = Convert.ToInt32(Console.ReadLine());
@@ -112,7 +114,7 @@ namespace Group11_Machine_Problem
             int keychoice = Convert.ToInt32(Console.ReadLine());
             if (keychoice == 1)
             {
-                Console.Clear();
+                Console.WriteLine();
                 Console.WriteLine("RAZER VIPER MINI");
                 Console.WriteLine("QTY: ");
                 qty = Convert.ToInt32(Console.ReadLine());
@@ -124,7 +126,7 @@ namespace Group11_Machine_Problem
 
             else if (keychoice == 2)
             {
-                Console.Clear();
+                Console.WriteLine();
                 Console.WriteLine("LOGITECH G203");
                 Console.WriteLine("QTY: ");
                 qty = Convert.ToInt32(Console.ReadLine());
@@ -152,7 +154,8 @@ namespace Group11_Machine_Problem
 
             int keychoice = Convert.ToInt32(Console.ReadLine());
             if (keychoice == 1)
-            {Console.Clear();
+            {
+                Console.WriteLine();
                 Console.WriteLine("RED DRAGON GS550 OPHEUS");
                 Console.WriteLine("QTY: ");
                 qty = Convert.ToInt32(Console.ReadLine());
@@ -162,7 +165,7 @@ namespace Group11_Machine_Problem
 
             else if (keychoice == 2)
             {
-                Console.Clear();
+                Console.WriteLine();
                 Console.WriteLine("FANTECH GS205");
                 Console.WriteLine("QTY: ");
                 qty = Convert.ToInt32(Console.ReadLine());
@@ -191,7 +194,7 @@ namespace Group11_Machine_Problem
             int keychoice = Convert.ToInt32(Console.ReadLine());
             if (keychoice == 1)
             {
-                Console.Clear();
+                Console.WriteLine();
                 Console.WriteLine("HYPERX CLOUD STINGER");
                 Console.WriteLine("QTY: ");
                 qty = Convert.ToInt32(Console.ReadLine());
@@ -201,7 +204,7 @@ namespace Group11_Machine_Problem
 
             else if (keychoice == 2)
             {
-                Console.Clear();
+                Console.WriteLine();
                 Console.WriteLine("ONIKUMA K19");
                 Console.WriteLine("QTY: ");
                 qty = Convert.ToInt32(Console.ReadLine());
