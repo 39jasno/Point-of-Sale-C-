@@ -1,0 +1,7 @@
+C:\Users\Windows 10\source\repos\OrderManagementSystemModule\OrderManagementSystemModule\bin\Debug\OrderManagementSystemModule.exe.config
+C:\Users\Windows 10\source\repos\OrderManagementSystemModule\OrderManagementSystemModule\bin\Debug\OrderManagementSystemModule.exe
+C:\Users\Windows 10\source\repos\OrderManagementSystemModule\OrderManagementSystemModule\bin\Debug\OrderManagementSystemModule.pdb
+C:\Users\Windows 10\source\repos\OrderManagementSystemModule\OrderManagementSystemModule\obj\Debug\OrderManagementSystemModule.csproj.AssemblyReference.cache
+C:\Users\Windows 10\source\repos\OrderManagementSystemModule\OrderManagementSystemModule\obj\Debug\OrderManagementSystemModule.csproj.CoreCompileInputs.cache
+C:\Users\Windows 10\source\repos\OrderManagementSystemModule\OrderManagementSystemModule\obj\Debug\OrderManagementSystemModule.exe
+C:\Users\Windows 10\source\repos\OrderManagementSystemModule\OrderManagementSystemModule\obj\Debug\OrderManagementSystemModule.pdb
