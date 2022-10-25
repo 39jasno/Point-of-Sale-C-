@@ -9,11 +9,11 @@ namespace Group11_Machine_Problem.ReportsManagementModule
 {
     public class Inventory
     {
-        public bool checkInfo()
+        public bool checkInfo(string path)
         {
             try
             {
-                FileStream salesReport = File.OpenRead("DailySales.txt");
+                FileStream salesReport = File.OpenRead(path);
                 return true;
             }
             catch (UnauthorizedAccessException)
@@ -35,40 +35,17 @@ namespace Group11_Machine_Problem.ReportsManagementModule
 
         public string[][] transfer(string path)
         {
-            bool found = checkInfo();
+            bool found = checkInfo(path);
 
             if (found == true)
             {
                 string[][] array = new string[(File.ReadAllLines(path).Length)][];
-
-                int counter = 0;
-                foreach (var line in File.ReadLines(path))
-                {
-                    string[] info = line.Split('|');
-                    array[counter] = new string[2] { info[0], info[1] };
-                    counter++;
-                }
                 return array;
             }
             else
             {
                 return null;
             }
-            /*{
-                string[] stringArray = File.ReadAllLines(path);
-                string[] array = new string[stringArray.Length];
-                int counter = 0;
-                foreach (string example in stringArray)
-                {
-                    array[counter] = example;
-                    counter++;
-                }
-                return array;
-            }
-            else
-            {
-                return null;
-            }*/
         }
     }
 }
