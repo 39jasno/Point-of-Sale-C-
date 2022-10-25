@@ -7,12 +7,11 @@ using System.Windows.Forms;
 
 namespace Group11_Machine_Problem
 {
-    class Keyboard
+     class Keyboard
     {
         public Keyboard()
         {
             int qty;
-
             Console.WriteLine("1. KEYCHRON Q1" + " Price: " + 8990);
             Console.WriteLine("2. GMMK PRO" + " Price: " + 8095);
             Console.WriteLine("3. GMMK 2" + " Price: " + 5990);
@@ -23,14 +22,19 @@ namespace Group11_Machine_Problem
             int keychoice = Convert.ToInt32(Console.ReadLine());
             if (keychoice == 1)
             {
+                Console.Clear();
+                Console.WriteLine("KEYCHRON Q1");
                 Console.WriteLine("QTY: ");
                 qty = Convert.ToInt32(Console.ReadLine());
                 Keychron *= qty;
+               
                 Console.WriteLine("total price of chosen keyboard is: {0:N2} ", Keychron);
             }
 
             else if (keychoice == 2)
             {
+                Console.Clear();
+                Console.WriteLine("GMMK PRO");
                 Console.WriteLine("QTY: ");
                 qty = Convert.ToInt32(Console.ReadLine());
                 gmmkPro *= qty;
@@ -39,6 +43,8 @@ namespace Group11_Machine_Problem
 
             else if (keychoice == 3)
             {
+                Console.Clear();
+                Console.WriteLine("GMMK 2");
                 Console.WriteLine("QTY: ");
                 qty = Convert.ToInt32(Console.ReadLine());
                 gmmk2 *= qty;
@@ -50,11 +56,6 @@ namespace Group11_Machine_Problem
                 MessageBox.Show("Invalid");
             }
 
-        }
-
-        internal void keybWrite()
-        {
-            throw new NotImplementedException();
         }
     }
 
@@ -71,18 +72,22 @@ namespace Group11_Machine_Problem
             int keychoice = Convert.ToInt32(Console.ReadLine());
             if (keychoice == 1)
             {
+                Console.Clear();
+                Console.WriteLine("ICON 23 INCH MONITOR");
                 Console.WriteLine("QTY: ");
                 qty = Convert.ToInt32(Console.ReadLine());
                 icon *= qty;
-                Console.WriteLine("total price of chosen keyboard is: {0:N2} ", icon);
+                Console.WriteLine("total price of chosen Monitor is: {0:N2} ", icon);
+                
             }
 
             else if (keychoice == 2)
-            {
+            {Console.Clear();
+                Console.WriteLine("AIODIY 24 INCH MONITOR");
                 Console.WriteLine("QTY: ");
                 qty = Convert.ToInt32(Console.ReadLine());
                 aiodiy *= qty;
-                Console.WriteLine("total price of chosen keyboard is: {0:N2} ", aiodiy);
+                Console.WriteLine("total price of chosen Monitor is: {0:N2} ", aiodiy);
             }
 
             else
@@ -107,29 +112,30 @@ namespace Group11_Machine_Problem
             int keychoice = Convert.ToInt32(Console.ReadLine());
             if (keychoice == 1)
             {
+                Console.Clear();
+                Console.WriteLine("RAZER VIPER MINI");
                 Console.WriteLine("QTY: ");
                 qty = Convert.ToInt32(Console.ReadLine());
                 razer *= qty;
-                Console.WriteLine("total price of chosen keyboard is: {0:N2} ", razer);
+                Console.WriteLine("total price of chosen Mouse is: {0:N2} ", razer);
+
+                int cont = Convert.ToInt32(Console.ReadLine());
             }
 
             else if (keychoice == 2)
             {
+                Console.Clear();
+                Console.WriteLine("LOGITECH G203");
                 Console.WriteLine("QTY: ");
                 qty = Convert.ToInt32(Console.ReadLine());
                 logitech *= qty;
-                Console.WriteLine("total price of chosen keyboard is: {0:N2} ", logitech);
+                Console.WriteLine("total price of chosen Mouse is: {0:N2} ", logitech);
             }
 
             else
             {
                 MessageBox.Show("Invalid");
             }
-        }
-
-        internal void mouseWrite()
-        {
-            throw new NotImplementedException();
         }
     }
 
@@ -146,19 +152,22 @@ namespace Group11_Machine_Problem
 
             int keychoice = Convert.ToInt32(Console.ReadLine());
             if (keychoice == 1)
-            {
+            {Console.Clear();
+                Console.WriteLine("RED DRAGON GS550 OPHEUS");
                 Console.WriteLine("QTY: ");
                 qty = Convert.ToInt32(Console.ReadLine());
                 redDragon *= qty;
-                Console.WriteLine("total price of chosen keyboard is: {0:N2} ", redDragon);
+                Console.WriteLine("total price of chosen Speaker is: {0:N2} ", redDragon);
             }
 
             else if (keychoice == 2)
             {
+                Console.Clear();
+                Console.WriteLine("FANTECH GS205");
                 Console.WriteLine("QTY: ");
                 qty = Convert.ToInt32(Console.ReadLine());
                 fantech *= qty;
-                Console.WriteLine("total price of chosen keyboard is: {0:N2} ", fantech);
+                Console.WriteLine("total price of chosen Speaker is: {0:N2} ", fantech);
             }
 
             else
@@ -182,18 +191,22 @@ namespace Group11_Machine_Problem
             int keychoice = Convert.ToInt32(Console.ReadLine());
             if (keychoice == 1)
             {
+                Console.Clear();
+                Console.WriteLine("HYPERX CLOUD STINGER");
                 Console.WriteLine("QTY: ");
                 qty = Convert.ToInt32(Console.ReadLine());
                 hyperxCloud *= qty;
-                Console.WriteLine("total price of chosen keyboard is: {0:N2} ", hyperxCloud);
+                Console.WriteLine("total price of chosen Headphone is: {0:N2} ", hyperxCloud);
             }
 
             else if (keychoice == 2)
             {
+                Console.Clear();
+                Console.WriteLine("ONIKUMA K19");
                 Console.WriteLine("QTY: ");
                 qty = Convert.ToInt32(Console.ReadLine());
                 onikuma *= qty;
-                Console.WriteLine("total price of chosen keyboard is: {0:N2} ", onikuma);
+                Console.WriteLine("total price of chosen Headphone is: {0:N2} ", onikuma);
             }
 
             else
