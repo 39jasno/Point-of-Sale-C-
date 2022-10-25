@@ -29,6 +29,7 @@ namespace Group11_Machine_Problem
                 if (check.IsAccountActive(username))
                 {
                     Reports initReport = new Reports();
+                    ProdManage initProd = new ProdManage();
                     Console.WriteLine("Manager Menu");
                     Console.WriteLine("\nPlease select an option from the menu:" +
                         "\n 1 - Product Management " +
@@ -42,10 +43,10 @@ namespace Group11_Machine_Problem
 
                     switch (choice)
                     {
-                        case "1": Console.Clear(); ManageUserAccount("Manager User Management Menu\n"); break;
+                        case "1": Console.Clear(); initProd.Main(); break;
                         case "2": break;
                         case "3": Console.Clear(); initReport.reports(); break;
-                        case "4": break;
+                        case "4": Console.Clear(); ManageUserAccount("Manager User Management Menu\n"); break;
                         case "5": Console.WriteLine("Logging out..."); Thread.Sleep(800); Console.Clear(); break;
 
                         default: Console.WriteLine("Invalid Input: Select a choice from the options!"); Thread.Sleep(800); Console.Clear(); break;

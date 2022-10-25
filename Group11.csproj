@@ -49,6 +49,7 @@
     <Compile Include="InventoryTextToArray\TextToArray.cs" />
     <Compile Include="MainMenuRepository\MainMenuClass.cs" />
     <Compile Include="PoS.cs" />
+    <Compile Include="ProductManagementModule\ProductManagement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportsManagementModule\Reports.cs" />
     <Compile Include="UserAccountManagement\Cashier.cs" />
@@ -62,7 +63,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="OrdersManagementModule\" />
-    <Folder Include="ProductManagementModule\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
