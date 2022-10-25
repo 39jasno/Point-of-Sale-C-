@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.32802.440
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Group11", "Group11.csproj", "{E470D3B7-7B9F-46DD-A753-877F1A82BF51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validation", "..\Validarion\Validation.csproj", "{D4D352D5-CBFA-4666-842C-908E1C45621B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{E470D3B7-7B9F-46DD-A753-877F1A82BF51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E470D3B7-7B9F-46DD-A753-877F1A82BF51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E470D3B7-7B9F-46DD-A753-877F1A82BF51}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D4D352D5-CBFA-4666-842C-908E1C45621B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D4D352D5-CBFA-4666-842C-908E1C45621B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D4D352D5-CBFA-4666-842C-908E1C45621B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D4D352D5-CBFA-4666-842C-908E1C45621B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
