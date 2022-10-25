@@ -30,6 +30,8 @@ namespace Group11_Machine_Problem
                 {
                     Reports initReport = new Reports();
                     ProdManage initProd = new ProdManage();
+                    OrderManage initOrder = new OrderManage();
+
                     Console.WriteLine("Manager Menu");
                     Console.WriteLine("\nPlease select an option from the menu:" +
                         "\n 1 - Product Management " +
@@ -44,8 +46,8 @@ namespace Group11_Machine_Problem
                     switch (choice)
                     {
                         case "1": Console.Clear(); initProd.Main(); break;
-                        case "2": break;
-                        case "3": Console.Clear(); initReport.reports(); break;
+                        case "2": Console.Clear(); initOrder.Main(); break;
+                        case "3": Console.Clear(); initReport.Main(); break;
                         case "4": Console.Clear(); ManageUserAccount("Manager User Management Menu\n"); break;
                         case "5": Console.Clear(); CreateUser(); break;
                         case "6": Console.WriteLine("Logging out..."); Thread.Sleep(800); Console.Clear(); break;

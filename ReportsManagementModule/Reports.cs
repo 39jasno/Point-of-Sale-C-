@@ -10,7 +10,7 @@ namespace Group11_Machine_Problem
 {
     public class Reports
     {
-        public void reports()
+        public void Main()
         {
             Reports reportsMenu = new Reports();
             ReportsOperations methods = new ReportsOperations();

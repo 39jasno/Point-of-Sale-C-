@@ -7,9 +7,9 @@ using System.Windows.Forms;
 
 namespace Group11_Machine_Problem
 {
-    class Program
+    public class OrderManage
     {
-        static void Main(string[] args)
+        public void Main()
         {
 
             Console.WriteLine("Choose product of your choice");
