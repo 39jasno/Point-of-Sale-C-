@@ -32,10 +32,13 @@ namespace Group11_Machine_Problem
                     counter++;
                 }
 
-                Console.WriteLine("Date\t\tGrand total\n");
+                string title = String.Format("{0,-10}{1,-10}", "Date", "Grand Total");
+                Console.WriteLine(title);
+
                 for (int i = 0; i < dailySales.Length; i++)                             //Display daily sales
                 {
-                    Console.Write("{0}\t{1}\n", dailySales[i][0], dailySales[i][1]);
+                    string format = String.Format("{0,-10}{1,-10}", dailySales[i][0], dailySales[i][1]);
+                    Console.WriteLine(format);
 
                 }
                 exit.operationsExit();
@@ -50,7 +53,7 @@ namespace Group11_Machine_Problem
             Inventory check = new Inventory();
             ReportsOperations exit = new ReportsOperations();
 
-            string path = @".\Reports\InventorySold.txt";
+            string path = @".\Reports\ProductSold.txt";
             bool found = check.checkInfo(path);
             if (found == true)
             {
@@ -64,10 +67,13 @@ namespace Group11_Machine_Problem
                     counter++;
                 }
 
-                Console.WriteLine("Category\t\tProduct\n");
+                string title = String.Format("{0,-10}{1,-10}", "Category", "Product");
+                Console.WriteLine(title);
+
                 for (int i = 0; i < productInv.Length; i++)                             //Display product inventory
                 {
-                    Console.Write("{0}\t{1}\n", productInv[i][0], productInv[i][1]);
+                    string format = String.Format("{0,-10}{1,-10}", productInv[i][0], productInv[i][1]);
+                    Console.WriteLine(format);
 
                 }
                 exit.operationsExit();
@@ -95,10 +101,13 @@ namespace Group11_Machine_Problem
                     counter++;
                 }
 
-                Console.WriteLine("Return Date\t\tCategory\t\tProduct\n");
+                string title = String.Format("{0,-15}{1,-15}{2,-15}", "Return Date", "Category", "Product");
+                Console.WriteLine(title);
+
                 for (int i = 0; i < returnsInv.Length; i++)
                 {
-                    Console.Write("{0}\t{1}\t{2}\n", returnsInv[i][0], returnsInv[i][1], returnsInv[i][2]);
+                    string format = String.Format("{0,-15}{1,-15}{2,-15}", returnsInv[i][0], returnsInv[i][1], returnsInv[i][2]);
+                    Console.WriteLine(format);
 
                 }
                 exit.operationsExit();

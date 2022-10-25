@@ -26,12 +26,12 @@ namespace Group11_Machine_Problem
                 }
                 else if (choice == "2")
                 {
-                    methods.productInventory("Inventory of Sold Items");
+                    methods.productInventory("Inventory of Sold Items\n");
 
                 }
                 else if (choice == "3")
                 {
-                    methods.returns("List of Return Items");
+                    methods.returns("List of Return Items\n");
 
                 }
                 else if (choice == "X")
