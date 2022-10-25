@@ -17,18 +17,23 @@ namespace Group11_Machine_Problem
         public string dateCreated { get; private set; }
         public string status { get; private set; }
 
-        public void CreateUser()
+        //create user then appends to textfile
+        public void CreateUser(string strMessage = "")
         {
             Console.Clear();
             Console.WriteLine("Register User Menu\n");
             Validation validate = new Validation();
-
             id = validate.GetLastID();
             id++;
-
             username = validate.ValidateUsername("Enter username: ", 1, 30);
             password = validate.ValidateUserPassword("Enter password: ", 8, 20, username);
-            accountType = validate.ValidateUserAccountType("Enter account type [Manager or Cashier]: ");
+
+            Checker check = new Checker();
+            if (check.IsFileEmpty())
+                accountType = "manager";
+            else
+                accountType = validate.ValidateUserAccountType("Enter account type [Manager or Cashier]: ");
+
             var dateCreated = DateTime.Now.ToString("MM/dd/yyyy");
             status = "ACTIVE";
 
@@ -40,15 +45,19 @@ namespace Group11_Machine_Problem
             {
                 writeUserInfo.WriteLine(addUserInfo);
                 Console.WriteLine("\nUser is successfully added!");
-                Thread.Sleep(800);
+                Console.WriteLine(strMessage);
+                Thread.Sleep(1000);
                 Console.Clear();
             }
         }
 
+
+        //set the the class variable based on textfile to perform user operations
         public void SetUserInfo()
         {
             try
             {
+                //open file
                 FileStream employeeFile = new FileStream("employee.txt", FileMode.Open);
                 StreamReader employeeReader = new StreamReader(employeeFile);
                 string employeeRecord = employeeReader.ReadLine();
@@ -81,7 +90,7 @@ namespace Group11_Machine_Problem
         }
 
 
-
+        //update the user file when changin its content
         public void UpdateUserFile(string newContent)
         {
             try
@@ -111,6 +120,7 @@ namespace Group11_Machine_Problem
         }
 
 
+        //change the password of user
         public void ChangeUserPassword()
         {
             string newPassword;
@@ -119,6 +129,7 @@ namespace Group11_Machine_Problem
 
             try
             {
+                //open file
                 FileStream employeeFile = new FileStream("employee.txt", FileMode.Open);
                 StreamReader employeeReader = new StreamReader(employeeFile);
                 string employeeRecord = employeeReader.ReadLine();
@@ -128,12 +139,15 @@ namespace Group11_Machine_Problem
                     string[] employeeContent = employeeRecord.Split('|');
                     if (employeeContent[1] == username)
                     {
+                        //loop unitl pass word not same as old password
                         do
                         {
                             newPassword = validate.ValidateUserPassword("Enter new Password: ", 8, 20, username);
+                            //checks if passwords is same as old password then displays error
                             if (newPassword == employeeContent[2])
                                 Console.WriteLine("Invalid Input: Password cant be the same as old password!");
                         } while (newPassword == employeeContent[2]);
+                        //replace old password with new password
                         employeeRecord = employeeRecord.Replace(employeeContent[2], newPassword);
                     }
                     newcontent += employeeRecord + Environment.NewLine;
@@ -158,10 +172,13 @@ namespace Group11_Machine_Problem
             }
         }
 
+
+        //activates or deactivate the account of a user
         public void ActiveOrDeactivateUserAccount(string status, string strMessage1, string strMessage2 = null)
         {
             try
             {
+                //open file
                 FileStream employeeFile = new FileStream("employee.txt", FileMode.Open);
                 StreamReader employeeReader = new StreamReader(employeeFile);
                 string employeeRecord = employeeReader.ReadLine();
@@ -172,6 +189,7 @@ namespace Group11_Machine_Problem
 
                     if (employeeContent[1] == username)
                     {
+                        // replace old account status with new status
                         employeeRecord = employeeRecord.Replace(employeeContent[5], status);
                     }
                     newcontent += employeeRecord + Environment.NewLine;
@@ -197,6 +215,9 @@ namespace Group11_Machine_Problem
             }
         }
 
+
+        //if user account is deactivated when logging in then displays prompt asking user if they want ot activate it again
+        //then activate account
         public void ActivateUserAccount(string strMessage)
         {
             char choice = '0';
@@ -222,6 +243,9 @@ namespace Group11_Machine_Problem
             }
         }
 
+
+        //shows the expiration date of user account
+        //all accounts is valid for 3 monthes
         public void ShowUserAccountExpiration()
         {
             string[] date = dateCreated.Split('/');
@@ -237,12 +261,14 @@ namespace Group11_Machine_Problem
             Console.ReadKey();
         }
 
+        //delete user from the file
         public void DeleteUserAccount()
         {
             Validation validate = new Validation();
 
             try
             {
+                //open file
                 FileStream employeeFile = new FileStream("employee.txt", FileMode.Open);
                 StreamReader employeeReader = new StreamReader(employeeFile);
                 string employeeRecord = employeeReader.ReadLine();
@@ -270,8 +296,11 @@ namespace Group11_Machine_Problem
                 Console.WriteLine("ERROR: An error has occurred!");
             }
 
+
+
         }
 
+        //displays menu for user management
         public void ManageUserAccount(string strMessage)
         {
             string choice = "0";

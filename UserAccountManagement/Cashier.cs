@@ -15,7 +15,7 @@ namespace Group11_Machine_Problem
         }
 
 
-
+        //display cashier menu then does corresposding options based on user choice
         public void DisplayMenu()
         {
             string choice = "0";
@@ -29,13 +29,9 @@ namespace Group11_Machine_Problem
                 if (check.IsAccountActive(username))
                 {
                     Console.WriteLine("Cashier Menu");
-                    Console.WriteLine("\nPlease select an option from the menu:" +
-                        "\n 1 - Manage your account " +
-                        "\n 2 - {option 2}  " +
-                        "\n 3 - Log out ");
+                    Console.WriteLine("\nPlease select an option from the menu:\n 1 - Manage your account \n 2 - {option 2}  \n 3 - Log out ");
                     Console.Write("\nEnter choice: ");
-                    string userChoice = Console.ReadLine();
-                    choice = userChoice;
+                    choice = Console.ReadLine();
 
                     switch (choice)
                     {
