@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.IO;
 using Group11_Machine_Problem.ProductManagementModule;
 
-
 namespace Group11_Machine_Problem
 {
     class ProductKeyboard
