@@ -12,6 +12,7 @@ namespace Group11_Machine_Problem
     {
         public void write(string path)
         {
+            Console.Clear();
             validation validate = new validation();
             int code = validate.numberLengthRequired("Enter Product ID: ", 1, 10);
             string name = validate.InputString("Enter Product Name: ");
@@ -20,31 +21,32 @@ namespace Group11_Machine_Problem
             int sold = validate.numbersRequired("Enter Product Sold: ");
 
 
-            headpData speakBase = new headpData();
-            speakBase.add(path, code, name, price, stock, sold);
-
-
+            Data write = new Data();
+            write.add(path, code, name, price, stock, sold);
         }
 
         //Read and Print Product informations
         public void read(string path)
         {
+            Console.Clear();
             StreamReader paytonReader = new StreamReader(path);
             string paytonLine;
             paytonLine = paytonReader.ReadLine();
 
-            Console.WriteLine("");
             while (paytonLine != null)
             {
                 Console.WriteLine(paytonLine);
                 paytonLine = paytonReader.ReadLine();
             }
             paytonReader.Close();
+            Console.WriteLine("\nPress any key to continue...");
+            Console.ReadKey();
         }
 
         //Search and print product informations
         public void search(string path)
         {
+            Console.Clear();
             Console.WriteLine("Enter Product Code:");
             string search = Console.ReadLine();
 
@@ -90,6 +92,7 @@ namespace Group11_Machine_Problem
             //Search product
             public void findUpdate(string path)
             {
+                Console.Clear();
                 validation codeValidate = new validation();
                 int up = codeValidate.numberLengthRequired("Enter code to update Price:", 1, 10);
                 string search = Convert.ToString(up);
@@ -132,7 +135,7 @@ namespace Group11_Machine_Problem
             //Overwrite data
             private void PUpdate(string path)
             {
-
+                Console.Clear();
                 validation validate = new validation();
                 Console.WriteLine();
                 double price = validate.doubleInput("Enter Product Price: ");
@@ -161,10 +164,11 @@ namespace Group11_Machine_Problem
 
 
 
-        class headpData
+        class Data
         {
             public void add(string path,int code, string name, double price, int stock, int sold)
             {
+                Console.Clear();
                 using (StreamWriter writer = new StreamWriter(path, true))
                 {
                     writer.WriteLine(code + "|" + name + "|" + price + "|" + stock + "|" + sold);

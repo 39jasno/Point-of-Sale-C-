@@ -27,14 +27,8 @@ namespace Group11_Machine_Problem
 
         public void Main()
         {
-            ProductKeyboard keyboard = new ProductKeyboard();
-            ProductMouse mouse = new ProductMouse();
-            ProductMonitor monitor = new ProductMonitor();
-            ProductSpeaker speaker = new ProductSpeaker();
-            ProductHeadphones headphones = new ProductHeadphones();
             ProductManagementOperations product = new ProductManagementOperations();
 
-            DialogResult dialogtryagain;
             string menuChoice;
             do
             {
@@ -47,20 +41,21 @@ namespace Group11_Machine_Problem
                 {
                     do
                     {
-                        Console.Write("\nAdd New Product"+
-                            "\n[1] Keyboard" +
-                            "\n[2] Mouse" +
-                            "\n[3] Monitor" +
-                            "\n[4] Speakers" +
-                            "\n[5] Headphones" +
-                            "\n[6] Return"+
+                        Console.Clear();
+                        Console.Write("Add New Product\n"+
+                            "\n1 - Keyboard" +
+                            "\n2 - Mouse" +
+                            "\n3 - Monitor" +
+                            "\n4 - Speakers" +
+                            "\n5 - Headphones" +
+                            "\n6 - Return"+
                             "\n\nEnter your choice: ");
 
                         string AmenuChoice = Console.ReadLine();
 
                         if (AmenuChoice.Trim() == "1")
                         {
-                            product.write(@".\\ProductInventory\\KeyboardData.txt");
+                            product.write("KeyboardData.txt");
                             Console.WriteLine("Data successfully inputted");
 
                         }
@@ -74,14 +69,14 @@ namespace Group11_Machine_Problem
 
                         else if (AmenuChoice.Trim() == "3")
                         {
-                            product.write("Keyboard.txt");
+                            product.write("MonitorData.txt");
                             Console.WriteLine("Data successfully inputted");
 
                         }
 
                         else if (AmenuChoice.Trim() == "4")
                         {
-                            product.write("MonitorData.txt");
+                            product.write("SpeakersData.txt");
                             Console.WriteLine("Data successfully inputted");
 
                         }
@@ -106,65 +101,63 @@ namespace Group11_Machine_Problem
                         }
 
 
-                    } while (true);
+                    } while (menuChoice!= "6");
 
                 }
 
                 else if (menuChoice.Trim() == "2")
                 {
+                    string BmenuChoice="";
                     do
                     {
+                        
                         try
                         {
+                            Console.Clear();
+                            Console.Write("Display Product Information\n"+
+                                "\n1 - Keyboard " +
+                                "\n2 - Mouse " +
+                                "\n3 - Monitor " +
+                                "\n4 - Speakers " +
+                                "\n5 - Headphones"+
+                                "\n6 - Return"+
+                                "\n\nInput choice: ");
 
-                            Console.WriteLine("");
-                            Console.WriteLine("What product type are you going to display?");
-                            Console.WriteLine("[A] Keyboard, [B] Mouse, [C] Monitor, [D] Speakers, [E] Headphones");
-                            Console.WriteLine("[F] Return");
-                            Console.WriteLine("Input choice: ");
-                            string BmenuChoice = Console.ReadLine();
+                            BmenuChoice = Console.ReadLine();
 
-                            if (BmenuChoice.ToUpper() == "A")
+                            if (BmenuChoice.Trim() == "1")
                             {
-
-                                keyboard.keybRead();
+                                product.read("KeyboardData.txt");
 
                             }
 
-                            else if (BmenuChoice.ToUpper() == "B")
+                            else if (BmenuChoice.Trim() == "2")
                             {
-
-
-                                mouse.mouseRead();
+                                product.read("MouseData.txt");
 
                             }
 
-                            else if (BmenuChoice.ToUpper() == "C")
+                            else if (BmenuChoice.Trim() == "3")
                             {
-
-
-                                monitor.moniRead();
+                                product.read("MonitorData.txt");
 
                             }
 
-                            else if (BmenuChoice.ToUpper() == "D")
+                            else if (BmenuChoice.Trim() == "4")
                             {
-
-
-                                speaker.speakRead();
+                                product.read("SpeakersData.txt");
 
                             }
 
-                            else if (BmenuChoice.ToUpper() == "E")
+                            else if (BmenuChoice.Trim() == "5")
                             {
-
-
-                                headphones.headpRead();
+                                product.read("HeadphonesData.txt");
 
                             }
 
-                            else if (BmenuChoice.ToUpper() == "F")
+                            else if (BmenuChoice.Trim() == "6")
                             {
+                                Console.Clear();
                                 break;
 
                             }
@@ -176,77 +169,68 @@ namespace Group11_Machine_Problem
                         }
                         catch (FileNotFoundException)
                         {
-                            Console.WriteLine("Input Data First!");
+                            Console.WriteLine("Input Data First!" +
+                                "\n\nPress any key to continue...");
+                            Console.ReadKey();
                         }
 
-
-                    } while (true);
+                    } while (BmenuChoice!="6");
 
                 }
 
                 else if (menuChoice.Trim() == "3")
                 {
+                    ProductManagementOperations.PriceUpdate update = new ProductManagementOperations.PriceUpdate();
                     do
                     {
                         try
                         {
 
-                            Console.WriteLine("");
-                            Console.WriteLine("What product type are you going to update the price of?:");
-                            Console.WriteLine("[A] Keyboard, [B] Mouse, [C] Monitor, [D] Speakers, [E] Headphones");
-                            Console.WriteLine("[F] Return");
-                            Console.WriteLine("Input choice: ");
+                            Console.Write("Update Price\n" +
+                                "\n1 - Keyboard " +
+                                "\n2 - Mouse " +
+                                "\n3 - Monitor " +
+                                "\n4 - Speakers " +
+                                "\n5 - Headphones" +
+                                "\n6 - Return"+
+                                "\n\nInput choice: ");
+
                             string CmenuChoice = Console.ReadLine();
 
-                            if (CmenuChoice.ToUpper() == "A")
+                            if (CmenuChoice.Trim() == "1")
                             {
-
-                                ProductKeyboard.keyboardPriceUpdate updateKeyboard = new ProductKeyboard.keyboardPriceUpdate();
-
-                                updateKeyboard.keybFindUpdate();
+                                update.findUpdate("KeyboardData.txt");
 
                             }
 
-                            else if (CmenuChoice.ToUpper() == "B")
+                            else if (CmenuChoice.Trim() == "2")
                             {
-
-                                ProductMouse.mousePriceUpdate updateMouse = new ProductMouse.mousePriceUpdate();
-
-                                updateMouse.mouseFindUpdate();
+                                update.findUpdate("MouseData.txt");
 
                             }
 
-                            else if (CmenuChoice.ToUpper() == "C")
+                            else if (CmenuChoice.Trim() == "3")
                             {
-
-                                ProductMonitor.monitorPriceUpdate updateMonitor = new ProductMonitor.monitorPriceUpdate();
-
-                                updateMonitor.moniFindUpdate();
+                                update.findUpdate("MonitorData.txt");
 
                             }
 
-                            else if (CmenuChoice.ToUpper() == "D")
+                            else if (CmenuChoice.Trim() == "4")
                             {
-
-                                ProductSpeaker.speakerPriceUpdate updateSpeaker = new ProductSpeaker.speakerPriceUpdate();
-
-                                updateSpeaker.speakFindUpdate();
+                                update.findUpdate("SpeakersData.txt");
 
                             }
 
-                            else if (CmenuChoice.ToUpper() == "E")
+                            else if (CmenuChoice.Trim() == "5")
                             {
-
-                                ProductHeadphones.headphonesPriceUpdate updateHeadphones = new ProductHeadphones.headphonesPriceUpdate();
-
-                                updateHeadphones.headpFindUpdate();
+                                update.findUpdate("HeadphonesData.txt");
 
                             }
 
-                            else if (CmenuChoice.ToUpper() == "F")
+                            else if (CmenuChoice.Trim() == "6")
                             {
+                                Console.Clear();
                                 break;
-
                             }
 
                             else
@@ -266,58 +250,58 @@ namespace Group11_Machine_Problem
 
                 else if (menuChoice.Trim() == "4")
                 {
+                    string DmenuChoice = "";
                     do
                     {
                         try
                         {
 
-                            Console.WriteLine("");
-                            Console.WriteLine("What product type are you going to search for?");
-                            Console.WriteLine("[A] Keyboard, [B] Mouse, [C] Monitor, [D] Speakers, [E] Headphones");
-                            Console.WriteLine("[F] Return");
-                            Console.WriteLine("Input choice: ");
-                            string DmenuChoice = Console.ReadLine();
+                            Console.Write("Search For Product Information\n" +
+                                "\n1 - Keyboard, " +
+                                "\n2 - Mouse, " +
+                                "\n3 - Monitor, " +
+                                "\n4 - Speakers, " +
+                                "\n5 - Headphones" +
+                                "\n6 - Return" +
+                                "\n\nInput choice: ");
 
-                            if (DmenuChoice.ToUpper() == "A")
+                            DmenuChoice = Console.ReadLine();
+
+                            if (DmenuChoice.Trim() == "1")
                             {
-
-                                keyboard.keybSearch();
-                            }
-
-
-                            else if (DmenuChoice.ToUpper() == "B")
-                            {
-
-
-                                mouse.mouseSearch();
+                                product.search("KeyboardData.txt");
 
                             }
 
-                            else if (DmenuChoice.ToUpper() == "C")
+                            else if (DmenuChoice.Trim() == "2")
                             {
-
-                                monitor.moniSearch();
+                                product.search("MouseData.txt");
 
                             }
 
-                            else if (DmenuChoice.ToUpper() == "D")
+                            else if (DmenuChoice.Trim() == "3")
                             {
-
-                                speaker.speakSearch();
+                                product.search("MonitorData.txt");
 
                             }
 
-                            else if (DmenuChoice.ToUpper() == "E")
+                            else if (DmenuChoice.Trim() == "4")
                             {
-
-                                headphones.headpSearch();
+                                product.search("SpeakersData.txt");
 
                             }
-                            else if (DmenuChoice.ToUpper() == "F")
+
+                            else if (DmenuChoice.Trim() == "5")
                             {
+                                product.search("HeadphonesData.txt");
+
+                            }
+                            else if (DmenuChoice.ToUpper() == "6")
+                            {
+                                Console.Clear();
                                 break;
-                            }
 
+                            }
 
                             else
                             {
@@ -329,8 +313,7 @@ namespace Group11_Machine_Problem
                             Console.WriteLine("Input Data First!");
                         }
 
-
-                    } while (true);
+                    } while (DmenuChoice!="6");
 
 
                 }
@@ -344,8 +327,6 @@ namespace Group11_Machine_Problem
                 {
                     MessageBox.Show("Invalid Input! Please try again", "Invalid Input!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
-                dialogtryagain = MessageBox.Show("Would you like to close the program?", "Inquiry", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             } while (menuChoice!= "5");
         }
