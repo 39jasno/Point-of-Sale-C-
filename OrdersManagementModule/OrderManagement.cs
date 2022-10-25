@@ -13,7 +13,7 @@ namespace Group11_Machine_Problem
         public void Main()
         {
 
-          int menu;
+  int menu;
 
             Console.WriteLine("----Main Menu----");
             Console.WriteLine("1. Create Order");
@@ -90,8 +90,17 @@ namespace Group11_Machine_Problem
 
                 }
 
-                Console.ReadKey();
+               
             }
+            else
+            {
+                StreamWriter moscosoWriter = new StreamWriter("Products.txt");
+                moscosoWriter.WriteLine(System.DateTime.Now.ToString());
+                moscosoWriter.Close();
+
+            }
+            Console.ReadKey();
+                
         }
     }
 }
