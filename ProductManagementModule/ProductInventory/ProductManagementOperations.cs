@@ -14,6 +14,7 @@ namespace Group11_Machine_Problem
         public void Write(string path)
         {
             Console.Clear();
+            Inventory check = new Inventory();
             ProductManagementModule.Validation validate = new ProductManagementModule.Validation();
             Console.WriteLine("Add product\n");
             int code = validate.NumberLengthRequired("Enter Product ID: ", 5);
@@ -156,6 +157,7 @@ namespace Group11_Machine_Problem
         {
             public void Add(string path,int code, string name, double price, int stock)
             {
+
                 Console.Clear();
                 using (StreamWriter writer = new StreamWriter(path, true))
                 {
