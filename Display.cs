@@ -27,6 +27,9 @@ namespace Group11_Machine_Problem
             loginForm.Height = 224;
             loginForm.StartPosition = FormStartPosition.CenterScreen;
             loginForm.MaximizeBox = false;
+            loginForm.SizeGripStyle = SizeGripStyle.Hide;
+            loginForm.FormBorderStyle=FormBorderStyle.FixedDialog;
+
 
             //create label for username 
             Label usernameLabel = new Label();
@@ -45,11 +48,13 @@ namespace Group11_Machine_Problem
 
             //create textbox for username 
             usernameTxt.Size = new Size(160, 50);
+            usernameTxt.BorderStyle=BorderStyle.FixedSingle;
             usernameTxt.Location = new System.Drawing.Point(140, 40);
             usernameTxt.Parent = loginForm;
 
             //create textbox for username 
             passwordTxt = new TextBox();
+            passwordTxt.BorderStyle=BorderStyle.FixedSingle;
             passwordTxt.Size = new Size(160, 50);
             passwordTxt.Location = new System.Drawing.Point(140, 90);
             passwordTxt.PasswordChar = '*';
@@ -58,6 +63,7 @@ namespace Group11_Machine_Problem
             //create login button and assign event
             loginBtn = new Button();
             loginBtn.Text = "Login";
+            loginBtn.FlatStyle=FlatStyle.Flat;
             loginBtn.Width = 95;
             loginBtn.Height = 25;
             loginBtn.Location = new System.Drawing.Point(270, 140);
