@@ -64,6 +64,8 @@ namespace Group11_Machine_Problem
             loginBtn.Parent = loginForm;
             loginBtn.Click += new EventHandler(loginBtn_Click);
 
+            loginForm.FormClosing += new FormClosingEventHandler(loginForm_Closing);
+
             //show the form
             loginForm.ShowDialog();
         }
@@ -115,6 +117,12 @@ namespace Group11_Machine_Problem
                 }
             }
 
+        }
+
+        //windows closing event
+        private void loginForm_Closing(object sender, FormClosingEventArgs e)
+        {   
+                isError = true;
         }
 
 
