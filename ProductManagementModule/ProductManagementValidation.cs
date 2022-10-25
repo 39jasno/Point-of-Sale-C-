@@ -14,39 +14,44 @@ namespace Group11_Machine_Problem.ProductManagementModule
             string svalue;
             do
             {
-                Console.WriteLine(message);
+                Console.Write(message);
                 svalue = Console.ReadLine().ToUpper().Trim();
             } while (svalue == String.Empty);
             return svalue;
         }
 
 
-        public int numberLengthRequired(String strmessage, int minimum1, int maximum1)
+        public int numberLengthRequired(String strmessage,int maximum)
         {
             int number; bool lnumber; string numlen;
             do
             {
-                Console.WriteLine(strmessage);
+                Console.Write(strmessage);
 
                 lnumber = int.TryParse(Console.ReadLine(), out number);
                 numlen = number.ToString();
 
-                if (!lnumber || numlen.Length < minimum1 || numlen.Length > maximum1)
-                    MessageBox.Show("Invalid", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } while (!lnumber || numlen.Length < minimum1 || numlen.Length > maximum1);
+                if (numlen.Length!=maximum)
+                {
+                    Console.WriteLine("\nInvalid input, must be 5 digits") ;
+                }
+            } while (numlen.Length != maximum);
             return number;
 
         }
 
-        public int numbersRequired(String strmessage)
+        public int numbersRequired(string strmessage)
         {
             int score; bool lscore;
             do
             {
-                Console.WriteLine(strmessage);
+                Console.Write(strmessage);
                 lscore = int.TryParse(Console.ReadLine(), out score);
                 if (!lscore)
-                    MessageBox.Show("Invalid", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                {
+                    Console.WriteLine("\nInvalid input");
+
+                }
             } while (!lscore);
             return score;
         }
@@ -60,11 +65,14 @@ namespace Group11_Machine_Problem.ProductManagementModule
 
             do
             {
-                Console.WriteLine(strmessage);
+                Console.Write(strmessage);
                 boolDouble = double.TryParse(Console.ReadLine(), out inputDouble);
 
                 if (!boolDouble)
-                    MessageBox.Show("Invalid Input", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                {
+                    Console.WriteLine("\nInvalid input");
+
+                }
             } while (!boolDouble);
             return inputDouble;
         }

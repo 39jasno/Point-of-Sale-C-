@@ -18,12 +18,12 @@ namespace Group11_Machine_Problem.ReportsManagementModule
             }
             catch (UnauthorizedAccessException)
             {
-                Console.WriteLine("\nUnable to access files.\n");
+                Console.WriteLine("Unable to access files.\n");
                 return false;
             }
             catch (FileNotFoundException)
             {
-                Console.WriteLine("\nFile not found.\n");
+                Console.WriteLine("File not found.\n");
                 return false;
             }
             catch
