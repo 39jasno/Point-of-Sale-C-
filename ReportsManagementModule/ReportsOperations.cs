@@ -4,31 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using Group11_Machine_Problem.ReportsManagementModule;
 
-namespace Group11_Machine_Problem.ReportsManagementModule
+namespace Group11_Machine_Problem
 {
     class ReportsOperations
     {
-        public void dailySales(string message) //Date | Grand Total
+        public void dailySales(string message)                                      //Date | Grand Total
         {
             Console.Clear();
-            Console.WriteLine(message);                         //Display Daily sales reports.
-            Inventory check = new Inventory();                  //Initalize Inventory Class.
+            Console.WriteLine(message);                                             //Display Daily sales reports.
+            Inventory check = new Inventory();                                      //Initalize Inventory Class.
             ReportsOperations exit = new ReportsOperations();
 
-            string path = "DailySales.txt";                     //Indicate text file name.
-            string[][] dailySales = check.transfer(path);       //Transfer text files into array.
+            string path = "DailySales.txt";                                         //Indicate text file name.
+            string[][] dailySales = check.transfer(path);                           //Transfer text files into a jagged array.
 
             int counter = 0;
             foreach (var line in File.ReadLines(path))       
             {
-                string[] info = line.Split('|');                //Split the array
+                string[] info = line.Split('|');                                    //Split the array
                 dailySales[counter] = new string[2] { info[0], info[1] };
                 counter++;
             }
 
             Console.WriteLine("Date\t\tGrand total\n");
-            for (int i = 0; i < dailySales.Length; i++)         //Display daily sales
+            for (int i = 0; i < dailySales.Length; i++)                             //Display daily sales
             {
                 Console.Write("{0}\t{1}\n", dailySales[i][0], dailySales[i][1]);
 
@@ -36,26 +37,26 @@ namespace Group11_Machine_Problem.ReportsManagementModule
             exit.operationsExit();
 
         }
-        public void productInventory(string message)//Category | Product
+        public void productInventory(string message)                                //Category | Product
         {
             Console.Clear();
-            Console.WriteLine(message);
+            Console.WriteLine(message);                                             //Inventory of Sold Items
             Inventory check = new Inventory();
             ReportsOperations exit = new ReportsOperations();
 
             string path = "productInventory.txt";
-            string[][] productInv = check.transfer(path);
+            string[][] productInv = check.transfer(path);                           //Transfer text file into a jagged array
 
             int counter = 0;
             foreach (var line in File.ReadLines(path))
             {
-                string[] info = line.Split('|');
+                string[] info = line.Split('|');                                    //Split into two and puting its elements into the array
                 productInv[counter] = new string[2] { info[0], info[1] };
                 counter++;
             }
 
             Console.WriteLine("Date\t\tGrand total\n");
-            for (int i = 0; i < productInv.Length; i++)         //Display daily sales
+            for (int i = 0; i < productInv.Length; i++)                             //Display product inventory
             {
                 Console.Write("{0}\t{1}\n", productInv[i][0], productInv[i][1]);
 
@@ -63,7 +64,7 @@ namespace Group11_Machine_Problem.ReportsManagementModule
             exit.operationsExit();
 
         }
-        public void returns(string message)//Return Date | Category | Product
+        public void returns(string message)                                         //Return Date | Category | Product
         {
             Console.Clear();
             Console.WriteLine(message);

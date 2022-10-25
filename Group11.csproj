@@ -51,7 +51,12 @@
     <Compile Include="OrdersManagementModule\OrderInventory.cs" />
     <Compile Include="OrdersManagementModule\OrderManagement.cs" />
     <Compile Include="PoS.cs" />
+    <Compile Include="ProductManagementModule\Headphones.cs" />
+    <Compile Include="ProductManagementModule\Keyboard.cs" />
+    <Compile Include="ProductManagementModule\Monitor.cs" />
+    <Compile Include="ProductManagementModule\Mouse.cs" />
     <Compile Include="ProductManagementModule\ProductManagement.cs" />
+    <Compile Include="ProductManagementModule\Speaker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportsManagementModule\Reports.cs" />
     <Compile Include="ReportsManagementModule\ReportsOperations.cs" />

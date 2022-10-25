@@ -51,6 +51,11 @@ namespace Group11_Machine_Problem
             }
 
         }
+
+        internal void keybWrite()
+        {
+            throw new NotImplementedException();
+        }
     }
 
     class Monitor
@@ -120,6 +125,11 @@ namespace Group11_Machine_Problem
             {
                 MessageBox.Show("Invalid");
             }
+        }
+
+        internal void mouseWrite()
+        {
+            throw new NotImplementedException();
         }
     }
 
