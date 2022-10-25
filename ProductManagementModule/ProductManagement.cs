@@ -13,7 +13,7 @@ namespace Group11_Machine_Problem
 {
     public class ProdManage
     {
-        static void introduction()
+        static void Introduction()
         {
             Console.Write("Product Management\n" +
                 "\n1 - Add new product"+
@@ -33,7 +33,7 @@ namespace Group11_Machine_Problem
             do
             {
                 Console.Clear();
-                introduction();
+                Introduction();
 
                 menuChoice = Console.ReadLine();
 
@@ -55,35 +55,35 @@ namespace Group11_Machine_Problem
 
                         if (AmenuChoice.Trim() == "1")
                         {
-                            product.write("KeyboardData.txt");
+                            product.Write(@".\Inventory\KeyboardData.txt");
                             Console.WriteLine("Data successfully inputted");
 
                         }
 
                         else if (AmenuChoice.Trim() == "2")
                         {
-                            product.write("MouseData.txt");
+                            product.Write(@".\Inventory\MouseData.txt");
                             Console.WriteLine("Data successfully inputted");
 
                         }
 
                         else if (AmenuChoice.Trim() == "3")
                         {
-                            product.write("MonitorData.txt");
+                            product.Write(@".\Inventory\MonitorData.txt");
                             Console.WriteLine("Data successfully inputted");
 
                         }
 
                         else if (AmenuChoice.Trim() == "4")
                         {
-                            product.write("SpeakersData.txt");
+                            product.Write(@".\Inventory\SpeakersData.txt");
                             Console.WriteLine("Data successfully inputted");
 
                         }
 
                         else if (AmenuChoice.Trim() == "5")
                         {
-                            product.write("HeadphonesData.txt");
+                            product.Write(@".\Inventory\HeadphonesData.txt");
                             Console.WriteLine("Data successfully inputted");
 
                         }
@@ -97,7 +97,8 @@ namespace Group11_Machine_Problem
 
                         else
                         {
-                            MessageBox.Show("Invalid Input! Please try again", "Invalid Input!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            Console.WriteLine("Invalid input");
+
                         }
 
 
@@ -107,7 +108,7 @@ namespace Group11_Machine_Problem
 
                 else if (menuChoice.Trim() == "2")
                 {
-                    string BmenuChoice="";
+                    string BmenuChoice;
                     do
                     {
 
@@ -125,31 +126,31 @@ namespace Group11_Machine_Problem
 
                         if (BmenuChoice.Trim() == "1")
                         {
-                            product.read("KeyboardData.txt");
+                            product.Read(@".\Inventory\KeyboardData.txt");
 
                         }
 
                         else if (BmenuChoice.Trim() == "2")
                         {
-                            product.read("MouseData.txt");
+                            product.Read(@".\Inventory\MouseData.txt");
 
                         }
 
                         else if (BmenuChoice.Trim() == "3")
                         {
-                            product.read("MonitorData.txt");
+                            product.Read(@".\Inventory\MonitorData.txt");
 
                         }
 
                         else if (BmenuChoice.Trim() == "4")
                         {
-                            product.read("SpeakersData.txt");
+                            product.Read(@".\Inventory\SpeakersData.txt");
 
                         }
 
                         else if (BmenuChoice.Trim() == "5")
                         {
-                            product.read("HeadphonesData.txt");
+                            product.Read(@".\Inventory\HeadphonesData.txt");
 
                         }
 
@@ -172,7 +173,7 @@ namespace Group11_Machine_Problem
 
                 else if (menuChoice.Trim() == "3")
                 {
-                    string CmenuChoice = "";
+                    string CmenuChoice;
                     ProductManagementOperations.PriceUpdate update = new ProductManagementOperations.PriceUpdate();
                     do
                     {
@@ -190,31 +191,31 @@ namespace Group11_Machine_Problem
 
                         if (CmenuChoice.Trim() == "1")
                         {
-                            update.update("KeyboardData.txt");
+                            update.Update(@".\Inventory\KeyboardData.txt");
 
                         }
 
                         else if (CmenuChoice.Trim() == "2")
                         {
-                            update.update("MouseData.txt");
+                            update.Update(@".\Inventory\MouseData.txt");
 
                         }
 
                         else if (CmenuChoice.Trim() == "3")
                         {
-                            update.update("MonitorData.txt");
+                            update.Update(@".\Inventory\MonitorData.txt");
 
                         }
 
                         else if (CmenuChoice.Trim() == "4")
                         {
-                            update.update("SpeakersData.txt");
+                            update.Update(@".\Inventory\SpeakersData.txt");
 
                         }
 
                         else if (CmenuChoice.Trim() == "5")
                         {
-                            update.update("HeadphonesData.txt");
+                            update.Update(@".\Inventory\HeadphonesData.txt");
 
                         }
 
@@ -256,31 +257,31 @@ namespace Group11_Machine_Problem
 
                             if (DmenuChoice.Trim() == "1")
                             {
-                                product.search("KeyboardData.txt");
+                                product.Search(@".\Inventory\KeyboardData.txt");
 
                             }
 
                             else if (DmenuChoice.Trim() == "2")
                             {
-                                product.search("MouseData.txt");
+                                product.Search(@".\Inventory\MouseData.txt");
 
                             }
 
                             else if (DmenuChoice.Trim() == "3")
                             {
-                                product.search("MonitorData.txt");
+                                product.Search(@".\Inventory\MonitorData.txt");
 
                             }
 
                             else if (DmenuChoice.Trim() == "4")
                             {
-                                product.search("SpeakersData.txt");
+                                product.Search(@".\Inventory\SpeakersData.txt");
 
                             }
 
                             else if (DmenuChoice.Trim() == "5")
                             {
-                                product.search("HeadphonesData.txt");
+                                product.Search(@".\Inventory\HeadphonesData.txt");
 
                             }
                             else if (DmenuChoice.ToUpper() == "6")
@@ -292,7 +293,8 @@ namespace Group11_Machine_Problem
 
                             else
                             {
-                                MessageBox.Show("Invalid Input! Please try again", "Invalid Input!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                Console.WriteLine("Invalid input");
+
                             }
                         }
                         catch (FileNotFoundException)
@@ -312,7 +314,8 @@ namespace Group11_Machine_Problem
 
                 else
                 {
-                    MessageBox.Show("Invalid Input! Please try again", "Invalid Input!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Console.WriteLine("Invalid input");
+
                 }
 
             } while (menuChoice!= "5");

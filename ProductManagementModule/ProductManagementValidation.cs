@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Group11_Machine_Problem.ProductManagementModule
 {
-    class validation
+    class Validation
     {
         public string InputString(string message)
         {
@@ -21,7 +21,7 @@ namespace Group11_Machine_Problem.ProductManagementModule
         }
 
 
-        public int numberLengthRequired(String strmessage,int maximum)
+        public int NumberLengthRequired(String strmessage,int maximum)
         {
             int number; bool lnumber; string numlen;
             do
@@ -40,7 +40,7 @@ namespace Group11_Machine_Problem.ProductManagementModule
 
         }
 
-        public int numbersRequired(string strmessage)
+        public int NumbersRequired(string strmessage)
         {
             int score; bool lscore;
             do
@@ -59,7 +59,7 @@ namespace Group11_Machine_Problem.ProductManagementModule
 
 
 
-        public double doubleInput(String strmessage)
+        public double DoubleInput(String strmessage)
         {
             double inputDouble; bool boolDouble;
 

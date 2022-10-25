@@ -11,23 +11,23 @@ namespace Group11_Machine_Problem
 {
     class ProductManagementOperations
     {
-        public void write(string path)
+        public void Write(string path)
         {
             Console.Clear();
-            validation validate = new validation();
+            ProductManagementModule.Validation validate = new ProductManagementModule.Validation();
             Console.WriteLine("Add product\n");
-            int code = validate.numberLengthRequired("Enter Product ID: ", 5);
+            int code = validate.NumberLengthRequired("Enter Product ID: ", 5);
             string name = validate.InputString("\nEnter Product Name: ");
-            double price = validate.doubleInput("\nEnter Product Price: ");
-            int stock = validate.numbersRequired("\nEnter Product Stock: ");
+            double price = validate.DoubleInput("\nEnter Product Price: ");
+            int stock = validate.NumbersRequired("\nEnter Product Stock: ");
             //int sold = validate.numbersRequired("\nEnter Product Sold: ");        //sold should not be added. Only update on order information
 
             Data write = new Data();
-            write.add(path, code, name, price, stock);
+            write.Add(path, code, name, price, stock);
         }
 
         //Read and Print Product informations
-        public void read(string path)
+        public void Read(string path)
         {
             Console.Clear();
             ProductManagementOperations transfer = new ProductManagementOperations();
@@ -35,7 +35,7 @@ namespace Group11_Machine_Problem
             bool found = check.checkInfo(path);
             if (found == true)
             {
-                string[][] productInfo = transfer.textArray(path);
+                string[][] productInfo = transfer.TextArray(path);
                 Console.WriteLine("Product No - Product Name - Price - Qty - Sold\n");
                 for (int i = 0; i < productInfo.Length; i++)
                 {
@@ -49,7 +49,7 @@ namespace Group11_Machine_Problem
         }
 
         //Search and print product informations
-        public void search(string path)
+        public void Search(string path)
         {
             Console.Clear();
             ProductManagementOperations transfer = new ProductManagementOperations();
@@ -62,7 +62,7 @@ namespace Group11_Machine_Problem
             bool searchtrue = false; 
             if (found == true)
             {
-                string[][] productInfo = transfer.textArray(path);
+                string[][] productInfo = transfer.TextArray(path);
                 for (int i = 0; i < productInfo.Length; i++)
                 {
                     if (productInfo[i][0] == search)
@@ -84,7 +84,7 @@ namespace Group11_Machine_Problem
             Console.ReadKey();
 
         }
-        private string[][] textArray(string path)
+        private string[][] TextArray(string path)
         {
             Inventory check = new Inventory();
             string[][] productInfo = check.transfer(path);
@@ -105,11 +105,11 @@ namespace Group11_Machine_Problem
         {
 
             //Search product
-            public void update(string path)
+            public void Update(string path)
             {
                 Console.Clear();
                 ProductManagementOperations transfer = new ProductManagementOperations();
-                validation validate = new validation();
+                ProductManagementModule.Validation validate = new ProductManagementModule.Validation();
                 Inventory check = new Inventory();
 
                 Console.Write("Enter Product Code: ");
@@ -119,13 +119,14 @@ namespace Group11_Machine_Problem
                 bool searchtrue = false;
                 if (found == true)
                 {
-                    string[][] productInfo = transfer.textArray(path);
+                    string[][] vs = transfer.TextArray(path);
+                    string[][] productInfo = vs;
                     for (int i = 0; i < productInfo.Length; i++)
                     {
                         if (productInfo[i][0] == search)
                         {
                             Console.Clear();
-                            int newPrice = validate.numbersRequired("Enter product's new price: ");
+                            int newPrice = validate.NumbersRequired("Enter product's new price: ");
                             searchtrue = true;
                             break;
                         }
@@ -140,17 +141,10 @@ namespace Group11_Machine_Problem
                 Console.ReadKey();
 
             }
-            static void lineChanger(string newText, string fileName, int line_to_edit)
-            {
-                string[] arrLine = File.ReadAllLines(fileName);
-                arrLine[line_to_edit] = newText;
-                File.WriteAllLines(fileName, arrLine);
-            }
-
         }
         class Data
         {
-            public void add(string path,int code, string name, double price, int stock)
+            public void Add(string path,int code, string name, double price, int stock)
             {
                 Console.Clear();
                 using (StreamWriter writer = new StreamWriter(path, true))

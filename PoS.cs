@@ -9,7 +9,7 @@ namespace Group11_Machine_Problem
 {
     public class PoS
     {
-        static void Main(string[] args)
+        static void Main()
         {
             //eto yung ginawa ko na login form
             DialogResult tryAgain = DialogResult.No;
@@ -18,7 +18,7 @@ namespace Group11_Machine_Problem
                 Display LoginDisplay = new Display();
                 LoginDisplay.DisplayLogin();
   
-                if(Display.isError)
+                if(Display.IsError)
                     tryAgain = MessageBox.Show("Do you want to Exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             } while (tryAgain != DialogResult.Yes);

@@ -16,85 +16,95 @@ namespace Group11_Machine_Problem
         public static Form loginForm;
         private static TextBox usernameTxt, passwordTxt;
         private static Button loginBtn;
-        public static bool isError { get; set; }
+        public static bool IsError { get; set; }
 
         public void DisplayLogin()
         {
             //create form
-            loginForm = new Form();
-            loginForm.Text = "Login";
-            loginForm.Width = 406;
-            loginForm.Height = 224;
-            loginForm.StartPosition = FormStartPosition.CenterScreen;
-            loginForm.MaximizeBox = false;
-            loginForm.SizeGripStyle = SizeGripStyle.Hide;
-            loginForm.FormBorderStyle=FormBorderStyle.FixedDialog;
+            loginForm = new Form
+            {
+                Text = "Login",
+                Width = 406,
+                Height = 224,
+                StartPosition = FormStartPosition.CenterScreen,
+                MaximizeBox = false,
+                SizeGripStyle = SizeGripStyle.Hide,
+                FormBorderStyle = FormBorderStyle.FixedDialog
+            };
 
 
             //create label for username 
-            Label usernameLabel = new Label();
-            usernameLabel.Text = "Username: ";
-            usernameLabel.AutoSize = true;
-            usernameLabel.Location = new System.Drawing.Point(60, 40);
-            usernameLabel.Parent = loginForm;
+            Label usernameLabel = new Label
+            {
+                Text = "Username: ",
+                AutoSize = true,
+                Location = new System.Drawing.Point(60, 40),
+                Parent = loginForm
+            };
 
             //create label for password 
-            Label passwordLabel = new Label();
-            passwordLabel.Text = "Password: ";
-            passwordLabel.AutoSize = true;
-            passwordLabel.Location = new System.Drawing.Point(60, 90);
-            passwordLabel.Parent = loginForm;
-            usernameTxt = new TextBox();
+            Label passwordLabel = new Label
+            {
+                Text = "Password: ",
+                AutoSize = true,
+                Location = new System.Drawing.Point(60, 90),
+                Parent = loginForm
+            };
+            usernameTxt = new TextBox
+            {
+
+                //create textbox for username 
+                Size = new Size(160, 50),
+                BorderStyle = BorderStyle.FixedSingle,
+                Location = new System.Drawing.Point(140, 40),
+                Parent = loginForm
+            };
 
             //create textbox for username 
-            usernameTxt.Size = new Size(160, 50);
-            usernameTxt.BorderStyle=BorderStyle.FixedSingle;
-            usernameTxt.Location = new System.Drawing.Point(140, 40);
-            usernameTxt.Parent = loginForm;
-
-            //create textbox for username 
-            passwordTxt = new TextBox();
-            passwordTxt.BorderStyle=BorderStyle.FixedSingle;
-            passwordTxt.Size = new Size(160, 50);
-            passwordTxt.Location = new System.Drawing.Point(140, 90);
-            passwordTxt.PasswordChar = '*';
-            passwordTxt.Parent = loginForm;
+            passwordTxt = new TextBox
+            {
+                BorderStyle = BorderStyle.FixedSingle,
+                Size = new Size(160, 50),
+                Location = new System.Drawing.Point(140, 90),
+                PasswordChar = '*',
+                Parent = loginForm
+            };
 
             //create login button and assign event
-            loginBtn = new Button();
-            loginBtn.Text = "Login";
-            loginBtn.FlatStyle=FlatStyle.Flat;
-            loginBtn.Width = 95;
-            loginBtn.Height = 25;
-            loginBtn.Location = new System.Drawing.Point(270, 140);
-            loginBtn.Parent = loginForm;
-            loginBtn.Click += new EventHandler(loginBtn_Click);
+            loginBtn = new Button
+            {
+                Text = "Login",
+                FlatStyle = FlatStyle.Flat,
+                Width = 95,
+                Height = 25,
+                Location = new System.Drawing.Point(270, 140),
+                Parent = loginForm
+            };
+            loginBtn.Click += new EventHandler(LoginBtn_Click);
 
-            loginForm.FormClosing += new FormClosingEventHandler(loginForm_Closing);
+            loginForm.FormClosing += new FormClosingEventHandler(LoginForm_Closing);
 
             //show the form
             loginForm.ShowDialog();
         }
 
         //event when pressing login button
-        static void loginBtn_Click(object sender, EventArgs e)
+        static void LoginBtn_Click(object sender, EventArgs e)
         {
             Console.Clear();
-
-            bool isLoginSuccess = false;
-
-            Checker check = new Checker();
-
-            check.username = usernameTxt.Text;
-            check.password = passwordTxt.Text;
+            Checker check = new Checker
+            {
+                username = usernameTxt.Text,
+                password = passwordTxt.Text
+            };
 
             //checks if user input in login form is correct
-            isLoginSuccess = check.CheckUserInfo();
+            bool isLoginSuccess = check.CheckUserInfo();
             loginForm.Hide();
 
             Console.Clear();
 
-            isError = isLoginSuccess;
+            IsError = isLoginSuccess;
 
             //if login is successful display menu depending on their account type
             if (isLoginSuccess)
@@ -104,31 +114,33 @@ namespace Group11_Machine_Problem
                 Console.WriteLine($"Welcome, {check.username}.");
                 Thread.Sleep(800);
 
-                User loginUser = new User();
-                loginUser.username = check.username;
+                User loginUser = new User
+                {
+                    username = check.username
+                };
                 loginUser.SetUserInfo();
                 if (loginUser.accountType == "manager")
                 {
                     Manager loginManager = new Manager(loginUser.username);
                     Console.Clear();
                     loginManager.DisplayMenu();
-                    isError = true;
+                    IsError = true;
                 }
                 else
                 {
                     Cashier loginCashier = new Cashier(loginUser.username);
                     Console.Clear();
                     loginCashier.DisplayMenu();
-                    isError = true;
+                    IsError = true;
                 }
             }
 
         }
 
         //windows closing event
-        private void loginForm_Closing(object sender, FormClosingEventArgs e)
+        private void LoginForm_Closing(object sender, FormClosingEventArgs e)
         {   
-                isError = true;
+                IsError = true;
         }
 
 
