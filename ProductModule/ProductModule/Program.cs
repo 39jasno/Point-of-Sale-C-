@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,14 +22,17 @@ namespace ProductModule
             Console.WriteLine("[B] Display Product Information");
             Console.WriteLine("[C] Update Price");
             Console.WriteLine("[D] Search for Product Information");
+            Console.WriteLine("[E] Quit");
         }
 
 
         static void Main(string[] args)
         {
-            DialogResult dialogtryagain;
+            DialogResult dialogtryagain = DialogResult.No;
+
             do
             {
+                
                 Console.Clear();
                 introduction();
                 Console.WriteLine("Input choice: ");
@@ -346,13 +349,18 @@ namespace ProductModule
 
                 }
 
+                else if (menuChoice.ToUpper() == "E")
+                {
+                    dialogtryagain = MessageBox.Show("Would you like to close the program?", "Inquiry", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                }
+
 
                 else
                 {
                     MessageBox.Show("Invalid Input! Please try again", "Invalid Input!", MessageBoxButtons.OK, MessageBoxIcon.Error);                  
                 }
 
-                dialogtryagain = MessageBox.Show("Would you like to close the program?", "Inquiry", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                
 
             } while (dialogtryagain == DialogResult.No);
         }
