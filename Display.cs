@@ -94,8 +94,8 @@ namespace Group11_Machine_Problem
             Console.Clear();
             Checker check = new Checker
             {
-                username = usernameTxt.Text,
-                password = passwordTxt.Text
+                Username = usernameTxt.Text,
+                Password = passwordTxt.Text
             };
 
             //checks if user input in login form is correct
@@ -111,24 +111,24 @@ namespace Group11_Machine_Problem
             {
                 loginForm.Hide();
                 Console.WriteLine("Login is successful!");
-                Console.WriteLine($"Welcome, {check.username}.");
+                Console.WriteLine($"Welcome, {check.Username}.");
                 Thread.Sleep(800);
 
                 User loginUser = new User
                 {
-                    username = check.username
+                    Username = check.Username
                 };
                 loginUser.SetUserInfo();
-                if (loginUser.accountType == "manager")
+                if (loginUser.AccountType == "manager")
                 {
-                    Manager loginManager = new Manager(loginUser.username);
+                    Manager loginManager = new Manager(loginUser.Username);
                     Console.Clear();
                     loginManager.DisplayMenu();
                     IsError = true;
                 }
                 else
                 {
-                    Cashier loginCashier = new Cashier(loginUser.username);
+                    Cashier loginCashier = new Cashier(loginUser.Username);
                     Console.Clear();
                     loginCashier.DisplayMenu();
                     IsError = true;

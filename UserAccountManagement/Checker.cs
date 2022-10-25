@@ -11,32 +11,34 @@ namespace Group11_Machine_Problem
     //checker class checks if user info is correct when logging in
     class Checker
     {
-        public string username { get; set; }
-        public string password { private get; set; }
+        public string Username { get; set; }
+        public string Password { private get; set; }
 
         //checks user info when logging in if valid and correct
         public bool CheckUserInfo()
         {
-            bool isUsernameFound = false, isPasswordCorrect = false, isAccountActive = true, isAccountExpired = false;
+            bool isPasswordCorrect = false, isAccountActive = true, isAccountExpired = false;
 
             //if file is empty then displays error then ask user to add a manager account
             if (!IsFileEmpty())
             {
-                isUsernameFound = UsernameChecker();
+                bool isUsernameFound = UsernameChecker();
 
                 //if username not in file displays error
                 if (!isUsernameFound)
                     MessageBox.Show("Invalid Input: Username does not exist in employee records!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
-                    User setUser = new User();
-                    setUser.username = username;
+                    User setUser = new User
+                    {
+                        Username = Username
+                    };
                     setUser.SetUserInfo();
 
                     //checks password, account status, and if account is expired
-                    isPasswordCorrect = PasswordChecker(password, setUser.password);
-                    isAccountActive = IsAccountActive(username);
-                    isAccountExpired = IsAccountExpired(setUser.dateCreated);
+                    isPasswordCorrect = PasswordChecker(Password, setUser.Password);
+                    isAccountActive = IsAccountActive(Username);
+                    isAccountExpired = IsAccountExpired(setUser.DateCreated);
 
                     //if password is incorrect displays error
                     if (!isPasswordCorrect)
@@ -46,8 +48,10 @@ namespace Group11_Machine_Problem
                     {
                         MessageBox.Show("\nUser Account is not Active!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         Display.loginForm.Hide();
-                        User ActiveAccount = new User();
-                        ActiveAccount.username = username;
+                        User ActiveAccount = new User
+                        {
+                            Username = Username
+                        };
                         ActiveAccount.ActivateUserAccount("Do you wish to activate your account? [Y or N]: ");
                     }
                     else
@@ -58,8 +62,10 @@ namespace Group11_Machine_Problem
                             MessageBox.Show("\nUser account is expired!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             MessageBox.Show("Deleting user account from database!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             //deletes the user from texfile
-                            User deleteUser = new User();
-                            deleteUser.username = username;
+                            User deleteUser = new User
+                            {
+                                Username = Username
+                            };
                             deleteUser.DeleteUserAccount();
                         }
                     }
@@ -98,7 +104,7 @@ namespace Group11_Machine_Problem
                 {
                     string[] employeeContent = employeeRecord.Split('|');
                     //return true if username is found
-                    if (employeeContent[1] == username)
+                    if (employeeContent[1] == Username)
                         isUsernameFound = true;
                     employeeRecord = employeeReader.ReadLine();
                 }
@@ -132,10 +138,12 @@ namespace Group11_Machine_Problem
         //check if account status is active
         public bool IsAccountActive(string username)
         {
-            User accountStatus = new User();
-            accountStatus.username = username;
+            User accountStatus = new User
+            {
+                Username = username
+            };
             accountStatus.SetUserInfo();
-            if (accountStatus.status != "ACTIVE")
+            if (accountStatus.Status != "ACTIVE")
                 return false;
             return true;
         }

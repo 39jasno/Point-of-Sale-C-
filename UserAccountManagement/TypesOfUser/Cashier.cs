@@ -11,22 +11,21 @@ namespace Group11_Machine_Problem
     {
         public Cashier(string username)
         {
-            this.username = username;
+            this.Username = username;
         }
 
 
         //display cashier menu then does corresposding options based on user choice
         public void DisplayMenu()
         {
-            string choice = "0";
-
             Checker check = new Checker();
 
             SetUserInfo();
 
+            string choice;
             do
             {
-                if (check.IsAccountActive(username))
+                if (check.IsAccountActive(Username))
                 {
                     OrderManage initOrder = new OrderManage();
 

@@ -11,22 +11,21 @@ namespace Group11_Machine_Problem
     {
         public Manager(string username)
         {
-            this.username = username;
+            this.Username = username;
         }
 
 
         //display manager menu and does coresponding actions based on user choice
         public void DisplayMenu()
         {
-            string choice = "0";
-
             Checker check = new Checker();
 
             SetUserInfo();
 
+            string choice;
             do
             {
-                if (check.IsAccountActive(username))
+                if (check.IsAccountActive(Username))
                 {
                     Reports initReport = new Reports();
                     ProdManage initProd = new ProdManage();
@@ -35,8 +34,8 @@ namespace Group11_Machine_Problem
                     Console.WriteLine("Manager Menu");
                     Console.WriteLine("\n 1 - Product Management " +
                         "\n 2 - Order Management  " +
-                        "\n 3 - Reports Management"+
-                        "\n 4 - User Account Management"+
+                        "\n 3 - Reports Management" +
+                        "\n 4 - User Account Management" +
                         "\n 5 - Add a New User" +
                         "\n 6 - Logout");
                     Console.Write("\nEnter choice: ");

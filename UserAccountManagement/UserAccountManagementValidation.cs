@@ -77,8 +77,7 @@ namespace Group11_Machine_Problem
         //checks usernames is valid meaning it is not already taken and meets the min and max length requirement and not empty
         public string ValidateUsername(string strMessage, int nameMin, int nameMax)
         {
-            string username; bool doesAccountExist = false;
-
+            string username; bool doesAccountExist;
             do
             {
                 Console.Write(strMessage);

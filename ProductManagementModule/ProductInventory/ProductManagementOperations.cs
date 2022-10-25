@@ -20,7 +20,7 @@ namespace Group11_Machine_Problem
             string name = validate.InputString("\nEnter Product Name: ");
             double price = validate.DoubleInput("\nEnter Product Price: ");
             int stock = validate.NumbersRequired("\nEnter Product Stock: ");
-            //int sold = validate.numbersRequired("\nEnter Product Sold: ");        //sold should not be added. Only update on order information
+            //int sold = validate.numbersRequired("\nEnter Product Sold: ");                //sold should not be added. Only update on order information
 
             Data write = new Data();
             write.Add(path, code, name, price, stock);
@@ -32,14 +32,19 @@ namespace Group11_Machine_Problem
             Console.Clear();
             ProductManagementOperations transfer = new ProductManagementOperations();
             Inventory check = new Inventory();
+
             bool found = check.checkInfo(path);
             if (found == true)
             {
                 string[][] productInfo = transfer.TextArray(path);
-                Console.WriteLine("Product No - Product Name - Price - Qty - Sold\n");
+
+                string title = String.Format("{0,-15}{1,-25}{2,-10}{3,-10}{4,-10}\n", "Product No", "Product Name", "Price", "Qty", "Sold");
+                Console.WriteLine(title);
+
                 for (int i = 0; i < productInfo.Length; i++)
                 {
-                    Console.Write("{0} - {1} - {2} - {3} - {4}\n", productInfo[i][0], productInfo[i][1], productInfo[i][2], productInfo[i][3], productInfo[i][4]);
+                    string format = String.Format("{0,-15}{1,-25}{2,-10}{3,-10}{4,-10}", productInfo[i][0], productInfo[i][1], productInfo[i][2], productInfo[i][3], productInfo[i][4]);
+                    Console.WriteLine(format);
 
                 }
             }
@@ -55,11 +60,12 @@ namespace Group11_Machine_Problem
             ProductManagementOperations transfer = new ProductManagementOperations();
             Inventory check = new Inventory();
 
+            bool found = check.checkInfo(path);
+            bool searchtrue = false;
+
             Console.Write("Enter Product Code: ");
             string search = Console.ReadLine();
 
-            bool found = check.checkInfo(path);
-            bool searchtrue = false; 
             if (found == true)
             {
                 string[][] productInfo = transfer.TextArray(path);
@@ -68,8 +74,12 @@ namespace Group11_Machine_Problem
                     if (productInfo[i][0] == search)
                     {
                         Console.Clear();
-                        Console.WriteLine("Product No | Product Name | Price | Qty | Sold\n");
-                        Console.Write("{0} - {1} - {2} - {3} - {4}\n", productInfo[i][0], productInfo[i][1], productInfo[i][2], productInfo[i][3], productInfo[i][4]);
+
+                        string title = String.Format("{0,-15}{1,-25}{2,-10}{3,-10}{4,-10}\n", "Product No", "Product Name", "Price", "Qty", "Sold");
+                        string format = String.Format("{0,-15}{1,-25}{2,-10}{3,-10}{4,-10}", productInfo[i][0], productInfo[i][1], productInfo[i][2], productInfo[i][3], productInfo[i][4]);
+                        
+                        Console.WriteLine(title + "\n" + format);
+
                         searchtrue = true;
                         break;
                     }

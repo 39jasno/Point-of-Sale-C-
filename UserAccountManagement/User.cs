@@ -10,12 +10,12 @@ namespace Group11_Machine_Problem
 {
     class User
     {
-        public int id { get; private set; }
-        public string username { get; set; }
-        public string password { get; private set; }
-        public string accountType { get; private set; }
-        public string dateCreated { get; private set; }
-        public string status { get; private set; }
+        public int Id { get; private set; }
+        public string Username { get; set; }
+        public string Password { get; private set; }
+        public string AccountType { get; private set; }
+        public string DateCreated { get; private set; }
+        public string Status { get; private set; }
 
         //create user then appends to textfile
         public void CreateUser(string strMessage = "")
@@ -23,25 +23,28 @@ namespace Group11_Machine_Problem
             Console.Clear();
             Console.WriteLine("Register User Menu\n");
             Validation validate = new Validation();
-            id = validate.GetLastID();
-            id++;
-            username = validate.ValidateUsername("Enter username: ", 1, 30);
-            password = validate.ValidateUserPassword("Enter password: ", 8, 20, username);
+            Id = validate.GetLastID();
+            Id++;
+            Username = validate.ValidateUsername("Enter username: ", 1, 30);
+            Password = validate.ValidateUserPassword("Enter password: ", 8, 20, Username);
 
             Checker check = new Checker();
             if (check.IsFileEmpty())
-                accountType = "manager";
+                AccountType = "MANAGER";
             else
-                accountType = validate.ValidateUserAccountType("Enter account type [Manager or Cashier]: ");
+                AccountType = validate.ValidateUserAccountType("Enter account type [Manager or Cashier]: ");
 
             var dateCreated = DateTime.Now.ToString("MM/dd/yyyy");
-            status = "ACTIVE";
+            Status = "ACTIVE";
 
-            string addUserInfo = id + "|" + username + "|" + password + "|" + accountType + "|" + dateCreated + "|" + status;
+            string addUserInfo = Id + "|" + Username + "|" + Password + "|" + AccountType + "|" + dateCreated + "|" + Status;
             // id[0] + usernam[1]+ password[2]+ position[3] + dayaccwas created[4]+ active or deactive status[5]
 
-            id++;
-            using (StreamWriter writeUserInfo = new StreamWriter("employee.txt", true))
+            Id++;
+
+            string path = @"\Employee\Employee.txt";
+
+            using (StreamWriter writeUserInfo = new StreamWriter(path, true))
             {
                 writeUserInfo.WriteLine(addUserInfo);
                 Console.WriteLine("\nUser is successfully added!");
@@ -55,23 +58,24 @@ namespace Group11_Machine_Problem
         //set the the class variable based on textfile to perform user operations
         public void SetUserInfo()
         {
+            string path = @"\Employee\Employee.txt";
             try
             {
                 //open file
-                FileStream employeeFile = new FileStream("employee.txt", FileMode.Open);
+                FileStream employeeFile = new FileStream(path, FileMode.Open);
                 StreamReader employeeReader = new StreamReader(employeeFile);
                 string employeeRecord = employeeReader.ReadLine();
 
                 while (employeeRecord != null)
                 {
                     string[] employeeContent = employeeRecord.Split('|');
-                    if (employeeContent[1] == username)
+                    if (employeeContent[1] == Username)
                     {
-                        id = Convert.ToInt32(employeeContent[0]);
-                        password = employeeContent[2];
-                        accountType = employeeContent[3];
-                        dateCreated = employeeContent[4];
-                        status = employeeContent[5];
+                        Id = Convert.ToInt32(employeeContent[0]);
+                        Password = employeeContent[2];
+                        AccountType = employeeContent[3];
+                        DateCreated = employeeContent[4];
+                        Status = employeeContent[5];
                     }
                     employeeRecord = employeeReader.ReadLine();
                 }
@@ -80,7 +84,7 @@ namespace Group11_Machine_Problem
             }
             catch (FileNotFoundException)
             {
-                FileStream employeeFile = new FileStream("employee.txt", FileMode.CreateNew);
+                FileStream employeeFile = new FileStream(path, FileMode.CreateNew);
                 employeeFile.Close();
             }
             catch
@@ -93,9 +97,11 @@ namespace Group11_Machine_Problem
         //update the user file when changin its content
         public void UpdateUserFile(string newContent)
         {
+            string path = @"\Employee\Employee.txt";
+
             try
             {
-                FileStream employeeFile = new FileStream("employee.txt", FileMode.Truncate);
+                FileStream employeeFile = new FileStream(path, FileMode.Truncate);
                 employeeFile.Close();
 
                 if (!(newContent.Trim() == String.Empty))
@@ -126,23 +132,24 @@ namespace Group11_Machine_Problem
             string newPassword;
 
             Validation validate = new Validation();
+            string path = @"\Employee\Employee.txt";
 
             try
             {
                 //open file
-                FileStream employeeFile = new FileStream("employee.txt", FileMode.Open);
+                FileStream employeeFile = new FileStream(path, FileMode.Open);
                 StreamReader employeeReader = new StreamReader(employeeFile);
                 string employeeRecord = employeeReader.ReadLine();
                 string newcontent = "";
                 while (employeeRecord != null)
                 {
                     string[] employeeContent = employeeRecord.Split('|');
-                    if (employeeContent[1] == username)
+                    if (employeeContent[1] == Username)
                     {
                         //loop unitl pass word not same as old password
                         do
                         {
-                            newPassword = validate.ValidateUserPassword("Enter new Password: ", 8, 20, username);
+                            newPassword = validate.ValidateUserPassword("Enter new Password: ", 8, 20, Username);
                             //checks if passwords is same as old password then displays error
                             if (newPassword == employeeContent[2])
                                 Console.WriteLine("Invalid Input: Password cant be the same as old password!");
@@ -163,7 +170,7 @@ namespace Group11_Machine_Problem
             }
             catch (FileNotFoundException)
             {
-                FileStream employeeFile = new FileStream("employee.txt", FileMode.CreateNew);
+                FileStream employeeFile = new FileStream(path, FileMode.CreateNew);
                 employeeFile.Close();
             }
             catch
@@ -176,10 +183,11 @@ namespace Group11_Machine_Problem
         //activates or deactivate the account of a user
         public void ActiveOrDeactivateUserAccount(string status, string strMessage1, string strMessage2 = null)
         {
+            string path = @"\Employee\Employee.txt";
             try
             {
                 //open file
-                FileStream employeeFile = new FileStream("employee.txt", FileMode.Open);
+                FileStream employeeFile = new FileStream(path, FileMode.Open);
                 StreamReader employeeReader = new StreamReader(employeeFile);
                 string employeeRecord = employeeReader.ReadLine();
                 string newcontent = "";
@@ -187,7 +195,7 @@ namespace Group11_Machine_Problem
                 {
                     string[] employeeContent = employeeRecord.Split('|');
 
-                    if (employeeContent[1] == username)
+                    if (employeeContent[1] == Username)
                     {
                         // replace old account status with new status
                         employeeRecord = employeeRecord.Replace(employeeContent[5], status);
@@ -206,7 +214,7 @@ namespace Group11_Machine_Problem
             }
             catch (FileNotFoundException)
             {
-                FileStream employeeFile = new FileStream("employee.txt", FileMode.CreateNew);
+                FileStream employeeFile = new FileStream(path, FileMode.CreateNew);
                 employeeFile.Close();
             }
             catch
@@ -248,7 +256,7 @@ namespace Group11_Machine_Problem
         //all accounts is valid for 3 monthes
         public void ShowUserAccountExpiration()
         {
-            string[] date = dateCreated.Split('/');
+            string[] date = DateCreated.Split('/');
             int month = Convert.ToInt32(date[0]);
             int day = Convert.ToInt32(date[1]); ;
             int year = Convert.ToInt32(date[2]);
@@ -265,11 +273,11 @@ namespace Group11_Machine_Problem
         public void DeleteUserAccount()
         {
             Validation validate = new Validation();
-
+            string path = @"\Employee\Employee.txt";
             try
             {
                 //open file
-                FileStream employeeFile = new FileStream("employee.txt", FileMode.Open);
+                FileStream employeeFile = new FileStream(path, FileMode.Open);
                 StreamReader employeeReader = new StreamReader(employeeFile);
                 string employeeRecord = employeeReader.ReadLine();
                 string newcontent = "";
@@ -277,7 +285,7 @@ namespace Group11_Machine_Problem
                 while (employeeRecord != null)
                 {
                     string[] employeeContent = employeeRecord.Split('|');
-                    if (employeeContent[1] != username)
+                    if (employeeContent[1] != Username)
                         newcontent += employeeRecord + Environment.NewLine;
                     employeeRecord = employeeReader.ReadLine();
                 }
@@ -288,7 +296,7 @@ namespace Group11_Machine_Problem
             }
             catch (FileNotFoundException)
             {
-                FileStream employeeFile = new FileStream("employee.txt", FileMode.CreateNew);
+                FileStream employeeFile = new FileStream(path, FileMode.CreateNew);
                 employeeFile.Close();
             }
             catch
@@ -303,8 +311,7 @@ namespace Group11_Machine_Problem
         //displays menu for user management
         public void ManageUserAccount(string strMessage)
         {
-            string choice = "0";
-
+            string choice;
             do
             {
                 Console.WriteLine("Manager User Management Menu\n");
