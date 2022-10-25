@@ -12,7 +12,7 @@ namespace Group11_Machine_Problem
         public void Main()
         {
 
-           int menu;
+          int menu;
 
             Console.WriteLine("----Main Menu----");
             Console.WriteLine("1. Create Order");
@@ -38,9 +38,9 @@ namespace Group11_Machine_Problem
                 {
                     Console.Clear();
                     Keyboard keyboard = new Keyboard();
-                    StreamWriter moscosoWriter = new StreamWriter("KeyboardProducts");
-                    moscosoWriter.WriteLine(System.DateTime.Now.ToString());
-                    moscosoWriter.Close();
+                    StreamWriter moscosoWriter = new StreamWriter("Products.txt");
+                    DateTime dt = new DateTime();
+                    Console.WriteLine(dt);
                 }
 
 
@@ -49,9 +49,9 @@ namespace Group11_Machine_Problem
                 {
                     Console.Clear();
                     Monitor monitor = new Monitor();
-                    StreamWriter moscosoWriter = new StreamWriter("KeyboardProducts");
-                    moscosoWriter.WriteLine(System.DateTime.Now.ToString());
-                    moscosoWriter.Close();
+                    StreamWriter moscosoWriter = new StreamWriter("Products.txt");
+                    DateTime dt = new DateTime();
+                    Console.WriteLine(dt);
 
                 }
 
@@ -59,25 +59,25 @@ namespace Group11_Machine_Problem
                 {
                     Console.Clear();
                     Mouse mouse = new Mouse();
-                    StreamWriter moscosoWriter = new StreamWriter("KeyboardProducts");
-                    moscosoWriter.WriteLine(System.DateTime.Now.ToString());
-                    moscosoWriter.Close();
+                    StreamWriter moscosoWriter = new StreamWriter("Products.txt");
+                    DateTime dt = new DateTime();
+                    Console.WriteLine(dt);
                 }
 
                 else if (choice == 4)
                 {
                     Console.Clear();
                     Speaker speaker = new Speaker();
-                    StreamWriter moscosoWriter = new StreamWriter("KeyboardProducts");
-                    moscosoWriter.WriteLine(System.DateTime.Now.ToString());
-                    moscosoWriter.Close();
+                    StreamWriter moscosoWriter = new StreamWriter("Products.txt");
+                    DateTime dt = new DateTime();
+                    Console.WriteLine(dt);
                 }
 
                 else if (choice == 5)
                 {
                     Console.Clear();
                     Headphone headphone = new Headphone();
-                    float payment = Convert.ToInt32(Console.ReadLine());
+                    StreamWriter moscosoWriter = new StreamWriter("Products.txt");
                     Console.WriteLine("Thank you for shopping");
                     DateTime dt = new DateTime();
                     Console.WriteLine(dt);
