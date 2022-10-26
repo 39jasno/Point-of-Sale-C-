@@ -13,228 +13,102 @@ namespace Group11_Machine_Problem
         public void Main()
         {
 
-            int qty;
-            double price;
-            FileStream fileStream = File.OpenRead(@".\Inventory\KeyboardData.txt");
+            int menu;
 
-            int keychoice = Convert.ToInt32(Console.ReadLine());
-            if (keychoice == 1)
+            Console.WriteLine("----Main Menu----");
+            Console.WriteLine("1. Create Order");
+            Console.WriteLine("2. Return Order");
+            menu = Convert.ToInt32(Console.ReadLine());
+            Console.Clear();
+            if (menu == 1)
             {
-
-                Console.WriteLine();
-                Console.WriteLine("Enter product Name: ");
-                string productname = Console.ReadLine(); 
-                Console.WriteLine("Enter price: ");
-                price = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("QTY: ");
-                qty = Convert.ToInt32(Console.ReadLine());
-                price *= qty;
                
-                Console.WriteLine("total price of chosen keyboard is: {0:N2} ", productname);
-            }
+                Program mainmenu = new Program();
+                mainmenu.showMenu();
 
-            else if (keychoice == 2)
-            {
-                
-                Console.WriteLine();
-                Console.WriteLine("Enter product Name: ");
-                string productname = Console.ReadLine();
-                Console.WriteLine("Enter price: ");
-                price = Convert.ToDouble(Console.ReadLine());
-                qty = Convert.ToInt32(Console.ReadLine());
-                price *= qty;
-                Console.WriteLine("total price of chosen keyboard is: {0:N2} ", productname);
-            }
+                int choice = Convert.ToInt32(Console.ReadLine());
 
-            else if (keychoice == 3)
-            {
-                Console.WriteLine();
-                Console.WriteLine("Enter product Name: ");
-                string productname = Console.ReadLine();
-                Console.WriteLine("Enter price: ");
-                price = Convert.ToDouble(Console.ReadLine());
-                qty = Convert.ToInt32(Console.ReadLine());
-                price *= qty;
-                Console.WriteLine("total price of chosen keyboard is: {0:N2} ", productname);
-            }
 
+
+
+
+                if (choice == 1)
+                {
+                    Console.WriteLine();
+                    Keyboard keyboard = new Keyboard();
+                    StreamWriter moscosoWriter = new StreamWriter("Products.txt");
+                    DateTime dt = new DateTime();
+                    Console.WriteLine(dt);
+                }
+
+
+
+                else if (choice == 2)
+                {
+                    Console.WriteLine();
+                    Monitor monitor = new Monitor();
+                    StreamWriter moscosoWriter = new StreamWriter("Products.txt");
+                    DateTime dt = new DateTime();
+                    Console.WriteLine(dt);
+
+                }
+
+                else if (choice == 3)
+                {
+                    Console.WriteLine();
+                    Mouse mouse = new Mouse();
+                    StreamWriter moscosoWriter = new StreamWriter("Products.txt");
+                    DateTime dt = new DateTime();
+                    Console.WriteLine(dt);
+                }
+
+                else if (choice == 4)
+                {
+                    Console.WriteLine();
+                    Speaker speaker = new Speaker();
+                    StreamWriter moscosoWriter = new StreamWriter("Products.txt");
+                    DateTime dt = new DateTime();
+                    Console.WriteLine(dt);
+                }
+
+                else if (choice == 5)
+                {
+                    Console.WriteLine();
+                    Headphone headphone = new Headphone();
+                    StreamWriter moscosoWriter = new StreamWriter("Products.txt");
+                    Console.WriteLine("Thank you for shopping");
+                    DateTime dt = new DateTime();
+                    Console.WriteLine(dt);
+                }
+
+                else
+                {
+                    MessageBox.Show("Invalid");
+
+                }
+
+               
+            }
             else
             {
-                MessageBox.Show("Invalid");
+                StreamWriter moscosoWriter = new StreamWriter("Products.txt");
+                moscosoWriter.WriteLine(System.DateTime.Now.ToString());
+                moscosoWriter.Close();
+
             }
+             Console.ReadKey();
 
         }
-    }
-
-    class Monitor
-    {
-        public Monitor()
+        private void showMenu()
         {
-            FileStream fileStream = File.OpenRead(@".\Inventory\MonitorData.txt");
-            int qty;
-            double price;
-
-            int keychoice = Convert.ToInt32(Console.ReadLine());
-            if (keychoice == 1)
-            {
-                Console.WriteLine();
-                Console.WriteLine("Enter product Name: ");
-                string productname = Console.ReadLine();
-                Console.WriteLine("Enter price: ");
-                price = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("QTY: ");
-                qty = Convert.ToInt32(Console.ReadLine());
-                price *= qty;
-                Console.WriteLine("total price of chosen  is: {0:N2} ", productname);
-                
-            }
-
-            else if (keychoice == 2)
-            {
-                Console.WriteLine();
-                Console.WriteLine("Enter product Name: ");
-                string productname = Console.ReadLine();
-                Console.WriteLine("Enter price: ");
-                price = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("QTY: ");
-                qty = Convert.ToInt32(Console.ReadLine());
-                price *= qty;
-                Console.WriteLine("total price of chosen Monitor is: {0:N2} ", productname);
-            }
-
-            else
-            {
-                MessageBox.Show("Invalid");
-            }
-
+            Console.WriteLine("Choose product of your choice");
+            Console.WriteLine("1. Keyboard");
+            Console.WriteLine("2. Monitor");
+            Console.WriteLine("3. Mouse");
+            Console.WriteLine("4. Speaker");
+            Console.WriteLine("5. Headphones");
+            Console.WriteLine("6. Exit");
         }
-    }
-
-    class Mouse
-    {
-        public Mouse()
-        {
-            FileStream fileStream = File.OpenRead(@".\Inventory\MouseData.txt");
-            double price;
-            int qty;
-
-            int keychoice = Convert.ToInt32(Console.ReadLine());
-            if (keychoice == 1)
-            {
-                Console.WriteLine();
-                Console.WriteLine("Enter product Name: ");
-                string productname = Console.ReadLine();
-                Console.WriteLine("Enter price: ");
-                price = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("QTY: ");
-                qty = Convert.ToInt32(Console.ReadLine());
-                price *= qty;
-                Console.WriteLine("total price of chosen Mouse is: {0:N2} ", productname);
-
-                int cont = Convert.ToInt32(Console.ReadLine());
-            }
-
-            else if (keychoice == 2)
-            {
-                Console.WriteLine();
-                Console.WriteLine("Enter product Name: ");
-                string productname = Console.ReadLine();
-                Console.WriteLine("Enter price: ");
-                price = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("QTY: ");
-                qty = Convert.ToInt32(Console.ReadLine());
-                price *= qty;
-                Console.WriteLine("total price of chosen Mouse is: {0:N2} ", productname);
-            }
-
-            else
-            {
-                MessageBox.Show("Invalid");
-            }
-        }
-    }
-
-    class Speaker
-    {
-        public Speaker()
-        {
-            FileStream fileStream = File.OpenRead(@".\Inventory\MouseData.txt");
-            int qty;
-            double price;
-
-            int keychoice = Convert.ToInt32(Console.ReadLine());
-            if (keychoice == 1)
-            {
-                Console.WriteLine();
-                Console.WriteLine("Enter product Name: ");
-                string productname = Console.ReadLine();
-                Console.WriteLine("Enter price: ");
-                price = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("QTY: ");
-                qty = Convert.ToInt32(Console.ReadLine());
-                price *= qty;
-                Console.WriteLine("total price of chosen Speaker is: {0:N2} ", productname);
-            }
-
-            else if (keychoice == 2)
-            {
-
-                Console.WriteLine();
-                Console.WriteLine("Enter product Name: ");
-                string productname = Console.ReadLine();
-                Console.WriteLine("Enter price: ");
-                price = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("QTY: ");
-                qty = Convert.ToInt32(Console.ReadLine());
-                price *= qty;
-                Console.WriteLine("total price of chosen Speaker is: {0:N2} ", productname);
-            }
-
-            else
-            {
-                MessageBox.Show("Invalid");
-            }
-        }
-    }
-
-    class Headphone
-    {
-        public Headphone()
-        {
-            FileStream fileStream = File.OpenRead(@".\Inventory\HeadphonesData.txt");
-            int qty;
-            double price;
-            int keychoice = Convert.ToInt32(Console.ReadLine());
-            if (keychoice == 1)
-            {
-                Console.WriteLine();
-                Console.WriteLine("Enter product Name: ");
-                string productname = Console.ReadLine();
-                Console.WriteLine("Enter price: ");
-                price = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("QTY: ");
-                qty = Convert.ToInt32(Console.ReadLine());
-                price *= qty;
-                Console.WriteLine("total price of chosen Headphone is: {0:N2} ", productname);
-            }
-
-            else if (keychoice == 2)
-            {
-                Console.WriteLine();
-                Console.WriteLine("Enter product Name: ");
-                string productname = Console.ReadLine();
-                Console.WriteLine("Enter price: ");
-                price = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("QTY: ");
-                qty = Convert.ToInt32(Console.ReadLine());
-                price *= qty;
-                Console.WriteLine("total price of chosen Headphone is: {0:N2} ", productname);
-            }
-
-            else
-            {
-                MessageBox.Show("Invalid");
-            }
                 
         }
     }
