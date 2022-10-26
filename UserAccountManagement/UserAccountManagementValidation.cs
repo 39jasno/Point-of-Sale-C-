@@ -107,11 +107,12 @@ namespace Group11_Machine_Problem
         {
             int ID = 999999;
             Checker check = new Checker();
+            string path = @".\Employee\Employee.txt";
 
             try
             {
                 //open file
-                FileStream employeeFile = new FileStream("employee.txt", FileMode.Open);
+                FileStream employeeFile = new FileStream(path, FileMode.Open);
                 StreamReader employeeReader = new StreamReader(employeeFile);
                 string employeeRecord = employeeReader.ReadLine();
                 while (employeeRecord != null)
@@ -125,7 +126,7 @@ namespace Group11_Machine_Problem
             }
             catch (FileNotFoundException)
             {
-                FileStream employeeFile = new FileStream("employee.txt", FileMode.CreateNew);
+                FileStream employeeFile = new FileStream(path, FileMode.CreateNew);
                 employeeFile.Close();
             }
             catch
@@ -141,10 +142,13 @@ namespace Group11_Machine_Problem
         {
             bool doesAccountExist = false;
             Checker check = new Checker();
+            string path = @".\Employee\Employee.txt";
+
             try
             {
+
                 //open file
-                FileStream employeeFile = new FileStream("employee.txt", FileMode.Open);
+                FileStream employeeFile = new FileStream(path, FileMode.Open);
                 StreamReader employeeReader = new StreamReader(employeeFile);
                 string employeeRecord = employeeReader.ReadLine();
                 while (employeeRecord != null)
@@ -163,7 +167,7 @@ namespace Group11_Machine_Problem
             }
             catch (FileNotFoundException)
             {
-                FileStream employeeFile = new FileStream("employee.txt", FileMode.CreateNew);
+                FileStream employeeFile = new FileStream(path, FileMode.CreateNew);
                 employeeFile.Close();
             }
             catch
