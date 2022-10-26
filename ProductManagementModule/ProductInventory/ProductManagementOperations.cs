@@ -33,7 +33,7 @@ namespace Group11_Machine_Problem
             ProductManagementOperations transfer = new ProductManagementOperations();
             Inventory check = new Inventory();
 
-            bool found = check.checkInfo(path);
+            bool found = check.CheckInfo(path);
             if (found == true)
             {
                 string[][] productInfo = transfer.TextArray(path);
@@ -59,7 +59,7 @@ namespace Group11_Machine_Problem
             ProductManagementOperations transfer = new ProductManagementOperations();
             Inventory check = new Inventory();
 
-            bool found = check.checkInfo(path);
+            bool found = check.CheckInfo(path);
             bool searchtrue = false;
 
             Console.Write("Enter Product Code: ");
@@ -96,7 +96,7 @@ namespace Group11_Machine_Problem
         private string[][] TextArray(string path)
         {
             Inventory check = new Inventory();
-            string[][] productInfo = check.transfer(path);
+            string[][] productInfo = check.Transfer(path);
             int counter = 0;
 
             foreach (var line in File.ReadAllLines(path))
@@ -121,7 +121,7 @@ namespace Group11_Machine_Problem
                 Console.Write("Enter Product Code: ");
                 string search = Console.ReadLine();
 
-                bool found = check.checkInfo(path);
+                bool found = check.CheckInfo(path);
                 bool searchtrue = false;
                 if (found == true)
                 {

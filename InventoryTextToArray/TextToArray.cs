@@ -9,7 +9,7 @@ namespace Group11_Machine_Problem.ReportsManagementModule
 {
     public class Inventory
     {
-        public bool checkInfo(string path)
+        public bool CheckInfo(string path)
         {
             try
             {
@@ -33,14 +33,35 @@ namespace Group11_Machine_Problem.ReportsManagementModule
             }
         }
 
-        public string[][] transfer(string path)
+        public string[][] Transfer(string path)
         {
-            bool found = checkInfo(path);
+            bool found = CheckInfo(path);
 
             if (found == true)
             {
                 string[][] array = new string[(File.ReadAllLines(path).Length)][];
                 return array;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public string[][] FromSales()
+        {
+            string path = @".\Order\Sales.txt";
+            bool found = CheckInfo(path);
+            string[] salesInfo;
+            if (found == true)
+            {
+                int counter = 0;
+                foreach (var line in File.ReadAllLines(path))
+                {
+                    salesInfo = line.Split('|');
+                }
+
+
             }
             else
             {

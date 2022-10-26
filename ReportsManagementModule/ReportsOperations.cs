@@ -14,15 +14,18 @@ namespace Group11_Machine_Problem
         {
 
             Console.Clear();
-            Console.WriteLine(message);                                           
+            Console.WriteLine(message);                                
+            
             Inventory check = new Inventory();                                     
             ReportsOperations exit = new ReportsOperations();
 
+            
             string path = @".\Reports\DailySales.txt";
-            bool found = check.checkInfo(path);
+            bool found = check.CheckInfo(path);
+
             if (found == true)
             {
-                string[][] dailySales = check.transfer(path);                          
+                string[][] dailySales = check.Transfer(path);                          
 
                 int counter = 0;
                 foreach (var line in File.ReadLines(path))
@@ -54,10 +57,10 @@ namespace Group11_Machine_Problem
             ReportsOperations exit = new ReportsOperations();
 
             string path = @".\Reports\ProductSold.txt";
-            bool found = check.checkInfo(path);
+            bool found = check.CheckInfo(path);
             if (found == true)
             {
-                string[][] productInv = check.transfer(path);                          
+                string[][] productInv = check.Transfer(path);                          
 
                 int counter = 0;
                 foreach (var line in File.ReadLines(path))
@@ -88,10 +91,10 @@ namespace Group11_Machine_Problem
             ReportsOperations exit = new ReportsOperations();
 
             string path = @".\Reports\ItemReturn.txt";
-            bool found = check.checkInfo(path);
+            bool found = check.CheckInfo(path);
             if (found == true)
             {
-                string[][] returnsInv = check.transfer(path);
+                string[][] returnsInv = check.Transfer(path);
 
                 int counter = 0;
                 foreach (var line in File.ReadLines(path))
