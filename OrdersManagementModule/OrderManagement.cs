@@ -12,13 +12,14 @@ namespace Group11_Machine_Problem
     {
         public void Main()
         {
-            Console.Write("Order management"+
+            Console.Write("Order management\n"+
             "\n1 - Create Order"+
             "\n2 - Return Order"+
             "\n\nInput choice: ");
 
             string menu = Console.ReadLine();
             Console.Clear();
+
             if (menu == "1")
             {
                
@@ -95,7 +96,7 @@ namespace Group11_Machine_Problem
         }
         private void showMenu()
         {
-            Console.Write("Choose product of your choice"+
+            Console.Write("Choose product of your choice\n"+
             "\n1. Keyboard"+
             "\n2. Monitor"+
             "\n3. Mouse"+

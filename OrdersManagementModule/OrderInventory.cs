@@ -15,11 +15,10 @@ namespace Group11_Machine_Problem
             int qty;
             double price;
             FileStream fileStream = File.OpenRead(@".\Inventory\KeyboardData.txt");
-
             string keychoice = Console.ReadLine();
+
             if (keychoice == "1")
             {
-
                 Console.WriteLine();
                 Console.WriteLine("Enter product Name: ");
                 string productname = Console.ReadLine(); 

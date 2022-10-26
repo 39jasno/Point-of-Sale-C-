@@ -19,7 +19,7 @@ namespace Group11_Machine_Problem
             while (choice != "x")
             {
                 reportsMenu.reportsMenu();
-                choice = Console.ReadLine().ToUpper().Trim();
+                choice = Console.ReadLine().Trim();
                 if (choice == "1")
                 {
                     methods.dailySales("Daily sales reports\n");
@@ -34,18 +34,20 @@ namespace Group11_Machine_Problem
                     methods.returns("List of Return Items\n");
 
                 }
-                else if (choice == "X")
+                else if (choice == "4")
                 {
+                    Console.Clear();
                     break;
                 }
             }
         }
         private void reportsMenu()
         {
-            Console.Write("1 - Daily sales reports" +
+            Console.Write("Reports Management\n" +
+                "\n1 - Daily sales reports" +
                 "\n2 - Inventory of Sold Items" +
                 "\n3 - List of Return Items" +
-                "\nX - Exit" +
+                "\n4 - Exit" +
                 "\n\nEnter your choicec: ");
         }
 
