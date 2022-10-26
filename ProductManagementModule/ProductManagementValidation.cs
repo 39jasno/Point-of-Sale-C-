@@ -56,9 +56,6 @@ namespace Group11_Machine_Problem.ProductManagementModule
             return score;
         }
 
-
-
-
         public double DoubleInput(String strmessage)
         {
             double inputDouble; bool boolDouble;
