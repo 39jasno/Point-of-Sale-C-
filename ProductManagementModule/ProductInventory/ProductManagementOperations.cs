@@ -21,13 +21,12 @@ namespace Group11_Machine_Problem
             string name = validate.InputString("\nEnter Product Name: ");
             double price = validate.DoubleInput("\nEnter Product Price: ");
             int stock = validate.NumbersRequired("\nEnter Product Stock: ");
-            //int sold = validate.numbersRequired("\nEnter Product Sold: ");                //sold should not be added. Only update on order information
+
 
             Data write = new Data();
             write.Add(path, code, name, price, stock);
         }
 
-        //Read and Print Product informations
         public void Read(string path)
         {
             Console.Clear();
@@ -54,7 +53,6 @@ namespace Group11_Machine_Problem
             Console.ReadKey();
         }
 
-        //Search and print product informations
         public void Search(string path)
         {
             Console.Clear();
@@ -111,11 +109,8 @@ namespace Group11_Machine_Problem
             return productInfo;
         }
 
-        //Search and update product price
         public class PriceUpdate
         {
-
-            //Search product
             public void Update(string path)
             {
                 Console.Clear();
@@ -168,74 +163,3 @@ namespace Group11_Machine_Problem
         }
     }
 }
-
-/*
-Console.Clear();
-validation codeValidate = new validation();
-int up = codeValidate.numberLengthRequired("Enter code to update Price:", 5);
-string search = Convert.ToString(up);
-
-FileStream paytonStm = new FileStream(path, FileMode.Open);
-StreamReader paytonStmReader = new StreamReader(paytonStm);
-bool found = false;
-string paytonLine = paytonStmReader.ReadLine();
-string[] lineContent = paytonLine.Split('|');
-
-while (paytonLine != null)
-{
-    lineContent = paytonLine.Split('|');
-    if (lineContent[0] == search)
-    {
-        found = true;
-    }
-    else
-    {
-        found = false;
-    }
-    paytonLine = paytonStmReader.ReadLine();
-}
-
-paytonStm.Close();
-paytonStmReader.Close();
-
-if (found)
-{
-    oldPrice = lineContent[2];
-    PUpdate(path);
-}
-else
-{
-    Console.WriteLine("Product doesn't Exist!");
-}
-*/
-
-/*
-//Overwrite data
-private void PUpdate(string path)
-{
-    Console.Clear();
-    validation validate = new validation();
-    Console.WriteLine();
-    double price = validate.doubleInput("Enter Product Price: ");
-    newPrice = Convert.ToString(price);
-
-    FileStream paytonStm = new FileStream(path, FileMode.Open);
-    StreamReader paytonStmReader = new StreamReader(paytonStm);
-    string paytonLine = paytonStmReader.ReadLine();
-    string newContent = "";
-    while (paytonLine != null)
-    {
-        paytonLine = paytonLine.Replace(oldPrice, newPrice);
-        newContent += paytonLine + Environment.NewLine;
-        paytonLine = paytonStmReader.ReadLine();
-    }
-
-    paytonStmReader.Close();
-    paytonStm.Close();
-    Console.WriteLine(newContent);
-    StreamWriter paytonWriter = new StreamWriter(path);
-    paytonWriter.Write(newContent);
-    paytonWriter.Close();
-
-}
-    */

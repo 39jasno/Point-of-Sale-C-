@@ -54,10 +54,3 @@ namespace Group11_Machine_Problem
 
     
 }
-
-/*
-- Daily Sales with grand total
-- Sales with Specific Dates
-- Inventory of Sold Item
-- List of Return Item for specific date
- */

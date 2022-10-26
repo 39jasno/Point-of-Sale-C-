@@ -10,24 +10,24 @@ namespace Group11_Machine_Problem
 {
     class ReportsOperations
     {
-        public void dailySales(string message)                                      //Date | Grand Total
+        public void dailySales(string message)                                    
         {
 
             Console.Clear();
-            Console.WriteLine(message);                                             //Display Daily sales reports.
-            Inventory check = new Inventory();                                      //Initalize Inventory Class.
+            Console.WriteLine(message);                                           
+            Inventory check = new Inventory();                                     
             ReportsOperations exit = new ReportsOperations();
 
             string path = @".\Reports\DailySales.txt";
             bool found = check.checkInfo(path);
             if (found == true)
             {
-                string[][] dailySales = check.transfer(path);                           //Transfer text files into a jagged array.
+                string[][] dailySales = check.transfer(path);                          
 
                 int counter = 0;
                 foreach (var line in File.ReadLines(path))
                 {
-                    string[] info = line.Split('|');                                    //Split the array
+                    string[] info = line.Split('|');                                   
                     dailySales[counter] = new string[2] { info[0], info[1] };
                     counter++;
                 }
@@ -35,7 +35,7 @@ namespace Group11_Machine_Problem
                 string title = String.Format("{0,-10}{1,-10}", "Date", "Grand Total");
                 Console.WriteLine(title);
 
-                for (int i = 0; i < dailySales.Length; i++)                             //Display daily sales
+                for (int i = 0; i < dailySales.Length; i++)                             
                 {
                     string format = String.Format("{0,-10}{1,-10}", dailySales[i][0], dailySales[i][1]);
                     Console.WriteLine(format);
@@ -46,10 +46,10 @@ namespace Group11_Machine_Problem
             
 
         }
-        public void productInventory(string message)                                //Category | Product
+        public void productInventory(string message)                               
         {
             Console.Clear();
-            Console.WriteLine(message);                                             //Inventory of Sold Items
+            Console.WriteLine(message);                                           
             Inventory check = new Inventory();
             ReportsOperations exit = new ReportsOperations();
 
@@ -57,12 +57,12 @@ namespace Group11_Machine_Problem
             bool found = check.checkInfo(path);
             if (found == true)
             {
-                string[][] productInv = check.transfer(path);                           //Transfer text file into a jagged array
+                string[][] productInv = check.transfer(path);                          
 
                 int counter = 0;
                 foreach (var line in File.ReadLines(path))
                 {
-                    string[] info = line.Split('|');                                    //Split into two and puting its elements into the array
+                    string[] info = line.Split('|');                                    
                     productInv[counter] = new string[2] { info[0], info[1] };
                     counter++;
                 }
@@ -70,7 +70,7 @@ namespace Group11_Machine_Problem
                 string title = String.Format("{0,-10}{1,-10}", "Category", "Product");
                 Console.WriteLine(title);
 
-                for (int i = 0; i < productInv.Length; i++)                             //Display product inventory
+                for (int i = 0; i < productInv.Length; i++)               
                 {
                     string format = String.Format("{0,-10}{1,-10}", productInv[i][0], productInv[i][1]);
                     Console.WriteLine(format);
@@ -80,7 +80,7 @@ namespace Group11_Machine_Problem
             }
 
         }
-        public void returns(string message)                                         //Return Date | Category | Product
+        public void returns(string message)                                  
         {
             Console.Clear();
             Console.WriteLine(message);
