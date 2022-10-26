@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 
 namespace Group11_Machine_Problem
 {
@@ -12,9 +12,9 @@ namespace Group11_Machine_Problem
     {
         public void Main()
         {
-            Console.Write("Order management\n"+
-            "\n1 - Create Order"+
-            "\n2 - Return Order"+
+            Console.Write("Order management\n" +
+            "\n1 - Create Order" +
+            "\n2 - Return Order" +
             "\n\nInput choice: ");
 
             string menu = Console.ReadLine();
@@ -22,7 +22,7 @@ namespace Group11_Machine_Problem
 
             if (menu == "1")
             {
-               
+
                 OrderManage mainmenu = new OrderManage();
                 mainmenu.showMenu();
                 int choice = Convert.ToInt32(Console.ReadLine());
@@ -82,7 +82,7 @@ namespace Group11_Machine_Problem
 
                 }
 
-               
+
             }
             else
             {
@@ -91,21 +91,21 @@ namespace Group11_Machine_Problem
                 moscosoWriter.Close();
 
             }
-             Console.ReadKey();
+            Console.ReadKey();
 
         }
         private void showMenu()
         {
-            Console.Write("Choose product of your choice\n"+
-            "\n1. Keyboard"+
-            "\n2. Monitor"+
-            "\n3. Mouse"+
-            "\n4. Speaker"+
-            "\n5. Headphones"+
-            "\n6. Exit"+
+            Console.Write("Choose product of your choice\n" +
+            "\n1. Keyboard" +
+            "\n2. Monitor" +
+            "\n3. Mouse" +
+            "\n4. Speaker" +
+            "\n5. Headphones" +
+            "\n6. Exit" +
             "\n\nInput choice: ");
         }
-                
-        }
+
     }
+}
 
