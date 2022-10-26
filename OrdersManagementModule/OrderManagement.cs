@@ -32,9 +32,6 @@ namespace Group11_Machine_Problem
                 int choice = Convert.ToInt32(Console.ReadLine());
 
 
-
-
-
                 if (choice == 1)
                 {
                     Console.WriteLine();
