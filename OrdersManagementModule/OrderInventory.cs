@@ -1,9 +1,10 @@
-﻿/*using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Group11_Machine_Problem
 {
@@ -11,12 +12,12 @@ namespace Group11_Machine_Problem
     {
         public Keyboard()
         {
-           int qty;
+            int qty;
             double price;
             FileStream fileStream = File.OpenRead(@".\Inventory\KeyboardData.txt");
 
-            int keychoice = Convert.ToInt32(Console.ReadLine());
-            if (keychoice == 1)
+            string keychoice = Console.ReadLine();
+            if (keychoice == "1")
             {
 
                 Console.WriteLine();
@@ -31,7 +32,7 @@ namespace Group11_Machine_Problem
                 Console.WriteLine("total price of chosen keyboard is: {0:N2} ", productname);
             }
 
-            else if (keychoice == 2)
+            else if (keychoice == "2")
             {
                 
                 Console.WriteLine();
@@ -44,7 +45,7 @@ namespace Group11_Machine_Problem
                 Console.WriteLine("total price of chosen keyboard is: {0:N2} ", productname);
             }
 
-            else if (keychoice == 3)
+            else if (keychoice == "3")
             {
                 Console.WriteLine();
                 Console.WriteLine("Enter product Name: ");
@@ -235,4 +236,4 @@ namespace Group11_Machine_Problem
             }
         }
     }
-}*/
+}

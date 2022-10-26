@@ -47,26 +47,5 @@ namespace Group11_Machine_Problem.ReportsManagementModule
                 return null;
             }
         }
-
-        public string[][] FromSales()
-        {
-            string path = @".\Order\Sales.txt";
-            bool found = CheckInfo(path);
-            string[] salesInfo;
-            if (found == true)
-            {
-                int counter = 0;
-                foreach (var line in File.ReadAllLines(path))
-                {
-                    salesInfo = line.Split('|');
-                }
-
-
-            }
-            else
-            {
-                return null;
-            }
-        }
     }
 }

@@ -12,25 +12,19 @@ namespace Group11_Machine_Problem
     {
         public void Main()
         {
+            Console.Write("Order management"+
+            "\n1 - Create Order"+
+            "\n2 - Return Order"+
+            "\n\nInput choice: ");
 
-            int menu;
-
-            Console.WriteLine("----Main Menu----");
-            Console.WriteLine("1. Create Order");
-            Console.WriteLine("2. Return Order");
-            menu = Convert.ToInt32(Console.ReadLine());
+            string menu = Console.ReadLine();
             Console.Clear();
-            if (menu == 1)
+            if (menu == "1")
             {
                
-                Program mainmenu = new Program();
+                OrderManage mainmenu = new OrderManage();
                 mainmenu.showMenu();
-
                 int choice = Convert.ToInt32(Console.ReadLine());
-
-
-
-
 
                 if (choice == 1)
                 {
@@ -101,15 +95,16 @@ namespace Group11_Machine_Problem
         }
         private void showMenu()
         {
-            Console.WriteLine("Choose product of your choice");
-            Console.WriteLine("1. Keyboard");
-            Console.WriteLine("2. Monitor");
-            Console.WriteLine("3. Mouse");
-            Console.WriteLine("4. Speaker");
-            Console.WriteLine("5. Headphones");
-            Console.WriteLine("6. Exit");
+            Console.Write("Choose product of your choice"+
+            "\n1. Keyboard"+
+            "\n2. Monitor"+
+            "\n3. Mouse"+
+            "\n4. Speaker"+
+            "\n5. Headphones"+
+            "\n6. Exit"+
+            "\n\nInput choice: ");
         }
                 
         }
     }
-}
+
