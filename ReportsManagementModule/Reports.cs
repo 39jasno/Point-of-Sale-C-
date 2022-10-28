@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-
+using Group11_Machine_Problem.ReportsManagementModule;
 
 namespace Group11_Machine_Problem
 {
@@ -14,10 +14,12 @@ namespace Group11_Machine_Problem
         {
             Reports reportsMenu = new Reports();
             ReportsOperations methods = new ReportsOperations();
+            InitializeSales init = new InitializeSales();
 
             string choice = "";
             while (choice != "x")
             {
+                init.Initialize();
                 reportsMenu.reportsMenu();
                 choice = Console.ReadLine().Trim();
                 if (choice == "1")

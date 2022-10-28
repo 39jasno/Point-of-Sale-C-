@@ -14,6 +14,7 @@ namespace Group11_Machine_Problem.FileCheck
             try
             {
                 FileStream salesReport = File.OpenRead(path);
+                salesReport.Close();
                 return true;
             }
             catch (UnauthorizedAccessException)

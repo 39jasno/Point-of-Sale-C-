@@ -19,8 +19,7 @@ namespace Group11_Machine_Problem
             Inventory check = new Inventory();                                     
             ReportsOperations exit = new ReportsOperations();
 
-            
-            string path = "DailySales.txt";
+            string path = "dailySales.txt";
             bool found = check.CheckInfo(path);
 
             if (found == true)
@@ -35,7 +34,7 @@ namespace Group11_Machine_Problem
                     counter++;
                 }
 
-                string title = String.Format("{0,-10}{1,-10}", "Date", "Grand Total");
+                string title = String.Format("{0,-10}{1,-10}\n", "Date", "Grand Total");
                 Console.WriteLine(title);
 
                 for (int i = 0; i < dailySales.Length; i++)                             
@@ -56,7 +55,7 @@ namespace Group11_Machine_Problem
             Inventory check = new Inventory();
             ReportsOperations exit = new ReportsOperations();
 
-            string path = "ProductSold.txt";
+            string path = "productSales.txt";
             bool found = check.CheckInfo(path);
             if (found == true)
             {
@@ -70,7 +69,7 @@ namespace Group11_Machine_Problem
                     counter++;
                 }
 
-                string title = String.Format("{0,-10}{1,-10}", "Category", "Product");
+                string title = String.Format("{0,-10}{1,-10}\n", "Category", "Product");
                 Console.WriteLine(title);
 
                 for (int i = 0; i < productInv.Length; i++)               
