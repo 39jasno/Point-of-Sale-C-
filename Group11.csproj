@@ -54,6 +54,7 @@
     <Compile Include="ProductManagementModule\ProductManagement.cs" />
     <Compile Include="ProductManagementModule\ProductManagementValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportsManagementModule\InitializeSales.cs" />
     <Compile Include="ReportsManagementModule\Reports.cs" />
     <Compile Include="ReportsManagementModule\ReportsOperations.cs" />
     <Compile Include="UserAccountManagement\TypesOfUser\Cashier.cs" />
