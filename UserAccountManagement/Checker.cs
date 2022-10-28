@@ -93,7 +93,7 @@ namespace Group11_Machine_Problem
         //chceks if usernames if in textfile
         public bool UsernameChecker()
         {
-            string path = @".\Employee\Employee.txt";
+            string path = "Employee.txt";
 
             bool isUsernameFound = false;
             try
@@ -187,7 +187,7 @@ namespace Group11_Machine_Problem
         //checks if file is empty
         public bool IsFileEmpty()
         {
-            string path = @".\Employee\Employee.txt";
+            string path = "Employee.txt";
             bool IsFileEmpty = false;
             try
             {

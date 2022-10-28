@@ -55,35 +55,35 @@ namespace Group11_Machine_Problem
 
                         if (AmenuChoice.Trim() == "1")
                         {
-                            product.Write(@".\Inventory\KeyboardData.txt");
+                            product.Write("KeyboardData.txt");
                             Console.WriteLine("Data successfully inputted");
 
                         }
 
                         else if (AmenuChoice.Trim() == "2")
                         {
-                            product.Write(@".\Inventory\MouseData.txt");
+                            product.Write("MouseData.txt");
                             Console.WriteLine("Data successfully inputted");
 
                         }
 
                         else if (AmenuChoice.Trim() == "3")
                         {
-                            product.Write(@".\Inventory\MonitorData.txt");
+                            product.Write("MonitorData.txt");
                             Console.WriteLine("Data successfully inputted");
 
                         }
 
                         else if (AmenuChoice.Trim() == "4")
                         {
-                            product.Write(@".\Inventory\SpeakersData.txt");
+                            product.Write("SpeakersData.txt");
                             Console.WriteLine("Data successfully inputted");
 
                         }
 
                         else if (AmenuChoice.Trim() == "5")
                         {
-                            product.Write(@".\Inventory\HeadphonesData.txt");
+                            product.Write("HeadphonesData.txt");
                             Console.WriteLine("Data successfully inputted");
 
                         }
@@ -126,31 +126,31 @@ namespace Group11_Machine_Problem
 
                         if (BmenuChoice.Trim() == "1")
                         {
-                            product.Read(@".\Inventory\KeyboardData.txt");
+                            product.Read("KeyboardData.txt");
 
                         }
 
                         else if (BmenuChoice.Trim() == "2")
                         {
-                            product.Read(@".\Inventory\MouseData.txt");
+                            product.Read("MouseData.txt");
 
                         }
 
                         else if (BmenuChoice.Trim() == "3")
                         {
-                            product.Read(@".\Inventory\MonitorData.txt");
+                            product.Read("MonitorData.txt");
 
                         }
 
                         else if (BmenuChoice.Trim() == "4")
                         {
-                            product.Read(@".\Inventory\SpeakersData.txt");
+                            product.Read("SpeakersData.txt");
 
                         }
 
                         else if (BmenuChoice.Trim() == "5")
                         {
-                            product.Read(@".\Inventory\HeadphonesData.txt");
+                            product.Read("HeadphonesData.txt");
 
                         }
 
@@ -191,31 +191,31 @@ namespace Group11_Machine_Problem
 
                         if (CmenuChoice.Trim() == "1")
                         {
-                            update.Update(@".\Inventory\KeyboardData.txt");
+                            update.Update("KeyboardData.txt");
 
                         }
 
                         else if (CmenuChoice.Trim() == "2")
                         {
-                            update.Update(@".\Inventory\MouseData.txt");
+                            update.Update("MouseData.txt");
 
                         }
 
                         else if (CmenuChoice.Trim() == "3")
                         {
-                            update.Update(@".\Inventory\MonitorData.txt");
+                            update.Update("MonitorData.txt");
 
                         }
 
                         else if (CmenuChoice.Trim() == "4")
                         {
-                            update.Update(@".\Inventory\SpeakersData.txt");
+                            update.Update("SpeakersData.txt");
 
                         }
 
                         else if (CmenuChoice.Trim() == "5")
                         {
-                            update.Update(@".\Inventory\HeadphonesData.txt");
+                            update.Update("HeadphonesData.txt");
 
                         }
 
@@ -257,31 +257,31 @@ namespace Group11_Machine_Problem
 
                             if (DmenuChoice.Trim() == "1")
                             {
-                                product.Search(@".\Inventory\KeyboardData.txt");
+                                product.Search("KeyboardData.txt");
 
                             }
 
                             else if (DmenuChoice.Trim() == "2")
                             {
-                                product.Search(@".\Inventory\MouseData.txt");
+                                product.Search("MouseData.txt");
 
                             }
 
                             else if (DmenuChoice.Trim() == "3")
                             {
-                                product.Search(@".\Inventory\MonitorData.txt");
+                                product.Search("MonitorData.txt");
 
                             }
 
                             else if (DmenuChoice.Trim() == "4")
                             {
-                                product.Search(@".\Inventory\SpeakersData.txt");
+                                product.Search("SpeakersData.txt");
 
                             }
 
                             else if (DmenuChoice.Trim() == "5")
                             {
-                                product.Search(@".\Inventory\HeadphonesData.txt");
+                                product.Search("HeadphonesData.txt");
 
                             }
                             else if (DmenuChoice.ToUpper() == "6")

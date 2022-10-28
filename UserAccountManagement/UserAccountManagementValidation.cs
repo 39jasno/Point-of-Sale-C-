@@ -107,7 +107,7 @@ namespace Group11_Machine_Problem
         {
             int ID = 999999;
             Checker check = new Checker();
-            string path = @".\Employee\Employee.txt";
+            string path = "Employee.txt";
 
             try
             {
@@ -142,7 +142,7 @@ namespace Group11_Machine_Problem
         {
             bool doesAccountExist = false;
             Checker check = new Checker();
-            string path = @".\Employee\Employee.txt";
+            string path = "Employee.txt";
 
             try
             {
@@ -196,5 +196,3 @@ namespace Group11_Machine_Problem
         }
     }
 }
-
-
