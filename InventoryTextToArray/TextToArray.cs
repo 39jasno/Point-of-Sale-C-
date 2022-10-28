@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace Group11_Machine_Problem.ReportsManagementModule
+namespace Group11_Machine_Problem.FileCheck
 {
     public class Inventory
     {

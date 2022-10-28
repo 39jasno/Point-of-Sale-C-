@@ -30,6 +30,7 @@ namespace Group11_Machine_Problem
                     Reports initReport = new Reports();
                     ProdManage initProd = new ProdManage();
                     OrderManage initOrder = new OrderManage();
+                    OMM hehe = new OMM();
 
                     Console.WriteLine("Manager Menu");
                     Console.WriteLine("\n 1 - Product Management " +
