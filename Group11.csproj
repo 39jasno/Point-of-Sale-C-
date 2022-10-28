@@ -64,22 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="bin\Debug\Group11_Machine_Problem.exe.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="bin\Debug\Employee\Employee.txt" />
-    <Content Include="bin\Debug\Group11_Machine_Problem.exe" />
-    <Content Include="bin\Debug\Group11_Machine_Problem.pdb" />
-    <Content Include="bin\Debug\Inventory\KeyboardData.txt" />
-    <Content Include="bin\Debug\Inventory\MouseData.txt" />
-    <Content Include="bin\Debug\Order\Sales.txt" />
-    <Content Include="bin\Debug\Products.txt" />
-    <Content Include="bin\Debug\Reports\DailySales.txt" />
-    <Content Include="bin\Debug\Reports\ItemReturn.txt" />
-    <Content Include="bin\Debug\Reports\ProductSold.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\Release\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
