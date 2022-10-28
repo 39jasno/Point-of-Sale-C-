@@ -47,7 +47,6 @@
   <ItemGroup>
     <Compile Include="Display.cs" />
     <Compile Include="InventoryTextToArray\TextToArray.cs" />
-    <Compile Include="OMM\OMM.cs" />
     <Compile Include="OrdersManagementModule\OrderInventory.cs" />
     <Compile Include="OrdersManagementModule\OrderManagement.cs" />
     <Compile Include="PoS.cs" />
