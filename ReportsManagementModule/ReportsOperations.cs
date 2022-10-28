@@ -20,7 +20,7 @@ namespace Group11_Machine_Problem
             ReportsOperations exit = new ReportsOperations();
 
             
-            string path = @".\Reports\DailySales.txt";
+            string path = "DailySales.txt";
             bool found = check.CheckInfo(path);
 
             if (found == true)
@@ -56,7 +56,7 @@ namespace Group11_Machine_Problem
             Inventory check = new Inventory();
             ReportsOperations exit = new ReportsOperations();
 
-            string path = @".\Reports\ProductSold.txt";
+            string path = "ProductSold.txt";
             bool found = check.CheckInfo(path);
             if (found == true)
             {
@@ -90,7 +90,7 @@ namespace Group11_Machine_Problem
             Inventory check = new Inventory();
             ReportsOperations exit = new ReportsOperations();
 
-            string path = @".\Reports\ItemReturn.txt";
+            string path = "ItemReturn.txt";
             bool found = check.CheckInfo(path);
             if (found == true)
             {
