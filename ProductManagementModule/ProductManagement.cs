@@ -174,7 +174,7 @@ namespace Group11_Machine_Problem
                 else if (menuChoice.Trim() == "3")
                 {
                     string CmenuChoice;
-                    ProductManagementOperations.PriceUpdate update = new ProductManagementOperations.PriceUpdate();
+                    ProductManagementOperations.keyboardPriceUpdate update = new ProductManagementOperations.keyboardPriceUpdate();
                     do
                     {
                         Console.Clear();
@@ -191,31 +191,31 @@ namespace Group11_Machine_Problem
 
                         if (CmenuChoice.Trim() == "1")
                         {
-                            update.Update("KeyboardData.txt");
+                            update.FindUpdate("KeyboardData.txt");
 
                         }
 
                         else if (CmenuChoice.Trim() == "2")
                         {
-                            update.Update("MouseData.txt");
+                            update.FindUpdate("MouseData.txt");
 
                         }
 
                         else if (CmenuChoice.Trim() == "3")
                         {
-                            update.Update("MonitorData.txt");
+                            update.FindUpdate("MonitorData.txt");
 
                         }
 
                         else if (CmenuChoice.Trim() == "4")
                         {
-                            update.Update("SpeakersData.txt");
+                            update.FindUpdate("SpeakersData.txt");
 
                         }
 
                         else if (CmenuChoice.Trim() == "5")
                         {
-                            update.Update("HeadphonesData.txt");
+                            update.FindUpdate("HeadphonesData.txt");
 
                         }
 

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using Group11_Machine_Problem.ProductManagementModule;
 using Group11_Machine_Problem.FileCheck;
 
 namespace Group11_Machine_Problem
@@ -15,7 +14,7 @@ namespace Group11_Machine_Problem
         {
             Console.Clear();
             Inventory check = new Inventory();
-            ProductManagementModule.Validation validate = new ProductManagementModule.Validation();
+            ProductValidation validate = new ProductValidation();
             Console.WriteLine("Add product\n");
             int code = validate.NumberLengthRequired("Enter Product ID: ", 5);
             string name = validate.InputString("\nEnter Product Name: ");
@@ -108,9 +107,88 @@ namespace Group11_Machine_Problem
             }
             return productInfo;
         }
-
-        public class PriceUpdate
+        public class keyboardPriceUpdate
         {
+            private static string oldPrice;
+            private static string newPrice;
+
+            //Search for the ID to update
+            public void FindUpdate(string path)
+            {
+                ProductValidation codeValidate = new ProductValidation();
+                int keybUp = codeValidate.NumberLengthRequired("Enter code to update Price:", 5);
+                string searchKeyb = Convert.ToString(keybUp);
+
+                FileStream paytonStm = new FileStream(path, FileMode.Open);
+                StreamReader paytonStmReader = new StreamReader(paytonStm);
+                bool found = false;
+                string paytonLine = paytonStmReader.ReadLine();
+                string[] lineContent = paytonLine.Split('|');
+
+                while (paytonLine != null)
+                {
+                    lineContent = paytonLine.Split('|');
+                    if (lineContent[0] == searchKeyb)
+                    {
+                        found = true;
+                        break;
+                    }
+                    else
+                    {
+                        found = false;
+                    }
+                    paytonLine = paytonStmReader.ReadLine();
+                }
+
+                paytonStm.Close();
+                paytonStmReader.Close();
+
+                if (found)
+                {
+                    oldPrice = lineContent[2];
+                    PUpdate(path);
+                }
+                else
+                {
+                    Console.WriteLine("Product doesn't Exist!");
+                }
+                Console.ReadKey();
+            }
+
+
+            //Overwrite Price data
+            private void PUpdate(string path)
+            {
+
+                ProductValidation keybValidate = new ProductValidation();
+                Console.WriteLine();
+                double newKeybPrice = keybValidate.DoubleInput("Enter Product Price: ");
+                newPrice = Convert.ToString(newKeybPrice);
+
+                FileStream paytonStm = new FileStream(path, FileMode.Open);
+                StreamReader paytonStmReader = new StreamReader(paytonStm);
+                string paytonLine = paytonStmReader.ReadLine();
+                string newContent = "";
+                while (paytonLine != null)
+                {
+                    paytonLine = paytonLine.Replace(oldPrice, newPrice);
+                    newContent += paytonLine + Environment.NewLine;
+                    paytonLine = paytonStmReader.ReadLine();
+                }
+
+                paytonStmReader.Close();
+                paytonStm.Close();
+                Console.WriteLine(newContent);
+                StreamWriter paytonWriter = new StreamWriter("KeyboardData.txt");
+                paytonWriter.Write(newContent);
+                paytonWriter.Close();
+
+            }
+        }
+        /*
+            public class PriceUpdate
+        {
+            
             public void Update(string path)
             {
                 Console.Clear();
@@ -147,7 +225,7 @@ namespace Group11_Machine_Problem
                 Console.ReadKey();
 
             }
-        }
+        */
         class Data
         {
             public void Add(string path,int code, string name, double price, int stock)
@@ -163,3 +241,81 @@ namespace Group11_Machine_Problem
         }
     }
 }
+/*
+ * public class keyboardPriceUpdate
+        {
+            private static string oldPrice;
+            private static string newPrice;
+            
+            //Search for the ID to update
+            public void keybFindUpdate()
+            {
+                validation codeValidate = new validation();
+                int keybUp = codeValidate.numberLengthRequired("Enter code to update Price:", 1,5);
+                string searchKeyb = Convert.ToString(keybUp);
+
+                FileStream paytonStm = new FileStream(path, FileMode.Open);
+                StreamReader paytonStmReader = new StreamReader(paytonStm);
+                bool found = false;
+                string paytonLine = paytonStmReader.ReadLine();
+                string[] keyboardLineContent = paytonLine.Split('|');
+
+                while (paytonLine != null)
+                {
+                    keyboardLineContent = paytonLine.Split('|');
+                    if (keyboardLineContent[0] == searchKeyb)
+                    {
+                        found = true;
+                    }
+                    else
+                    {
+                        found = false;
+                    }
+                    paytonLine = paytonStmReader.ReadLine();
+                }
+
+                paytonStm.Close();
+                paytonStmReader.Close();
+
+                if (found)
+                {
+                    oldPrice = keyboardLineContent[2];
+                    keybPUpdate();
+                }
+                else
+                {
+                    Console.WriteLine("Product doesn't Exist!");
+                }
+
+            }
+
+            //Overwrite Price data
+            private void keybPUpdate()
+            {
+
+                validation keybValidate = new validation();
+                Console.WriteLine();
+                double newKeybPrice = keybValidate.doubleInput("Enter Product Price: ");
+                newPrice = Convert.ToString(newKeybPrice);
+
+                FileStream paytonStm = new FileStream(path, FileMode.Open);
+                StreamReader paytonStmReader = new StreamReader(paytonStm);
+                string paytonLine = paytonStmReader.ReadLine();
+                string newContent = "";
+                while (paytonLine != null)
+                {
+                    paytonLine = paytonLine.Replace(oldPrice, newPrice);
+                    newContent += paytonLine + Environment.NewLine;
+                    paytonLine = paytonStmReader.ReadLine();
+                }
+
+                paytonStmReader.Close();
+                paytonStm.Close();
+                Console.WriteLine(newContent);
+                StreamWriter paytonWriter = new StreamWriter("KeyboardData.txt");
+                paytonWriter.Write(newContent);
+                paytonWriter.Close();
+
+            }
+        }
+*/

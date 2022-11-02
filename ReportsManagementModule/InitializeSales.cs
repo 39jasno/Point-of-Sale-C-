@@ -32,6 +32,7 @@ namespace Group11_Machine_Problem.ReportsManagementModule
             foreach (var line in File.ReadLines(path))
             {
                 string[] info = line.Split('|');
+
                 dailySales[counter] = new string[2] { info[4], info[5] };
                 counter++;
             }

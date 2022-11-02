@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Group11_Machine_Problem.ProductManagementModule
+namespace Group11_Machine_Problem
 {
-    class Validation
+    class ProductValidation
     {
         public string InputString(string message)
         {
