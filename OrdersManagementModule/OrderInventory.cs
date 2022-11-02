@@ -14,86 +14,31 @@ namespace Group11_Machine_Problem
         {
             int qty;
             double price;
-            FileStream fileStream = File.OpenRead(@".\Inventory\KeyboardData.txt");
+            FileStream fileStream = File.OpenRead("KeyboardData.txt");
+            Console.WriteLine(fileStream);
 
-            int keychoice = Convert.ToInt32(Console.ReadLine());
-            if (keychoice == 1)
-            {
-                string file = (@".\Inventory\Sales.txt");
-                var inputfile = @".\Inventory\KeyboardData.txt";
+                string file = ("Sales.txt");
+                var inputfile = "KeyboardData.txt";
                 string[] output = File.ReadAllLines(inputfile, Encoding.UTF8);
                 foreach (string op in output)
                 {
                     Console.WriteLine(op);
                 }
                 Console.WriteLine();
-                Console.WriteLine("Enter Keyboard product:");
-                string product = Console.ReadLine();
-                Console.WriteLine("Enter price: ");
+                Console.WriteLine("Enter product: ");
+            string product = Console.ReadLine();
+            Console.WriteLine("Enter price: ");
                 price = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("QTY: ");
                 qty = Convert.ToInt32(Console.ReadLine());
                 price *= qty;
                 string categ = "Keyboard";
                 File.WriteAllText(file, categ);
-                File.WriteAllText(file, product);
                 File.WriteAllText(file, Convert.ToString(qty));
                 File.WriteAllText(file, Convert.ToString(price));
-                Console.WriteLine("total price of chosen keyboard is: {0:N2} ", file);
-            }
+                Console.WriteLine("total price of chosen keyboard is: {0:N2} ", price);
+            Console.WriteLine("total quantity: {0:N2} ", qty);
 
-            else if (keychoice == 2)
-            {
-                string file = (@".\Inventory\Sales.txt");
-                var inputfile = @".\Inventory\KeyboardData.txt";
-                string[] output = File.ReadAllLines(inputfile, Encoding.UTF8);
-                foreach (string op in output)
-                {
-                    Console.WriteLine(op);
-                }
-                Console.WriteLine();
-                Console.WriteLine("Enter Keyboard product:");
-                string product = Console.ReadLine();
-                Console.WriteLine("Enter price: ");
-                price = Convert.ToDouble(Console.ReadLine());
-                qty = Convert.ToInt32(Console.ReadLine());
-                price *= qty;
-                string categ = "Keyboard";
-                File.WriteAllText(file, categ);
-                File.WriteAllText(file, product);
-                File.WriteAllText(file, Convert.ToString(qty));
-                File.WriteAllText(file, Convert.ToString(price));
-                Console.WriteLine("total price of chosen keyboard is: {0:N2} ", file);
-            }
-
-            else if (keychoice == 3)
-            {
-                string file = (@".\Inventory\Sales.txt");
-                var inputfile = @".\Inventory\KeyboardData.txt";
-                string[] output = File.ReadAllLines(inputfile, Encoding.UTF8);
-                foreach (string op in output)
-                {
-                    Console.WriteLine(op);
-                }
-                Console.WriteLine();
-                Console.WriteLine("Enter Keyboard product:");
-                string product = Console.ReadLine();
-                Console.WriteLine("Enter price: ");
-                price = Convert.ToDouble(Console.ReadLine());
-                qty = Convert.ToInt32(Console.ReadLine());
-                price *= qty;
-                string categ = "Keyboard";
-                File.WriteAllText(file, categ);
-                File.WriteAllText(file, product);
-                File.WriteAllText(file, Convert.ToString(qty));
-                File.WriteAllText(file, Convert.ToString(price));
-                Console.WriteLine("total price of chosen keyboard is: {0:N2} ", file);
-            }
-
-            else
-            {
-                MessageBox.Show("Invalid");
-            }
 
         }
     }
@@ -102,66 +47,33 @@ namespace Group11_Machine_Problem
     {
         public Monitor()
         {
-            FileStream fileStream = File.OpenRead(@".\Inventory\MonitorData.txt");
+            FileStream fileStream = File.OpenRead("MonitorData.txt");
+            Console.WriteLine(fileStream);
             int qty;
             double price;
 
-            int keychoice = Convert.ToInt32(Console.ReadLine());
-            if (keychoice == 1)
-            {
-                string file = (@".\Inventory\Sales.txt");
-                var inputfile = @".\Inventory\MonitorData.txt";
+                string file = ("Sales.txt");
+                var inputfile = "MonitorData.txt";
                 string[] output = File.ReadAllLines(inputfile, Encoding.UTF8);
                 foreach (string op in output)
                 {
                     Console.WriteLine(op);
                 }
                 Console.WriteLine();
-                Console.WriteLine("Enter Monitor product:");
-                string product = Console.ReadLine();
-                Console.WriteLine("Enter price: ");
+            Console.WriteLine("Enter product: ");
+            string product = Console.ReadLine();
+            Console.WriteLine("Enter price: ");
                 price = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("QTY: ");
                 qty = Convert.ToInt32(Console.ReadLine());
                 price *= qty;
                 string categ = "Monitor";
                 File.WriteAllText(file, categ);
-                File.WriteAllText(file, product);
                 File.WriteAllText(file, Convert.ToString(qty));
                 File.WriteAllText(file, Convert.ToString(price));
-                Console.WriteLine("total price of chosen  is: {0:N2} ", file);
-                
-            }
+            Console.WriteLine("total price of chosen keyboard is: {0:N2} ", price);
 
-            else if (keychoice == 2)
-            {
-                string file = (@".\Inventory\Sales.txt");
-                var inputfile = @".\Inventory\MonitorData.txt";
-                string[] output = File.ReadAllLines(inputfile, Encoding.UTF8);
-                foreach (string op in output)
-                {
-                    Console.WriteLine(op);
-                }
-                Console.WriteLine();
-                Console.WriteLine("Enter Monitor product:");
-                string product = Console.ReadLine();
-                Console.WriteLine("Enter price: ");
-                price = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("QTY: ");
-                qty = Convert.ToInt32(Console.ReadLine());
-                price *= qty;
-                string categ = "Monitor";
-                File.WriteAllText(file, categ);
-                File.WriteAllText(file, product);
-                File.WriteAllText(file, Convert.ToString(qty));
-                File.WriteAllText(file, Convert.ToString(price));
-                Console.WriteLine("total price of chosen Monitor is: {0:N2} ", file);
-            }
 
-            else
-            {
-                MessageBox.Show("Invalid");
-            }
 
         }
     }
@@ -170,68 +82,33 @@ namespace Group11_Machine_Problem
     {
         public Mouse()
         {
-            System.IO.File.ReadAllLines(@".\Inventory\KeyboardData.txt");
-            FileStream fileStream = File.OpenRead(@".\Inventory\MouseData.txt");
+            FileStream fileStream = File.OpenRead("MouseData.txt");
+            Console.WriteLine(fileStream);
             double price;
             int qty;
-
-            int keychoice = Convert.ToInt32(Console.ReadLine());
-            if (keychoice == 1)
-            {
-                string file = (@".\Inventory\Sales.txt");
-                var inputfile = @".\Inventory\MouseData.txt";
+            
+                string file = ("Sales.txt");
+                var inputfile = "MouseData.txt";
                 string[] output = File.ReadAllLines(inputfile, Encoding.UTF8);
                 foreach (string op in output)
                 {
                     Console.WriteLine(op);
                 }
                 Console.WriteLine();
-                Console.WriteLine("Enter Mouse product:");
-                string product = Console.ReadLine();
-                Console.WriteLine("Enter price: ");
+            Console.WriteLine("Enter product: ");
+            string product = Console.ReadLine();
+            Console.WriteLine("Enter price: ");
                 price = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("QTY: ");
                 qty = Convert.ToInt32(Console.ReadLine());
                 price *= qty;
                 string categ = "Mouse";
                 File.WriteAllText(file, categ);
-                File.WriteAllText(file, product);
                 File.WriteAllText(file, Convert.ToString(qty));
                 File.WriteAllText(file, Convert.ToString(price));
-                Console.WriteLine("total price of chosen Mouse is: {0:N2} ", file);
+            Console.WriteLine("total price of chosen keyboard is: {0:N2} ", price);
 
-                int cont = Convert.ToInt32(Console.ReadLine());
-            }
-
-            else if (keychoice == 2)
-            {
-                string file = (@".\Inventory\Sales.txt");
-                var inputfile = @".\Inventory\MouseData.txt";
-                string[] output = File.ReadAllLines(inputfile, Encoding.UTF8);
-                foreach (string op in output)
-                {
-                    Console.WriteLine(op);
-                }
-                Console.WriteLine();
-                Console.WriteLine("Enter Mouse product:");
-                string product = Console.ReadLine();
-                Console.WriteLine("Enter price: ");
-                price = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("QTY: ");
-                qty = Convert.ToInt32(Console.ReadLine());
-                price *= qty;
-                string categ = "Mouse";
-                File.WriteAllText(file, categ);
-                File.WriteAllText(file, product);
-                File.WriteAllText(file, Convert.ToString(qty));
-                File.WriteAllText(file, Convert.ToString(price));
-                Console.WriteLine("total price of chosen Mouse is: {0:N2} ", file);
-            }
-
-            else
-            {
-                MessageBox.Show("Invalid");
-            }
+            
         }
     }
 
@@ -239,65 +116,33 @@ namespace Group11_Machine_Problem
     {
         public Speaker()
         {
-            FileStream fileStream = File.OpenRead(@".\Inventory\MouseData.txt");
+            FileStream fileStream = File.OpenRead("MouseData.txt");
+            Console.WriteLine(fileStream);
             int qty;
             double price;
-
-            int keychoice = Convert.ToInt32(Console.ReadLine());
-            if (keychoice == 1)
-            {
-                string file = (@".\Inventory\Sales.txt");
-                var inputfile = @".\Inventory\SpeakerData.txt";
+           
+                string file = ("Sales.txt");
+                var inputfile = "SpeakerData.txt";
                 string[] output = File.ReadAllLines(inputfile, Encoding.UTF8);
                 foreach (string op in output)
                 {
                     Console.WriteLine(op);
                 }
                 Console.WriteLine();
-                Console.WriteLine("Enter Speaker product:");
-                string product = Console.ReadLine();
-                Console.WriteLine("Enter price: ");
+            Console.WriteLine("Enter product: ");
+            string product = Console.ReadLine();
+            Console.WriteLine("Enter price: ");
                 price = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("QTY: ");
                 qty = Convert.ToInt32(Console.ReadLine());
                 price *= qty;
                 string categ = "Speaker";
                 File.WriteAllText(file, categ);
-                File.WriteAllText(file, product);
                 File.WriteAllText(file, Convert.ToString(qty));
                 File.WriteAllText(file, Convert.ToString(price));
-                Console.WriteLine("total price of chosen Speaker is: {0:N2} ", file);
-            }
+            Console.WriteLine("total price of chosen keyboard is: {0:N2} ", price);
 
-            else if (keychoice == 2)
-            {
-                string file = (@".\Inventory\Sales.txt");
-                var inputfile = @".\Inventory\SpeakerData.txt";
-                string[] output = File.ReadAllLines(inputfile, Encoding.UTF8);
-                foreach (string op in output)
-                {
-                    Console.WriteLine(op);
-                }
-                Console.WriteLine();
-                Console.WriteLine("Enter Speaker product:");
-                string product = Console.ReadLine();
-                Console.WriteLine("Enter product Name: ");
-                price = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("QTY: ");
-                qty = Convert.ToInt32(Console.ReadLine());
-                price *= qty;
-                string categ = "Speaker";
-                File.WriteAllText(file, categ);
-                File.WriteAllText(file, product);
-                File.WriteAllText(file, Convert.ToString(qty));
-                File.WriteAllText(file, Convert.ToString(price));
-                Console.WriteLine("total price of chosen Speaker is: {0:N2} ", file);
-            }
 
-            else
-            {
-                MessageBox.Show("Invalid");
-            }
         }
     }
 
@@ -305,64 +150,33 @@ namespace Group11_Machine_Problem
     {
         public Headphone()
         {
-            FileStream fileStream = File.OpenRead(@".\Inventory\HeadphonesData.txt");
+            FileStream fileStream = File.OpenRead("HeadphonesData.txt");
+            Console.WriteLine(fileStream);
             int qty;
             double price;
-            int keychoice = Convert.ToInt32(Console.ReadLine());
-            if (keychoice == 1)
-            {
-                string file = (@".\Inventory\Sales.txt");
-                var inputfile = @".\Inventory\HeadphonesData.txt";
+
+                string file = ("Sales.txt");
+                var inputfile = "HeadphonesData.txt";
                 string[] output = File.ReadAllLines(inputfile, Encoding.UTF8);
                 foreach (string op in output)
                 {
                     Console.WriteLine(op);
                 }
                 Console.WriteLine();
-                Console.WriteLine("Enter Headphone product:");
-                string product = Console.ReadLine();
-                Console.WriteLine("Enter price: ");
+            Console.WriteLine("Enter product: ");
+            string product = Console.ReadLine();
+            Console.WriteLine("Enter price: ");
                 price = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("QTY: ");
                 qty = Convert.ToInt32(Console.ReadLine());
                 price *= qty;
                 string categ = "Headphones";
                 File.WriteAllText(file, categ);
-                File.WriteAllText(file, product);
                 File.WriteAllText(file, Convert.ToString(qty));
                 File.WriteAllText(file, Convert.ToString(price));
-                Console.WriteLine("total price of chosen Headphone is: {0:N2} ", file); ;
-            }
+            Console.WriteLine("total price of chosen keyboard is: {0:N2} ", price);
+            
 
-            else if (keychoice == 2)
-            {
-                string file = (@".\Inventory\Sales.txt");
-                var inputfile = @".\Inventory\HeadphonesData.txt";
-                string[] output = File.ReadAllLines(inputfile, Encoding.UTF8);
-                foreach(string op in output)
-                {
-                    Console.WriteLine(op);
-                }
-                Console.WriteLine();
-                Console.WriteLine("Enter Headphone product:");
-                string product = Console.ReadLine();
-                Console.WriteLine("Enter price: ");
-                price = Convert.ToDouble(Console.ReadLine());
-                Console.WriteLine("QTY: ");
-                qty = Convert.ToInt32(Console.ReadLine());
-                price *= qty;
-                string categ = "Headphones";
-                File.WriteAllText(file, categ);
-                File.WriteAllText(file, product);
-                File.WriteAllText(file, Convert.ToString(qty)); 
-                File.WriteAllText(file, Convert.ToString(price));
-                Console.WriteLine("total price of chosen Headphone is: {0:N2} ", file);
-            }
-
-            else
-            {
-                MessageBox.Show("Invalid");
-            }
         }
     }
 }
