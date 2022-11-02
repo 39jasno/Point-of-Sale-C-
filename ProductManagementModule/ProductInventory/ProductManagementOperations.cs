@@ -115,8 +115,9 @@ namespace Group11_Machine_Problem
             //Search for the ID to update
             public void FindUpdate(string path)
             {
+                Console.Clear();
                 ProductValidation codeValidate = new ProductValidation();
-                int keybUp = codeValidate.NumberLengthRequired("Enter code to update Price:", 5);
+                int keybUp = codeValidate.NumberLengthRequired("Enter code to update Price: ", 5);
                 string searchKeyb = Convert.ToString(keybUp);
 
                 FileStream paytonStm = new FileStream(path, FileMode.Open);
@@ -151,15 +152,15 @@ namespace Group11_Machine_Problem
                 else
                 {
                     Console.WriteLine("Product doesn't Exist!");
+                    Console.Clear();
                 }
-                Console.ReadKey();
             }
 
 
             //Overwrite Price data
             private void PUpdate(string path)
             {
-
+                ProductManagementOperations display = new ProductManagementOperations();
                 ProductValidation keybValidate = new ProductValidation();
                 Console.WriteLine();
                 double newKeybPrice = keybValidate.DoubleInput("Enter Product Price: ");
@@ -179,10 +180,14 @@ namespace Group11_Machine_Problem
                 paytonStmReader.Close();
                 paytonStm.Close();
                 Console.WriteLine(newContent);
-                StreamWriter paytonWriter = new StreamWriter("KeyboardData.txt");
-                paytonWriter.Write(newContent);
-                paytonWriter.Close();
+                Console.Clear();
+                Console.WriteLine("Price updated\n\n");
+                display.Read(path);
+                //StreamWriter paytonWriter = new StreamWriter("KeyboardData.txt");
+                //paytonWriter.Write(newContent);
+                //paytonWriter.Close();
 
+                
             }
         }
         /*

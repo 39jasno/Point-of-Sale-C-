@@ -26,6 +26,7 @@ namespace Group11_Machine_Problem
             int number; bool lnumber; string numlen;
             do
             {
+                Console.Clear();
                 Console.Write(strmessage);
 
                 lnumber = int.TryParse(Console.ReadLine(), out number);
@@ -33,8 +34,9 @@ namespace Group11_Machine_Problem
 
                 if (numlen.Length!=maximum)
                 {
-                    Console.WriteLine("\nInvalid input, must be 5 digits") ;
+                    Console.WriteLine("\nInvalid input, must be 5 digits\n\nPress any key to continue.") ;
                 }
+                Console.ReadKey();
             } while (numlen.Length != maximum);
             return number;
 
