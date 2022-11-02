@@ -182,10 +182,11 @@ namespace Group11_Machine_Problem
                 Console.WriteLine(newContent);
                 Console.Clear();
                 Console.WriteLine("Price updated\n\n");
+
+                StreamWriter paytonWriter = new StreamWriter(path);
+                paytonWriter.Write(newContent);
+                paytonWriter.Close();
                 display.Read(path);
-                //StreamWriter paytonWriter = new StreamWriter("KeyboardData.txt");
-                //paytonWriter.Write(newContent);
-                //paytonWriter.Close();
 
                 
             }
