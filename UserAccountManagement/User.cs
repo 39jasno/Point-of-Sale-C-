@@ -312,12 +312,12 @@ namespace Group11_Machine_Problem
         }
 
         //displays menu for user management
-        public void ManageUserAccount(string strMessage)
+        public void ManageUserAccount()
         {
             string choice;
             do
             {
-                Console.WriteLine("Manager User Management Menu\n");
+                Console.WriteLine("User Management Menu\n");
                 Console.WriteLine("Please select an option from the menu:\n 1 - Change Password \n 2 - Deactive your account \n 3 - Show Account Expiration \n 4 - Exit ");
                 Console.Write("\nEnter choice: ");
                 string userChoice = Console.ReadLine();

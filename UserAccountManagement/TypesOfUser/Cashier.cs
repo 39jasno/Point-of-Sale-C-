@@ -32,7 +32,8 @@ namespace Group11_Machine_Problem
                     Console.WriteLine("Cashier Menu");
                     Console.WriteLine("\n 1 - Order Management" +
                         "\n 2 - Returns Management" +
-                        "\n 3 - Log out ");
+                        "\n 3 - User Account Management" +
+                        "\n 4 - Log out ");
                     Console.Write("\nEnter choice: ");
                     choice = Console.ReadLine();
 
@@ -40,15 +41,16 @@ namespace Group11_Machine_Problem
                     {
                         case "1": Console.Clear(); initOrder.Main(); break;
                         case "2": break;
-                        case "3": Console.WriteLine("Logging out..."); Thread.Sleep(800); Console.Clear(); break;
+                        case "3": Console.Clear(); ManageUserAccount(); break;
+                        case "4": Console.WriteLine("Logging out..."); Thread.Sleep(800); Console.Clear(); break;
                         default: Console.WriteLine("Invalid Input: Select a choice from the options!"); Thread.Sleep(800); Console.Clear(); break;
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Logging out..."); Thread.Sleep(800); Console.Clear(); choice = "3";
+                    Console.WriteLine("Logging out..."); Thread.Sleep(800); Console.Clear(); choice = "4";
                 }
-            } while (choice != "3");
+            } while (choice != "4");
         }
     }
 }

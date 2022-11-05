@@ -46,7 +46,7 @@ namespace Group11_Machine_Problem
                         case "1": Console.Clear(); initProd.Main(); break;
                         case "2": Console.Clear(); initOrder.Main(); break;
                         case "3": Console.Clear(); initReport.Main(); break;
-                        case "4": Console.Clear(); ManageUserAccount("Manager User Management Menu\n"); break;
+                        case "4": Console.Clear(); ManageUserAccount(); break;
                         case "5": Console.Clear(); CreateUser(); break;
                         case "6": Console.WriteLine("Logging out..."); Thread.Sleep(800); Console.Clear(); break;
 
